@@ -1,124 +1,314 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import type { ReactNode } from "react";
-import {
-  capabilities,
-  email,
-  focusThemes,
-  industries,
-  media,
-} from "@/data/site";
+import { useEffect, useRef, useState } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import { media } from "@/data/site";
+import { practices, sectors, people } from "@/data/home-v14";
 
-type IconProps = { size?: number; strokeWidth?: number; className?: string };
+const CONTACT_EMAIL = "reachus@afii.eu";
 
-function ArrowUpRight({ size = 20, strokeWidth = 1.5, className }: IconProps) {
+const NAV = [
+  { label: "About", href: "/about" },
+  { label: "Industries", href: "/industries" },
+  { label: "Expertise", href: "/expertise" },
+  { label: "Leadership & Offices", href: "/leadership-offices" },
+  { label: "Transactions", href: "/transactions" },
+  { label: "Careers", href: "/careers" },
+];
+
+const PRINCIPLES = [
+  {
+    head: "Understand the business",
+    desc: "Start with the asset, the cash flows and the stakeholders—not a ready-made product.",
+  },
+  {
+    head: "Shape the structure",
+    desc: "Consider a financing route in light of risk, time horizon and commercial feasibility.",
+  },
+  {
+    head: "Keep the long view",
+    desc: "Good terms should make sense through the life of a project, not only at signing.",
+  },
+];
+
+function Arrow({ diagonal = false, size = 20 }: { diagonal?: boolean; size?: number }) {
   return (
-    <svg aria-hidden="true" className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 19 19 5M7 5h12v12" />
+    <svg
+      aria-hidden="true"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {diagonal ? <path d="M5 19 19 5M8 5h11v11" /> : <path d="M3 12h18m-7-7 7 7-7 7" />}
     </svg>
   );
 }
 
-function ArrowDown({ size = 18, strokeWidth = 1.5, className }: IconProps) {
+function MailIcon({ size = 18 }: { size?: number }) {
   return (
-    <svg aria-hidden="true" className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round">
-      <path d="M12 4v16m-7-7 7 7 7-7" />
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m3 7 9 7 9-7" />
     </svg>
   );
 }
 
-function ArrowRight({ size = 20, strokeWidth = 1.5, className }: IconProps) {
+function LinkedInIcon({ size = 18 }: { size?: number }) {
   return (
-    <svg aria-hidden="true" className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round">
-      <path d="M4 12h16m-7-7 7 7-7 7" />
+    <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62 1.44 1.44 0 0 1 6.94 8.5ZM5.68 9.62h2.52V18H5.68V9.62Zm3.96 0h2.41v1.15h.03c.34-.64 1.16-1.32 2.39-1.32 2.55 0 3.02 1.68 3.02 3.86V18h-2.51v-4.14c0-.99-.02-2.27-1.38-2.27-1.38 0-1.59 1.08-1.59 2.2V18H9.64V9.62Z" />
     </svg>
   );
 }
 
-function MenuGlyph({ open }: { open: boolean }) {
-  return (
-    <span className={`menu-glyph ${open ? "menu-glyph--open" : ""}`} aria-hidden="true">
-      <span /><span />
-    </span>
-  );
-}
+function Brand({ footer = false }: { footer?: boolean }) {
+  const [source, setSource] = useState("/afii-logo.jpg");
+  const [fallback, setFallback] = useState(false);
 
-function Wordmark({ light = false }: { light?: boolean }) {
-  // Keep the real AFII file intact; a text fallback is shown if no file is supplied.
-  const [logo, setLogo] = useState("/afii-logo.jpg");
-  const [showFallback, setShowFallback] = useState(false);
-  const tryNextLogo = () => {
-    if (logo === "/afii-logo.jpg") setLogo("/afii-logo.png");
-    else setShowFallback(true);
-  };
   return (
-    <a className={`wordmark wordmark--official ${light ? "wordmark--light" : ""}`} href="#top" aria-label="AFII Capital — back to top">
-      {showFallback ? (
-        <span className="official-brand-fallback"><strong>afii</strong><small>CAPITAL</small></span>
+    <a href="/" aria-label="AFII — home" className={`af-brand ${footer ? "af-brand--footer" : ""}`}>
+      {fallback ? (
+        <span className="af-brand-fallback">afii</span>
       ) : (
-        <img className="official-brand-image" src={logo} alt="AFII Capital" onError={tryNextLogo} />
+        <img
+          alt="AFII"
+          src={source}
+          onError={() => {
+            if (source.endsWith(".jpg")) setSource("/afii-logo.png");
+            else setFallback(true);
+          }}
+        />
       )}
     </a>
   );
 }
 
-function MediaImage({ src, alt, className = "", eager = false }: { src: string; alt: string; className?: string; eager?: boolean }) {
-  const [current, setCurrent] = useState(src);
-  return <img className={className} src={current} alt={alt} loading={eager ? "eager" : "lazy"} decoding="async" fetchPriority={eager ? "high" : undefined} onError={() => { if (current !== media.heroFallback) setCurrent(media.heroFallback); }} />;
-}
-
-function Header({ onOpenContact }: { onOpenContact: () => void }) {
-  const [scrolled, setScrolled] = useState(false);
+function Header({ onContact }: { onContact: () => void }) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const update = () => setScrolled(window.scrollY > 24);
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    const listener = () => setScrolled(window.scrollY > 55);
+    listener();
+    window.addEventListener("scroll", listener, { passive: true });
+    return () => window.removeEventListener("scroll", listener);
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle("menu-is-open", open);
-    const keyHandler = (event: KeyboardEvent) => { if (event.key === "Escape") setOpen(false); };
-    window.addEventListener("keydown", keyHandler);
-    return () => { document.body.classList.remove("menu-is-open"); window.removeEventListener("keydown", keyHandler); };
+    const handler = (ev: KeyboardEvent) => {
+      if (ev.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", handler);
+    document.body.classList.toggle("af-menu-open", open);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      document.body.classList.remove("af-menu-open");
+    };
   }, [open]);
 
-  const closeMenu = () => setOpen(false);
   return (
     <>
-      <header className={`site-header ${scrolled ? "site-header--scrolled" : ""} ${open ? "site-header--open" : ""}`}>
-        <div className="header-inner page-shell">
-          <Wordmark />
-          <nav className="desktop-nav" aria-label="Primary navigation">
-            <a href="#expertise">Expertise</a>
-            <a href="#industries">Industries</a>
-            <a href="#approach">Our approach</a>
-            <a href="#perspectives">Perspectives</a>
+      <header className={`af-header ${scrolled ? "af-header--scrolled" : ""}`}>
+        <div className="af-header-inner">
+          <Brand />
+          <nav className="af-desktop-nav" aria-label="Main navigation">
+            {NAV.map((item) => (
+              <a href={item.href} key={item.label}>
+                {item.label}
+              </a>
+            ))}
           </nav>
-          <div className="header-actions">
-            <button className="header-contact" type="button" onClick={onOpenContact}>Discuss a mandate <ArrowUpRight size={15} /></button>
-            <button type="button" className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-site-menu" onClick={() => setOpen(!open)}><MenuGlyph open={open} /></button>
-          </div>
+          <button className="af-contact-trigger" type="button" onClick={onContact} aria-label="Contact AFII">
+            <MailIcon size={23} />
+          </button>
+          <button
+            type="button"
+            className="af-mobile-trigger"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span />
+            <span />
+          </button>
         </div>
       </header>
-      <div id="mobile-site-menu" className={`menu-panel ${open ? "menu-panel--open" : ""}`} aria-hidden={!open}>
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          {[
-            ["Our expertise", "#expertise"],
-            ["Industries", "#industries"],
-            ["Our approach", "#approach"],
-            ["Perspectives", "#perspectives"],
-            ["Contact", "#contact"],
-          ].map(([name, href]) => (
-            <a tabIndex={open ? 0 : -1} href={href} onClick={closeMenu} key={name}><span>{name}</span><ArrowUpRight size={24}/></a>
+      <div className={`af-mobile-menu ${open ? "af-mobile-menu--open" : ""}`} aria-hidden={!open} id="mobile-menu">
+        <nav aria-label="Mobile navigation">
+          {NAV.map((item) => (
+            <a key={item.href} href={item.href} tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>
+              {item.label}
+              <Arrow diagonal />
+            </a>
           ))}
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              onContact();
+            }}
+          >
+            Contact AFII
+            <Arrow diagonal />
+          </button>
         </nav>
-        <div className="mobile-menu-bottom"><span>STRUCTURED FINANCE & INFRASTRUCTURE ADVISORY</span><span>AFII CAPITAL</span></div>
       </div>
     </>
+  );
+}
+
+
+function Lotus({ side = "right", className = "" }: { side?: "left" | "right"; className?: string }) {
+  const petals = [-78, -60, -41, -21, 0, 21, 41, 60, 78];
+
+  return (
+    <div className={`af-lotus af-lotus--${side} ${className}`} aria-hidden="true" data-lotus>
+      <svg viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        {/* Both arcs share the exact same centre: only the radius differs.
+            dash lengths interrupt the rings; rotating them cannot produce an intersection. */}
+        <circle className="af-orbit af-orbit--outer" cx="0" cy="360" r="353" pathLength="100"
+          strokeDasharray="22 12 24 42" />
+        <circle className="af-orbit af-orbit--inner" cx="0" cy="360" r="282" pathLength="100"
+          strokeDasharray="28 14 18 40" />
+
+        {/* The root is pinned to the side edge (0,360), rather than the bottom.
+            Each petal fans vertically from that same point. */}
+        <g className="af-lotus-flower">
+          {petals.map((angle, index) => (
+            <path key={angle} className={`af-petal af-petal-${index}`}
+              style={{ "--petal-rotation": `${angle}deg`, "--petal-delay": `${index * 70}ms` } as CSSProperties}
+              d="M0 360 C66 310 145 290 251 360 C145 430 66 410 0 360Z" />
+          ))}
+          <path className="af-lotus-root" d="M0 348 Q24 360 0 372" />
+        </g>
+      </svg>
+    </div>
+  );
+}
+
+function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+  return (
+    <div data-reveal className={className} style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}>
+      {children}
+    </div>
+  );
+}
+
+function Breadcrumb({ trail }: { trail: string }) {
+  return (
+    <div className="af-breadcrumb">
+      <a href="/">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>{trail}</span>
+    </div>
+  );
+}
+
+function ResponsiveImage({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
+  const [current, setCurrent] = useState(src);
+  return (
+    <img
+      src={current}
+      alt={alt}
+      className={className}
+      loading="lazy"
+      decoding="async"
+      onError={() => {
+        if (current !== media.heroFallback) setCurrent(media.heroFallback);
+      }}
+    />
+  );
+}
+
+function VideoSection() {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [available, setAvailable] = useState(true);
+  const [playing, setPlaying] = useState(false);
+
+  useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          void video.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
+        } else {
+          video.pause();
+          setPlaying(false);
+        }
+      },
+      { threshold: 0.28 },
+    );
+    obs.observe(video);
+    return () => {
+      obs.disconnect();
+      video.pause();
+    };
+  }, []);
+
+  return (
+    <section className="af-film" aria-label="Infrastructure in motion">
+      <div className="af-marquee" aria-label="AFII expertise in project finance and international infrastructure">
+        <div className="af-marquee-track" aria-hidden="true">
+          {[0, 1].map((key) => (
+            <div className="af-marquee-set" key={key}>
+              {["PROJECT FINANCE", "INTERNATIONAL TRADE", "INFRASTRUCTURE", "EQUIPMENT FINANCE", "CAPITAL ADVISORY"].map((text) => (
+                <span key={text}>
+                  {text}
+                  <i />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="af-film-screen">
+        {available ? (
+          <video
+            ref={ref}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={media.filmPoster}
+            src={media.filmVideo}
+            onError={() => setAvailable(false)}
+            aria-label="Urban infrastructure footage"
+          />
+        ) : (
+          <ResponsiveImage src={media.filmPoster} alt="Urban infrastructure" />
+        )}
+        <div className="af-film-tools">
+          <span>Finance for the real economy.</span>
+          {available && (
+            <button
+              type="button"
+              onClick={() => {
+                const video = ref.current;
+                if (!video) return;
+                if (video.paused) {
+                  void video.play().then(() => setPlaying(true)).catch(() => {});
+                } else {
+                  video.pause();
+                  setPlaying(false);
+                }
+              }}
+              aria-label={playing ? "Pause video" : "Play video"}
+            >
+              {playing ? "Pause" : "Play"}
+              <span aria-hidden="true">{playing ? "Ⅱ" : "▶"}</span>
+            </button>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -127,196 +317,389 @@ function ContactModal({ open, onClose }: { open: boolean; onClose: () => void })
     if (!open) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    function onKey(event: KeyboardEvent) { if (event.key === "Escape") onClose(); }
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key === "Escape") onClose();
+    };
     window.addEventListener("keydown", onKey);
-    return () => { document.body.style.overflow = previous; window.removeEventListener("keydown", onKey); };
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener("keydown", onKey);
+    };
   }, [open, onClose]);
+
   if (!open) return null;
+
   return (
-    <div className="dialog-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) onClose(); }}>
-      <section className="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-dialog-title">
-        <div className="dialog-top"><span className="dialog-heading">Start a conversation</span><button className="dialog-close" onClick={onClose} type="button" aria-label="Close contact dialog">×</button></div>
-        <h2 id="contact-dialog-title">Every project begins with a conversation.</h2>
-        <p>Tell us a little about your project, financing requirement or transaction. Our team can assess the appropriate next discussion.</p>
-        <a className="button-dark" href={`mailto:${email}?subject=AFII%20Capital%20%E2%80%94%20Mandate%20enquiry`}>Write to {email} <ArrowUpRight size={18} /></a>
-        <span className="dialog-note">Your email application will open with a new message.</span>
-      </section>
+    <div className="af-modal-backdrop" onMouseDown={(ev) => { if (ev.target === ev.currentTarget) onClose(); }}>
+      <div className="af-modal" role="dialog" aria-modal="true" aria-labelledby="af-modal-title">
+        <button className="af-modal-x" type="button" aria-label="Close" onClick={onClose}>
+          ×
+        </button>
+        <h2 id="af-modal-title">Discuss a project with AFII.</h2>
+        <p>For a financing or advisory enquiry, send a short note about your project and the support you are looking for.</p>
+        <a href={`mailto:${CONTACT_EMAIL}?subject=AFII%20-%20Project%20enquiry`} className="af-pill-link">
+          Write to {CONTACT_EMAIL}
+          <Arrow diagonal size={18} />
+        </a>
+        <small>This opens your email application; no information is submitted through this website.</small>
+      </div>
     </div>
   );
 }
 
-function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
-  useEffect(() => {
-    let raf = 0;
-    const update = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-        setProgress(scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0);
-      });
-    };
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    return () => { window.removeEventListener("scroll", update); window.removeEventListener("resize", update); cancelAnimationFrame(raf); };
-  }, []);
-  return <div className="scroll-progress" style={{ transform: `scaleX(${progress / 100})` }} aria-hidden="true" />;
-}
-
-function FilmSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isAvailable, setIsAvailable] = useState(true);
-  const [reducedMotion, setReducedMotion] = useState(true);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mediaQuery.matches);
-    const video = videoRef.current;
-    if (!video || mediaQuery.matches) return;
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        void video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
-      } else {
-        video.pause(); setIsPlaying(false);
-      }
-    }, { threshold: 0.28 });
-    observer.observe(video);
-    return () => { observer.disconnect(); video.pause(); };
-  }, []);
-
-  const toggle = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) void video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
-    else { video.pause(); setIsPlaying(false); }
-  };
-
+function Footer({ onContact }: { onContact: () => void }) {
   return (
-    <section className="film-section" aria-label="The infrastructure behind the economy">
-        <div className="film-marquee" aria-label="AFII Capital — project finance, trade finance, equipment finance and advisory">
-          <div className="film-marquee-track" aria-hidden="true">
-            {[0, 1].map((repeat) => (
-              <div className="film-marquee-set" key={repeat}>
-                {["Project finance", "Trade finance", "Infrastructure advisory", "Equipment finance", "Cross-border transactions", "Capital structuring"].map((title) => (
-                  <span className="film-marquee-item" key={`${repeat}-${title}`}><span className="film-marquee-dot" />{title}</span>
-                ))}
-              </div>
-            ))}
+    <footer className="af-footer">
+      <div className="af-container">
+        <div className="af-footer-top">
+          <div>
+            <Brand footer />
+            <p>
+              Structured finance and infrastructure advisory.
+              <br />
+              A practical perspective on capital and the projects behind it.
+            </p>
+          </div>
+          <div className="af-footer-right">
+            <button type="button" onClick={onContact}>
+              Start a conversation
+              <Arrow diagonal />
+            </button>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </div>
         </div>
-      <div className="film-media">
-        <MediaImage src={media.filmPoster} alt="Major city and infrastructure seen in the evening" className="film-poster" />
-        {isAvailable && <video ref={videoRef} className="film-video" src={media.filmVideo} playsInline muted loop preload="none" aria-label="Moving city infrastructure footage" onError={() => setIsAvailable(false)} />}
-        <div className="film-vignette" />
-      </div>
-      <div className="film-content page-shell">
-        <div className="film-top-spacer" aria-hidden="true" />
-        <h2 data-reveal="up">The real economy<br /><em>doesn&apos;t stand still.</em></h2>
-        <div className="film-bottom"><p>Capital decisions shape the assets, systems and industries people rely on. The structure behind them matters.</p>
-          {isAvailable && !reducedMotion && <button className="film-control" type="button" onClick={toggle} aria-label={isPlaying ? "Pause background video" : "Play background video"}><span>{isPlaying ? "Ⅱ" : "▶"}</span>{isPlaying ? "Pause film" : "Play film"}</button>}
+        <div className="af-footer-line" />
+        <div className="af-footer-bottom">
+          <span>© {new Date().getFullYear()} AFII</span>
+          <div>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/legal-notice">Legal Notice</a>
+            <a href="/">Home</a>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }
 
 export default function HomeExperience() {
   const [selected, setSelected] = useState(0);
   const [contactOpen, setContactOpen] = useState(false);
-  const closeContact = useCallback(() => setContactOpen(false), []);
 
   useEffect(() => {
-    document.documentElement.classList.add("js-ready");
-    const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      nodes.forEach((node) => node.classList.add("is-visible"));
-      return () => { document.documentElement.classList.remove("js-ready"); };
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal], [data-lotus]"));
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => el.classList.add("af-visible"));
+      return;
     }
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: "0px 0px -9% 0px", threshold: 0.08 });
-    nodes.forEach((node) => observer.observe(node));
-    return () => { observer.disconnect(); document.documentElement.classList.remove("js-ready"); };
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("af-visible");
+            observer.unobserve(entry.target);
+          }
+        }),
+      { rootMargin: "0px 0px -5% 0px", threshold: 0.08 },
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
-  const capability = capabilities[selected];
-  const navigateFromIndustry = (index: number) => {
-    setSelected(index);
-    document.getElementById("expertise")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-  };
+  const active = practices[selected];
 
   return (
     <>
-      <ScrollProgress />
-      <Header onOpenContact={() => setContactOpen(true)} />
+      <Header onContact={() => setContactOpen(true)} />
       <main id="top">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-top page-shell">
-            <div className="hero-kicker hero-entrance hero-entrance--one"><span className="kicker-dot" /> STRUCTURED FINANCE <span className="hero-kicker-divider">/</span> INFRASTRUCTURE ADVISORY</div>
-            <div className="hero-main">
-              <div className="hero-headline"><h1 id="hero-title"><span className="hero-entrance hero-entrance--two">Financing what</span><span className="hero-entrance hero-entrance--three"><em>comes next.</em></span></h1></div>
-              <div className="hero-side hero-entrance hero-entrance--four"><p>Financial thinking for infrastructure, industry and international trade — grounded in the realities of each project.</p><a className="text-link" href="#expertise"><span>Explore our expertise</span><ArrowUpRight size={18} /></a></div>
+        <section className="af-hero af-container" aria-labelledby="af-hero-heading">
+          <div className="af-hero-breadcrumb">
+            <Breadcrumb trail="AFII" />
+          </div>
+          <div className="af-hero-grid">
+            <Reveal className="af-hero-title">
+              <h1 id="af-hero-heading">
+                Finance for <span>what comes next.</span>
+              </h1>
+            </Reveal>
+            <Reveal className="af-hero-summary" delay={130}>
+              <p>Structured finance and advisory for infrastructure, business and international trade. We begin with the commercial realities of each project.</p>
+              <a href="#expertise" className="af-inline-link">
+                Explore our expertise
+                <Arrow diagonal size={18} />
+              </a>
+            </Reveal>
+          </div>
+          <Reveal className="af-hero-photo" delay={210}>
+            <ResponsiveImage src={media.hero} alt="Container port infrastructure and international trade" />
+            <div className="af-hero-caption">AFII <span>·</span> Structured Finance & Infrastructure Investments</div>
+          </Reveal>
+        </section>
+
+        <section className="af-introduction af-section" id="about">
+          <div className="af-container af-intro-grid">
+            <Reveal>
+              <h2>
+                Good finance begins with <span>understanding.</span>
+              </h2>
+            </Reveal>
+            <Reveal className="af-intro-text" delay={110}>
+              <p>A new project, an established business and a cross-border transaction each call for a different approach to capital. The first task is to understand how the business works, where the risks sit and what the financing needs to achieve.</p>
+              <p>AFII advises on structured funding and related commercial arrangements for companies, sponsors and institutions working across sectors and borders.</p>
+              <a href="/about" className="af-inline-link">
+                About AFII
+                <Arrow diagonal size={18} />
+              </a>
+            </Reveal>
+            <Lotus side="right" />
+          </div>
+        </section>
+
+        <section className="af-expertise af-section" id="expertise">
+          <div className="af-container">
+            <Reveal className="af-section-header">
+              <div>
+                <h2>
+                  Different mandates.
+                  <br />
+                  <span>Different ways forward.</span>
+                </h2>
+              </div>
+              <p>Our work extends across five connected practice areas. Each brings a different set of considerations to the table.</p>
+            </Reveal>
+            <div className="af-practice-layout">
+              <div className="af-practice-grid" role="group" aria-label="AFII areas of expertise">
+                {practices.map((item, index) => (
+                  <Reveal className="af-practice-reveal" key={item.name} delay={index * 80}>
+                    <button
+                      className={`af-practice-pill ${selected === index ? "af-practice-pill--active" : ""}`}
+                      type="button"
+                      onClick={() => setSelected(index)}
+                      onMouseEnter={() => setSelected(index)}
+                      onFocus={() => setSelected(index)}
+                      aria-pressed={selected === index}
+                    >
+                      <strong>{item.name}</strong>
+                      <span>{item.detail}</span>
+                      <i>
+                        <Arrow diagonal size={19} />
+                      </i>
+                    </button>
+                  </Reveal>
+                ))}
+              </div>
+              <Reveal className="af-practice-detail" delay={180}>
+                <div className="af-practice-detail-panel" key={`${selected}-${active.name}`}>
+                  <div className="af-practice-image">
+                    <ResponsiveImage src={active.image} alt={`Representative photograph for ${active.name}`} />
+                  </div>
+                  <h3>{active.name}</h3>
+                  <p>{active.description}</p>
+                  <a href="/expertise" className="af-inline-link">
+                    Explore expertise
+                    <Arrow diagonal size={18} />
+                  </a>
+                </div>
+              </Reveal>
             </div>
           </div>
-          <div className="hero-media hero-entrance hero-entrance--five">
-            <MediaImage src={media.hero} eager alt="International marine logistics and infrastructure" className="hero-image" />
-            <div className="hero-image-scrim" />
-            <div className="hero-image-bottom page-shell"><div className="hero-photo-caption"><span className="small-plus">+</span><span>CAPITAL. PROJECTS. PERSPECTIVE.</span></div><a className="hero-scroll" href="#introduction"><span>Scroll to discover</span><ArrowDown size={17} /></a></div>
-          </div>
         </section>
 
-        <section id="introduction" className="intro section-pad page-shell" aria-labelledby="intro-title">
-          <div className="intro-body"><h2 id="intro-title" className="display-heading" data-reveal="up">Good finance<br />starts with <em>understanding.</em></h2><div className="intro-copy" data-reveal="up"><p>Every project has its own commercial logic. Its own risks, relationships and long-term obligations. Financing it well begins by understanding those realities — not by reaching for a standard formula.</p><p>AFII Capital works across structured finance and infrastructure advisory, helping businesses and project sponsors consider the capital structures and counterparties suited to their ambitions.</p><a className="underlined-link" href="#approach">How we approach a mandate <ArrowUpRight size={18}/></a></div></div>
-        </section>
-
-        <section id="expertise" className="expertise" aria-labelledby="expertise-title">
-          <div className="page-shell"><div className="expertise-title-row" data-reveal="up"><h2 id="expertise-title" className="display-heading">Finance, shaped<br /><em>around the project.</em></h2><p>Choose an area to see the kind of financing questions we help clients work through.</p></div></div>
-          <div className="expertise-layout page-shell">
-            <div className="expertise-list" role="group" aria-label="Select an area of expertise">
-              {capabilities.map((item, i) => (
-                <div className="expertise-bubble-reveal" key={item.title} data-reveal="bubble" style={{ transitionDelay: `${i * 70}ms` }}>
-                  <button type="button" className={`expertise-item ${selected === i ? "expertise-item--active" : ""}`} aria-pressed={selected === i} onMouseEnter={() => setSelected(i)} onFocus={() => setSelected(i)} onClick={() => setSelected(i)}>
-                    <span className="exp-text"><span className="exp-title">{item.title}</span><span className="exp-short">{item.short}</span></span>
-                    <span className="exp-arrow"><ArrowUpRight size={23}/></span>
-                  </button>
-                </div>
+        <section className="af-industries af-section" id="industries">
+          <div className="af-container">
+            <div className="af-industry-head">
+              <Reveal>
+                <h2>
+                  The work behind
+                  <br />
+                  <span>the economy.</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={90}>
+                <p>From essential energy systems to transport networks and manufacturing, each industry brings its own financing needs.</p>
+              </Reveal>
+            </div>
+            <div className="af-industry-grid">
+              {sectors.map((sector, index) => (
+                <Reveal key={sector.title} delay={index * 110}>
+                  <a className="af-industry-card" href="/industries">
+                    <div className="af-industry-image">
+                      <ResponsiveImage src={sector.src} alt={sector.title} />
+                    </div>
+                    <div className="af-industry-caption">
+                      <div>
+                        <h3>{sector.title}</h3>
+                        <p>{sector.copy}</p>
+                      </div>
+                      <Arrow diagonal size={23} />
+                    </div>
+                  </a>
+                </Reveal>
               ))}
             </div>
-            <div className="expertise-detail" aria-live="polite"><div className="expertise-image-wrap"><MediaImage key={capability.image} src={capability.image} alt={`${capability.title} — representative infrastructure and business imagery`} className="expertise-image" /></div><div className="expertise-description"><p>{capability.description}</p></div></div>
+          </div>
+          <Lotus side="left" className="af-industry-lotus" />
+        </section>
+
+        <VideoSection />
+
+        <section className="af-approach af-section" id="approach">
+          <div className="af-container">
+            <Reveal>
+              <h2>
+                Beyond the <span>term sheet.</span>
+              </h2>
+            </Reveal>
+            <div className="af-approach-grid">
+              <Reveal className="af-approach-image">
+                <ResponsiveImage src={media.bridge} alt="Architecture and infrastructure project" />
+              </Reveal>
+              <Reveal className="af-approach-copy" delay={100}>
+                <h3>Sound decisions start with the right questions.</h3>
+                <p>What will the capital fund? How will the asset operate? What obligations will remain after the financing closes?</p>
+                <p>We look at the full commercial picture, working through the structure, counterparties and practical constraints before recommending a way forward.</p>
+                <a href="/about" className="af-inline-link">
+                  Our approach
+                  <Arrow diagonal size={18} />
+                </a>
+              </Reveal>
+            </div>
+          </div>
+          <Lotus side="right" className="af-approach-lotus" />
+        </section>
+
+        <section className="af-principles af-section">
+          <div className="af-container af-principles-grid">
+            <Reveal>
+              <h2>
+                Clarity is part of <span>the work.</span>
+              </h2>
+              <p>Complex finance becomes easier to discuss when the decisions, responsibilities and trade-offs are made clear.</p>
+            </Reveal>
+            <div className="af-principles-list">
+              {PRINCIPLES.map((principle, index) => (
+                <Reveal
+                  key={principle.head}
+                  delay={index * 90}
+                  className={`af-principle af-principle--${index % 2 === 0 ? "left" : "right"}`}
+                >
+                  <h3>{principle.head}</h3>
+                  <p>{principle.desc}</p>
+                </Reveal>
+              ))}
+            </div>
+            <Lotus side="left" />
           </div>
         </section>
 
-        <section id="industries" className="industries section-pad" aria-labelledby="industries-title">
-          <div className="page-shell industries-heading"><div data-reveal="up"><h2 id="industries-title" className="display-heading">Real assets.<br /><em>Lasting purpose.</em></h2></div><p data-reveal="up">From essential infrastructure to the assets that keep economies moving, our work crosses industries and geographies.</p></div>
-          <div className="industries-editorial page-shell">
-            {industries.map((industry, index) => <button className={`industry-tile industry-tile--${index + 1}`} onClick={() => navigateFromIndustry(industry.capabilityIndex)} key={industry.title} type="button" aria-label={`Explore finance related to ${industry.title}`} data-reveal="up"><MediaImage src={industry.image} alt={`Representative photography of ${industry.title}`} className="industry-image" /><span className="industry-shade" /><span className="industry-top"><ArrowUpRight size={22}/></span><span className="industry-bottom"><strong>{industry.title}</strong><small>{industry.label}</small></span></button>)}
+        <section className="af-leadership af-section" id="leadership">
+          <div className="af-container">
+            <div className="af-leadership-heading">
+              <Reveal>
+                <Breadcrumb trail="Leadership & Offices" />
+                <h2>
+                  People behind <span>the perspective.</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={100}>
+                <p>Selected leadership and senior advisory contacts from AFII’s published team. Profiles and photography will be completed with approved material.</p>
+              </Reveal>
+            </div>
+            <div className="af-people-grid">
+              {people.map((person, index) => (
+                <Reveal key={person.name} delay={index * 85}>
+                  <article className="af-person">
+                    <div className="af-person-media">
+                      <a className="af-person-main" href="/leadership-offices" aria-label={`Open ${person.name} profile`}>
+                        <div className="af-portrait" aria-label={`Portrait placeholder for ${person.name}`}>
+                          <div className="af-portrait-ring" />
+                          <strong>{person.initials}</strong>
+                          <span>Portrait to follow</span>
+                        </div>
+                      </a>
+                      <div className="af-person-actions" aria-label={`Quick actions for ${person.name}`}>
+                        <a
+                          className="af-person-action af-person-action--mail"
+                          href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Leadership enquiry - ${person.name}`)}`}
+                          aria-label={`Email about ${person.name}`}
+                        >
+                          <MailIcon />
+                        </a>
+                        <a
+                          className="af-person-action af-person-action--linkedin"
+                          href={person.linkedin}
+                          aria-label={`LinkedIn placeholder for ${person.name}`}
+                        >
+                          <LinkedInIcon />
+                        </a>
+                      </div>
+                    </div>
+                    <a className="af-person-copy" href="/leadership-offices">
+                      <h3>{person.name}</h3>
+                      <p>{person.role}</p>
+                      <small>{person.city}</small>
+                    </a>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="af-people-link">
+              <a href="/leadership-offices" className="af-inline-link">
+                Leadership & offices
+                <Arrow diagonal size={18} />
+              </a>
+            </Reveal>
+            <div className="af-offices-strip">
+              <div className="af-offices-head">Connected across markets</div>
+              <div className="af-offices-places">
+                <span>Frankfurt</span>
+                <span>New Delhi</span>
+                <span>Mumbai</span>
+                <span>UAE</span>
+              </div>
+            </div>
           </div>
-          <p className="industries-foot page-shell">Select an industry to explore related expertise.</p>
         </section>
 
-        <FilmSection />
-
-        <section id="approach" className="approach section-pad page-shell" aria-labelledby="approach-title">
-          <div className="approach-head" data-reveal="up"><h2 id="approach-title" className="display-heading">Beyond the<br /><em>term sheet.</em></h2></div>
-          <div className="approach-layout"><div className="approach-photo" data-reveal="image"><MediaImage src={media.bridge} alt="Monumental modern architecture illustrating complex long-term projects" /></div><div className="approach-story" data-reveal="up"><p className="approach-lead">The quality of a financing decision can shape a project for years.</p><p>Our approach begins with listening. We look at how a project is built, what makes it commercially viable and where risks sit between sponsors, investors, lenders and other stakeholders.</p><p>Only then does a financing structure become meaningful. The objective is not complexity for its own sake, but a credible path from commercial ambition to execution.</p><div className="approach-steps" aria-label="Our advisory process"><div data-reveal="bubble"><strong>Understand the project</strong><ArrowUpRight size={17}/></div><div data-reveal="bubble"><strong>Consider the options</strong><ArrowUpRight size={17}/></div><div data-reveal="bubble"><strong>Structure the way forward</strong><ArrowUpRight size={17}/></div></div></div></div>
+        <section className="af-transaction af-section">
+          <div className="af-container af-transaction-grid">
+            <Reveal>
+              <h2>
+                Experience across <span>transactions and sectors.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={100}>
+              <p>AFII’s published work spans infrastructure, finance and industrial activity. Individual transaction details are presented only where disclosure is appropriate.</p>
+              <a href="/transactions" className="af-inline-link">
+                Transactions
+                <Arrow diagonal size={18} />
+              </a>
+            </Reveal>
+          </div>
+          <Lotus side="right" />
         </section>
 
-        <section className="perspective-quote" aria-label="Cross-border perspective"><div className="page-shell"><div className="quote-top" aria-hidden="true" /><p className="quote-statement" data-reveal="up">Capital crosses borders.<br />Good judgement needs<br /><em>more than one perspective.</em></p><div className="quote-bottom" data-reveal="up"><p>Cross-border financing brings together different markets, counterparties and commercial expectations. Clear judgement helps connect them.</p></div></div></section>
-
-        <section id="perspectives" className="themes section-pad page-shell" aria-labelledby="themes-title"><div className="themes-left" data-reveal="up"><h2 id="themes-title" className="display-heading">A considered<br /><em>point of view.</em></h2><p>Good advice is less about having a standard answer and more about asking the right questions.</p></div><div className="themes-right">{focusThemes.map((theme, index) => <article className={`theme-row theme-row--${index + 1}`} key={theme.title} data-reveal="bubble" style={{ transitionDelay: `${index * 95}ms` }}><div className="theme-orb"><ArrowUpRight size={21}/></div><div><h3>{theme.title}</h3><p>{theme.description}</p></div></article>)}</div></section>
-
-        <section id="contact" className="contact-section"><div className="page-shell"><div className="contact-top" aria-hidden="true" /><div className="contact-main" data-reveal="up"><h2>Let's find the<br /><em>right way forward.</em></h2><button onClick={() => setContactOpen(true)} aria-label="Contact AFII Capital" className="contact-round" type="button"><ArrowUpRight size={34}/></button></div><div className="contact-detail"><p>Have a project or financing requirement to discuss? We would welcome an initial conversation.</p><a className="contact-mail" href={`mailto:${email}`}>{email}<ArrowUpRight size={19}/></a></div></div></section>
+        <section className="af-cta" id="contact">
+          <div className="af-container af-cta-grid">
+            <Reveal>
+              <h2>
+                Let&apos;s discuss what
+                <br />
+                <span>you&apos;re working on.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={120} className="af-cta-right">
+              <p>For a project, financing requirement or advisory conversation, write to the team and we’ll direct your enquiry appropriately.</p>
+              <button type="button" onClick={() => setContactOpen(true)} className="af-pill-link">
+                Start a conversation
+                <Arrow diagonal size={18} />
+              </button>
+            </Reveal>
+          </div>
+        </section>
       </main>
-      <footer className="footer"><div className="page-shell"><div className="footer-main"><Wordmark light /><div className="footer-links"><a href="#expertise">Expertise</a><a href="#industries">Industries</a><a href="#approach">Approach</a><a href="#contact">Contact</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} AFII Capital. All rights reserved.</span><span>Structured Finance & Infrastructure Advisory</span><a href="#top">Back to top ↑</a></div></div></footer>
-      <ContactModal open={contactOpen} onClose={closeContact} />
+      <Footer onContact={() => setContactOpen(true)} />
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }
