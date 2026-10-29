@@ -92,7 +92,7 @@
 @media(max-width:740px){.af-header-inner{grid-template-columns:68px 39px 39px}.af-brand img{width:46px;height:46px}.af-contact-trigger{width:39px;height:39px}.af-principle{padding:22px 22px 24px;border-radius:24px}.af-practice-image img{max-height:340px}.af-person-actions{width:122px;height:60px;padding-top:8px}.af-person-action{width:36px;height:36px}.af-lotus{width:clamp(240px,64vw,360px)!important;opacity:.34}.af-lotus--left{left:-92px;transform:translate3d(-46px,20px,0)}.af-lotus--right{right:-92px;transform:translate3d(46px,20px,0)}.af-introduction .af-lotus{top:8%;right:-30%}.af-principles .af-lotus{bottom:-48px;left:-28%}.af-transaction .af-lotus{right:-24%}}
 
 
-/* AFII v1.5.2 — edge-rooted lotus + concentric, independently rotating broken arcs.
+/* AFII v1.5.2 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â edge-rooted lotus + concentric, independently rotating broken arcs.
    The old ring pseudo-elements are removed: each SVG circle has one fixed radius. */
 .af-lotus {
   position: absolute;
@@ -324,3 +324,1232 @@
   .af-person-actions { transition: none; will-change: auto; }
 }
 /* AFII_LEADERSHIP_ARC_V1_5_3_END */
+
+/* AFII_ABOUT_V1_6_BEGIN */
+.af-about-kicker{
+  margin:0 0 18px;
+  font-size:13px;
+  line-height:1.2;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#5d737b;
+  font-weight:700;
+}
+.af-about-section-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:48px;
+  align-items:end;
+  margin-bottom:44px;
+}
+.af-about-section-head p:last-child{
+  margin-bottom:0;
+}
+.af-about-hero{
+  padding-top:142px;
+  padding-bottom:58px;
+}
+.af-about-hero-breadcrumb{
+  margin-bottom:28px;
+}
+.af-about-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);
+  gap:64px;
+  align-items:start;
+}
+.af-about-hero-copy h1{
+  margin-bottom:22px;
+  font-size:clamp(54px,6.2vw,98px);
+  line-height:1.03;
+  letter-spacing:-.058em;
+  font-weight:600;
+}
+.af-about-lead{
+  max-width:690px;
+  font-size:clamp(19px,1.55vw,24px);
+  line-height:1.62;
+  color:var(--text);
+  margin-bottom:0;
+}
+.af-about-links{
+  margin-top:34px;
+}
+.af-about-anniversary-wrap{
+  display:grid;
+  gap:18px;
+}
+.af-about-anniversary{
+  display:grid;
+  grid-template-columns:156px 1fr;
+  border:1px solid #d6dfe0;
+  border-radius:28px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 18px 42px rgba(6,37,48,.07);
+}
+.af-about-anniversary-brand{
+  background:#2f376e;
+  border-right:1px solid rgba(214,192,136,.44);
+  display:grid;
+  place-items:center;
+  padding:30px 18px;
+  position:relative;
+}
+.af-about-anniversary-brand::after{
+  content:"";
+  position:absolute;
+  inset:16px;
+  border:1px solid rgba(214,192,136,.78);
+  border-radius:12px;
+}
+.af-about-anniversary-brand .af-brand{
+  position:relative;
+  z-index:1;
+}
+.af-about-anniversary-brand .af-brand img{
+  width:76px;
+  height:76px;
+}
+.af-about-anniversary-copy{
+  padding:26px 30px 28px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+}
+.af-about-anniversary-mark{
+  font-size:clamp(72px,7vw,108px);
+  line-height:.9;
+  font-weight:600;
+  color:#d5a843;
+  letter-spacing:-.065em;
+}
+.af-about-anniversary-sub{
+  margin-top:8px;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:.18em;
+  color:#6e7c80;
+}
+.af-about-anniversary-since{
+  margin-top:10px;
+  font-size:clamp(24px,2.2vw,42px);
+  line-height:1.05;
+  font-weight:600;
+  color:#111;
+}
+.af-about-hero-note{
+  padding:0 6px;
+  font-size:16px;
+  line-height:1.6;
+  color:#66777c;
+}
+.af-about-fact-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:18px;
+  margin-top:42px;
+}
+.af-about-fact-card{
+  min-height:188px;
+  border:1px solid #d8e2e3;
+  border-radius:26px;
+  background:#fff;
+  padding:22px 22px 24px;
+  box-shadow:0 12px 28px rgba(6,37,48,.04);
+}
+.af-about-fact-icon{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#f6ead2;
+  color:#113844;
+  margin-bottom:18px;
+}
+.af-about-fact-icon svg,
+.af-about-value-icon svg{
+  width:22px;
+  height:22px;
+}
+.af-about-fact-card strong{
+  display:block;
+  font-size:42px;
+  line-height:.96;
+  letter-spacing:-.05em;
+  color:var(--ink);
+  margin-bottom:12px;
+}
+.af-about-fact-card span{
+  display:block;
+  font-size:16px;
+  line-height:1.35;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:10px;
+}
+.af-about-fact-card small{
+  display:block;
+  color:#6a7a7f;
+  font-size:14px;
+  line-height:1.5;
+}
+.af-about-story{
+  padding-top:72px;
+  padding-bottom:112px;
+}
+.af-about-story-grid{
+  display:grid;
+  grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);
+  gap:60px;
+  align-items:center;
+}
+.af-about-story-media img,
+.af-about-footprint-stack img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+  border-radius:24px;
+  border:1px solid #dbe2e4;
+}
+.af-about-story-media img{
+  aspect-ratio:10/12;
+  max-height:620px;
+}
+.af-about-story-copy h2{
+  margin-bottom:22px;
+}
+.af-about-story-copy p:last-child{
+  margin-bottom:0;
+}
+.af-about-timeline{
+  background:linear-gradient(180deg,#ffffff 0%,#fbfcfc 100%);
+  padding-top:108px;
+  padding-bottom:112px;
+}
+.af-about-milestones{
+  position:relative;
+  padding:12px 0;
+}
+.af-about-milestones::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:1px;
+  background:linear-gradient(180deg,rgba(180,192,194,0) 0%,rgba(180,192,194,.95) 12%,rgba(180,192,194,.95) 88%,rgba(180,192,194,0) 100%);
+}
+.af-about-milestone{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 110px 1fr;
+  align-items:center;
+  margin:28px 0;
+}
+.af-about-milestone-year{
+  grid-column:2;
+  width:92px;
+  height:92px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid #d8e2e3;
+  box-shadow:0 10px 24px rgba(6,37,48,.05);
+  display:grid;
+  place-items:center;
+  justify-self:center;
+  font-weight:700;
+  font-size:17px;
+  color:var(--ink);
+  padding:0 10px;
+  text-align:center;
+  line-height:1.2;
+}
+.af-about-milestone-card{
+  border:1px solid #d8e2e3;
+  border-radius:28px;
+  background:#fff;
+  padding:26px 28px;
+  box-shadow:0 12px 30px rgba(6,37,48,.05);
+}
+.af-about-milestone-card h3{
+  font-size:clamp(24px,2.1vw,33px);
+  line-height:1.14;
+  margin-bottom:14px;
+}
+.af-about-milestone-card p{
+  margin-bottom:0;
+  font-size:17px;
+  line-height:1.65;
+}
+.af-about-milestone--left .af-about-milestone-card{
+  grid-column:1;
+  margin-right:22px;
+}
+.af-about-milestone--right .af-about-milestone-card{
+  grid-column:3;
+  margin-left:22px;
+}
+.af-about-values{
+  padding-top:110px;
+  padding-bottom:110px;
+}
+.af-about-values-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:52px;
+  align-items:start;
+}
+.af-about-values-list{
+  display:grid;
+  gap:18px;
+}
+.af-about-value-card{
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:18px;
+  padding:24px 24px 24px 22px;
+  background:#fff;
+  border:1px solid #d8e2e3;
+  border-radius:24px;
+  box-shadow:0 12px 28px rgba(6,37,48,.04);
+}
+.af-about-value-icon{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#f6ead2;
+  color:#113844;
+}
+.af-about-value-card h3{
+  margin-bottom:10px;
+  font-size:28px;
+  line-height:1.1;
+}
+.af-about-value-card p{
+  margin-bottom:0;
+  font-size:17px;
+  line-height:1.62;
+}
+.af-about-practices{
+  padding-top:108px;
+  padding-bottom:112px;
+}
+.af-about-practice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.af-about-practice-card{
+  position:relative;
+  min-height:244px;
+  padding:30px 28px 28px;
+  border-radius:28px;
+  border:1px solid #d8e2e3;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(6,37,48,.04);
+  transition:transform .32s ease,box-shadow .32s ease,border-color .32s ease;
+}
+.af-about-practice-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 34px rgba(6,37,48,.08);
+  border-color:#cfdbdd;
+}
+.af-about-practice-order{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:46px;
+  height:30px;
+  padding:0 12px;
+  border-radius:999px;
+  background:#f5f6f6;
+  border:1px solid #e0e6e7;
+  color:#6b7b80;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.11em;
+}
+.af-about-practice-card h3{
+  margin:20px 0 16px;
+  font-size:clamp(28px,2.25vw,37px);
+  line-height:1.08;
+}
+.af-about-practice-card p{
+  font-size:17px;
+  line-height:1.66;
+  margin-bottom:0;
+}
+.af-about-practice-links{
+  margin-top:22px;
+}
+.af-about-practice-links a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:15px;
+  font-weight:700;
+  color:#214955;
+  border-bottom:1px solid rgba(33,73,85,.25);
+  padding-bottom:4px;
+  transition:color .25s ease,border-color .25s ease;
+}
+.af-about-practice-links a:hover{
+  color:var(--gold);
+  border-color:rgba(166,140,85,.5);
+}
+.af-about-footprint{
+  padding-top:108px;
+  padding-bottom:108px;
+}
+.af-about-footprint-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.88fr) minmax(340px,1.12fr);
+  gap:58px;
+  align-items:center;
+}
+.af-about-footprint-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px;
+}
+.af-about-footprint-tags span{
+  display:inline-flex;
+  align-items:center;
+  min-height:40px;
+  padding:0 15px;
+  border-radius:999px;
+  border:1px solid #d7e1e2;
+  background:#fff;
+  font-size:14px;
+  font-weight:700;
+  color:#24434c;
+}
+.af-about-footprint-stack{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+.af-about-footprint-stack img:nth-child(1){
+  margin-top:44px;
+}
+
+/* mobile nav refinements */
+@media(max-width:740px){
+  .af-header{
+    top:10px;
+    width:calc(100% - 16px);
+    border-radius:22px;
+  }
+  .af-header-inner{
+    grid-template-columns:auto 1fr auto auto !important;
+    gap:10px;
+    min-height:64px;
+    padding:8px 14px;
+  }
+  .af-brand img{
+    width:42px;
+    height:42px;
+  }
+  .af-contact-trigger,
+  .af-mobile-trigger{
+    width:40px;
+    height:40px;
+  }
+  .af-mobile-menu{
+    position:fixed;
+    top:84px;
+    left:8px;
+    right:8px;
+    z-index:99;
+    border-radius:22px;
+    background:rgba(255,255,255,.98);
+    border:1px solid rgba(213,222,223,.9);
+    box-shadow:0 18px 42px rgba(6,37,48,.12);
+    padding:12px;
+    max-height:calc(100vh - 104px);
+    overflow:auto;
+  }
+  .af-mobile-menu nav{
+    display:grid;
+    gap:8px;
+  }
+  .af-mobile-menu a,
+  .af-mobile-menu button{
+    min-height:52px;
+    border-radius:16px;
+    padding:0 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid #e4e9ea;
+    background:#fff;
+    color:#1b404a;
+  }
+}
+
+/* leadership quick actions: desktop hover, mobile click-to-open */
+.af-person-toggle{
+  appearance:none;
+  border:0;
+  background:transparent;
+  padding:0;
+  width:100%;
+  display:block;
+  cursor:default;
+}
+.af-person-toggle .af-portrait{
+  pointer-events:none;
+}
+.af-person-actions{
+  position:absolute;
+  z-index:4;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:clamp(82px,8.4vw,116px);
+  transform:translate3d(0,105%,0);
+  opacity:1;
+  visibility:visible;
+  pointer-events:none;
+  border-radius:50% 50% 0 0 / 100% 100% 0 0;
+  background:#113844;
+  box-shadow:none;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:16px;
+  padding:0 14px 18px;
+  transition:transform 560ms cubic-bezier(.2,.74,.18,1);
+  will-change:transform;
+}
+.af-person:hover .af-person-actions,
+.af-person:focus-within .af-person-actions,
+.af-person--active .af-person-actions,
+.af-person-actions--open{
+  transform:translate3d(0,0,0);
+  pointer-events:auto;
+}
+.af-person-actions .af-person-action,
+.af-person-actions .af-person-action--mail,
+.af-person-actions .af-person-action--linkedin{
+  flex:0 0 auto;
+  width:44px;
+  height:44px;
+  color:#fff;
+  background:#1d4b56;
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  box-shadow:0 3px 11px rgba(0,0,0,.12);
+}
+.af-person-actions .af-person-action svg{
+  color:#fff;
+  stroke:currentColor;
+}
+.af-person-actions .af-person-action--linkedin svg{
+  fill:currentColor;
+  stroke:none;
+}
+.af-person-actions .af-person-action:hover,
+.af-person-actions .af-person-action:focus-visible{
+  background:#2b6370;
+  color:#fff;
+  transform:translateY(-2px);
+}
+
+@media(hover:none),(max-width:980px){
+  .af-person:hover .af-person-actions,
+  .af-person:focus-within .af-person-actions{
+    transform:translate3d(0,105%,0);
+    pointer-events:none;
+  }
+  .af-person--active .af-person-actions,
+  .af-person-actions--open{
+    transform:translate3d(0,0,0);
+    pointer-events:auto;
+  }
+  .af-person-toggle{
+    cursor:pointer;
+  }
+}
+@media(max-width:740px){
+  .af-person-actions{
+    width:100%;
+    height:79px;
+    padding:0 8px 10px;
+    gap:12px;
+  }
+  .af-person-actions .af-person-action,
+  .af-person-actions .af-person-action--mail,
+  .af-person-actions .af-person-action--linkedin{
+    width:37px;
+    height:37px;
+  }
+}
+
+/* about page responsive */
+@media(max-width:1160px){
+  .af-about-section-head,
+  .af-about-hero-grid,
+  .af-about-story-grid,
+  .af-about-values-grid,
+  .af-about-footprint-grid{
+    grid-template-columns:1fr;
+  }
+  .af-about-fact-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .af-about-practice-grid{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:980px){
+  .af-about-hero{padding-top:132px}
+  .af-about-milestones::before{
+    left:46px;
+  }
+  .af-about-milestone{
+    grid-template-columns:92px 1fr;
+    gap:18px;
+    align-items:start;
+  }
+  .af-about-milestone-year{
+    grid-column:1;
+    justify-self:start;
+    width:86px;
+    height:86px;
+  }
+  .af-about-milestone--left .af-about-milestone-card,
+  .af-about-milestone--right .af-about-milestone-card{
+    grid-column:2;
+    margin:0;
+  }
+  .af-about-footprint-stack{
+    grid-template-columns:1fr;
+  }
+  .af-about-footprint-stack img:nth-child(1){
+    margin-top:0;
+  }
+}
+@media(max-width:740px){
+  .af-about-hero{padding-top:118px;padding-bottom:34px}
+  .af-about-hero-copy h1{
+    font-size:clamp(42px,13vw,60px);
+  }
+  .af-about-anniversary{
+    grid-template-columns:108px 1fr;
+    border-radius:22px;
+  }
+  .af-about-anniversary-brand{
+    padding:18px 12px;
+  }
+  .af-about-anniversary-brand .af-brand img{
+    width:54px;
+    height:54px;
+  }
+  .af-about-anniversary-mark{
+    font-size:60px;
+  }
+  .af-about-anniversary-since{
+    font-size:22px;
+  }
+  .af-about-fact-grid{
+    grid-template-columns:1fr;
+  }
+  .af-about-fact-card{
+    min-height:unset;
+  }
+  .af-about-story,
+  .af-about-timeline,
+  .af-about-values,
+  .af-about-practices,
+  .af-about-footprint{
+    padding-top:82px;
+    padding-bottom:82px;
+  }
+  .af-about-story-media img{
+    aspect-ratio:4/5;
+  }
+  .af-about-milestones::before{
+    left:34px;
+  }
+  .af-about-milestone{
+    grid-template-columns:68px 1fr;
+  }
+  .af-about-milestone-year{
+    width:68px;
+    height:68px;
+    font-size:14px;
+  }
+  .af-about-milestone-card,
+  .af-about-practice-card,
+  .af-about-value-card{
+    padding:22px 20px;
+    border-radius:22px;
+  }
+}
+/* AFII_ABOUT_V1_6_END */
+
+/* AFII_ABOUT_V1_6_1_BEGIN */
+.af-header-actions{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-left:auto;
+}
+
+.af-about-hero-grid{
+  align-items:center;
+}
+.af-about-anniversary-wrap{
+  align-self:center;
+  justify-self:stretch;
+}
+.af-about-anniversary{
+  grid-template-columns:minmax(196px,.9fr) minmax(0,1.25fr);
+  min-height:256px;
+  border-radius:34px;
+  overflow:hidden;
+  box-shadow:0 24px 58px rgba(6,37,48,.08);
+  transition:transform .36s ease, box-shadow .36s ease, border-color .36s ease;
+}
+.af-about-anniversary:hover,
+.af-about-anniversary:focus-within{
+  transform:translateY(-4px);
+  box-shadow:0 28px 68px rgba(6,37,48,.12);
+  border-color:#c7d3d6;
+}
+.af-about-anniversary-brand{
+  padding:28px;
+  background:linear-gradient(180deg,#293371 0%,#213065 100%);
+}
+.af-about-anniversary-brand::after{
+  display:none;
+}
+.af-about-anniversary-brand-frame{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:100%;
+  border:2px solid rgba(215,180,88,.92);
+  border-radius:24px;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(0,0,0,.06));
+  overflow:hidden;
+}
+.af-about-anniversary-brand-frame::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(215,180,88,.8);
+  border-radius:18px;
+}
+.af-about-anniversary-brand .af-brand{
+  position:relative;
+  z-index:2;
+}
+.af-about-anniversary-brand .af-brand img{
+  width:106px;
+  height:106px;
+}
+.af-about-anniversary-copy{
+  position:relative;
+  overflow:hidden;
+  min-height:100%;
+  padding:28px 34px 26px;
+  background:linear-gradient(180deg,#ffffff 0%,#fdfdfc 100%);
+  align-items:stretch;
+}
+.af-about-anniversary-content{
+  position:relative;
+  z-index:3;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:100%;
+}
+.af-about-anniversary-heading-row{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.af-about-anniversary-mark{
+  font-size:clamp(96px,8vw,132px);
+  letter-spacing:-.07em;
+  line-height:.82;
+  color:#f0b021;
+  text-shadow:0 6px 18px rgba(213,168,67,.08);
+}
+.af-about-anniversary-stack{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  transform:translateY(10px);
+}
+.af-about-anniversary-stack span{
+  font-size:clamp(18px,1.4vw,24px);
+  font-style:italic;
+  line-height:1;
+  letter-spacing:.03em;
+  color:#9e7d79;
+}
+.af-about-anniversary-sub{
+  display:none;
+}
+.af-about-anniversary-since{
+  margin-top:18px;
+  font-size:clamp(30px,2.45vw,50px);
+  line-height:1;
+  font-weight:700;
+  color:#090b10;
+}
+.af-about-hero-note{
+  display:none;
+}
+.af-about-anniversary-lotus{
+  position:absolute;
+  right:-34px;
+  bottom:-24px;
+  width:min(58%,340px);
+  opacity:.44;
+  z-index:1;
+  pointer-events:none;
+}
+.af-about-anniversary-lotus svg{
+  width:100%;
+  height:auto;
+}
+.af-about-anniversary-lotus path{
+  stroke:#dcb7c8;
+  stroke-width:2.2;
+}
+.af-about-anniversary-orbit{
+  position:absolute;
+  border-style:solid;
+  border-color:transparent;
+  border-radius:999px;
+  pointer-events:none;
+}
+.af-about-anniversary-orbit--large{
+  right:-112px;
+  top:12px;
+  width:248px;
+  height:248px;
+  border-width:2px 2px 2px 0;
+  border-top-color:rgba(208,179,101,.72);
+  border-right-color:rgba(208,179,101,.72);
+  border-bottom-color:rgba(208,179,101,.72);
+}
+.af-about-anniversary-orbit--small{
+  right:-84px;
+  top:36px;
+  width:196px;
+  height:196px;
+  border-width:2px 2px 2px 0;
+  border-top-color:rgba(73,95,117,.55);
+  border-right-color:rgba(73,95,117,.55);
+  border-bottom-color:rgba(73,95,117,.55);
+}
+
+.af-about-fact-card{
+  transition:transform .28s ease, background-color .28s ease, border-color .28s ease, box-shadow .28s ease, color .28s ease;
+}
+.af-about-fact-card:hover,
+.af-about-fact-card:focus-within{
+  transform:translateY(-4px);
+  background:#123844;
+  border-color:#123844;
+  box-shadow:0 18px 44px rgba(6,37,48,.14);
+}
+.af-about-fact-card:hover strong,
+.af-about-fact-card:focus-within strong,
+.af-about-fact-card:hover span,
+.af-about-fact-card:focus-within span{
+  color:#fff;
+}
+.af-about-fact-card:hover small,
+.af-about-fact-card:focus-within small{
+  color:rgba(255,255,255,.74);
+}
+.af-about-fact-card:hover .af-about-fact-icon,
+.af-about-fact-card:focus-within .af-about-fact-icon{
+  background:#e9d8b1;
+  color:#d2a134;
+}
+.af-about-fact-card:hover .af-about-fact-icon svg,
+.af-about-fact-card:focus-within .af-about-fact-icon svg{
+  color:#d2a134;
+}
+
+.af-person-media{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+}
+.af-person-actions{
+  background:#113844;
+  box-shadow:0 -10px 24px rgba(7,34,44,.16);
+}
+.af-person-actions .af-person-action,
+.af-person-actions .af-person-action--mail,
+.af-person-actions .af-person-action--linkedin{
+  background:#1b4a57;
+}
+
+@media(max-width:1160px){
+  .af-about-anniversary{
+    grid-template-columns:180px minmax(0,1fr);
+  }
+}
+
+@media(max-width:980px){
+  .af-header-inner{
+    gap:12px;
+  }
+  .af-header-actions{
+    gap:10px;
+    margin-left:auto;
+  }
+  .af-contact-trigger{
+    order:1;
+  }
+  .af-mobile-trigger{
+    order:2;
+  }
+  .af-about-hero-grid{
+    gap:36px;
+  }
+  .af-about-anniversary{
+    min-height:232px;
+  }
+  .af-about-anniversary-brand .af-brand img{
+    width:94px;
+    height:94px;
+  }
+}
+
+@media(max-width:740px){
+  .af-header-inner{
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+  }
+  .af-desktop-nav{
+    display:none;
+  }
+  .af-header-actions{
+    justify-self:end;
+    gap:10px;
+  }
+  .af-about-anniversary-wrap{
+    width:100%;
+  }
+  .af-about-anniversary{
+    grid-template-columns:104px minmax(0,1fr);
+    min-height:164px;
+    border-radius:26px;
+  }
+  .af-about-anniversary-brand{
+    padding:14px;
+  }
+  .af-about-anniversary-brand-frame{
+    border-radius:16px;
+  }
+  .af-about-anniversary-brand-frame::before{
+    inset:9px;
+    border-radius:12px;
+  }
+  .af-about-anniversary-brand .af-brand img{
+    width:60px;
+    height:60px;
+  }
+  .af-about-anniversary-copy{
+    padding:20px 18px 18px;
+  }
+  .af-about-anniversary-heading-row{
+    gap:12px;
+  }
+  .af-about-anniversary-mark{
+    font-size:clamp(56px,16vw,78px);
+  }
+  .af-about-anniversary-stack{
+    transform:translateY(4px);
+  }
+  .af-about-anniversary-stack span{
+    font-size:14px;
+  }
+  .af-about-anniversary-since{
+    margin-top:12px;
+    font-size:clamp(20px,7.2vw,32px);
+  }
+  .af-about-anniversary-lotus{
+    width:70%;
+    right:-24px;
+    bottom:-18px;
+  }
+  .af-about-anniversary-orbit--large{
+    right:-102px;
+    top:18px;
+    width:184px;
+    height:184px;
+  }
+  .af-about-anniversary-orbit--small{
+    right:-78px;
+    top:36px;
+    width:146px;
+    height:146px;
+  }
+  .af-contact-trigger{
+    width:36px;
+    height:36px;
+  }
+  .af-person-actions{
+    width:100%;
+    height:82px;
+    padding:0 10px 12px;
+    gap:12px;
+    transform:translate3d(0,110%,0);
+    opacity:0;
+    transition:transform 380ms cubic-bezier(.2,.74,.18,1), opacity .26s ease;
+  }
+  .af-person--active .af-person-actions,
+  .af-person-actions--open{
+    transform:translate3d(0,0,0);
+    opacity:1;
+  }
+}
+/* AFII_ABOUT_V1_6_1_END */
+
+/* AFII_ABOUT_V1_6_2_BEGIN */
+/* Actual supplied image; no CSS-rendered anniversary card or clipped text. */
+.af-about-hero-grid {
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+  gap: clamp(24px, 3.8vw, 60px);
+  align-items: center;
+}
+.af-about-anniversary-wrap {
+  width: 100%;
+  align-self: center;
+  min-width: 0;
+}
+.af-about-anniversary-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1774 / 887;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+/* Lotus belongs to the page composition, outside the image. */
+.af-about-story,
+.af-about-timeline {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.af-about-story > .af-container,
+.af-about-timeline > .af-container {
+  position: relative;
+  z-index: 1;
+}
+.af-about-story .af-about-page-lotus {
+  position: absolute;
+  right: -19vw;
+  top: 3%;
+  width: min(43vw, 650px) !important;
+  z-index: 0;
+  opacity: .26;
+}
+.af-about-timeline .af-about-timeline-lotus {
+  position: absolute;
+  left: -20vw;
+  top: 15%;
+  width: min(41vw, 620px) !important;
+  z-index: 0;
+  opacity: .22;
+}
+
+/* Unified mobile/tablet nav: a solid surface with a visible X control. */
+@media (max-width: 1050px) {
+  .af-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .af-header-actions {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 9px;
+    margin-left: auto;
+  }
+  .af-contact-trigger,
+  .af-mobile-trigger {
+    flex: 0 0 auto;
+  }
+  .af-mobile-trigger {
+    display: block;
+    position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #d8e2e3;
+    background: #ffffff;
+    color: #133d49;
+  }
+  .af-mobile-trigger span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 22px;
+    height: 2px;
+    margin: 0;
+    border-radius: 2px;
+    background: currentColor;
+    transform-origin: center;
+    transition: transform 270ms ease, background-color 270ms ease;
+  }
+  .af-mobile-trigger span:first-child {
+    transform: translate(-50%, calc(-50% - 4px));
+  }
+  .af-mobile-trigger span:last-child {
+    transform: translate(-50%, calc(-50% + 4px));
+  }
+  .af-mobile-trigger[aria-expanded="true"] span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .af-mobile-trigger[aria-expanded="true"] span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .af-mobile-menu {
+    display: block;
+    position: fixed;
+    inset: 100px 12px 12px;
+    width: auto;
+    height: auto;
+    max-height: none;
+    padding: 10px 24px 24px;
+    z-index: 99;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: #ffffff;
+    border: 1px solid #dce4e5;
+    border-radius: 20px;
+    box-shadow: 0 22px 44px rgba(6,37,48,.14);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity 260ms ease, transform 260ms ease, visibility 260ms;
+  }
+  .af-mobile-menu.af-mobile-menu--open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .af-mobile-menu nav {
+    width: 100%;
+    display: grid;
+    gap: 0;
+    align-content: start;
+    overflow: visible;
+  }
+  .af-mobile-menu nav a,
+  .af-mobile-menu nav button {
+    display: flex;
+    width: 100%;
+    min-height: 64px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 6px;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid #e7ecec;
+    border-radius: 0;
+    background: #ffffff;
+    color: #153c48;
+    text-align: left;
+    font-size: clamp(18px, 2.6vw, 25px);
+    font-weight: 600;
+    line-height: 1.3;
+    box-shadow: none;
+  }
+  .af-mobile-menu nav a:hover,
+  .af-mobile-menu nav a:focus-visible,
+  .af-mobile-menu nav button:hover,
+  .af-mobile-menu nav button:focus-visible {
+    color: #a78a53;
+    background: #fafafa;
+  }
+  .af-mobile-menu nav a svg,
+  .af-mobile-menu nav button svg {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 auto;
+  }
+}
+@media (max-width: 740px) {
+  .af-header-inner {
+    display: flex;
+    min-height: 64px;
+    padding: 7px 12px;
+    justify-content: space-between;
+  }
+  .af-header-actions { gap: 8px; }
+  .af-contact-trigger,
+  .af-mobile-trigger {
+    width: 42px;
+    height: 42px;
+  }
+  .af-mobile-menu {
+    inset: 85px 9px 9px;
+    padding: 8px 15px 18px;
+    border-radius: 18px;
+  }
+  .af-mobile-menu nav a,
+  .af-mobile-menu nav button {
+    min-height: 58px;
+    font-size: 19px;
+    padding: 12px 4px;
+  }
+  .af-about-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+  .af-about-anniversary-wrap { max-width: 640px; }
+  .af-about-story .af-about-page-lotus {
+    right: -40vw;
+    top: 3%;
+    width: min(80vw, 440px) !important;
+    opacity: .16;
+  }
+  .af-about-timeline .af-about-timeline-lotus {
+    left: -45vw;
+    top: 2%;
+    width: min(80vw, 440px) !important;
+    opacity: .14;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .af-mobile-trigger span,
+  .af-mobile-menu {
+    transition: none;
+  }
+}
+/* AFII_ABOUT_V1_6_2_END */

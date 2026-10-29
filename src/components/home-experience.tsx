@@ -123,19 +123,22 @@ function Header({ onContact }: { onContact: () => void }) {
               </a>
             ))}
           </nav>
-          <button className="af-contact-trigger" type="button" onClick={onContact} aria-label="Contact AFII">
-            <MailIcon size={23} />
-          </button>
-          <button
-            type="button"
-            className="af-mobile-trigger"
-            aria-label={open ? "Close navigation" : "Open navigation"}
-            aria-expanded={open}
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span />
-            <span />
-          </button>
+          <div className="af-header-actions">
+            <button className="af-contact-trigger" type="button" onClick={onContact} aria-label="Contact AFII">
+              <MailIcon size={23} />
+            </button>
+            <button
+              type="button"
+              className="af-mobile-trigger"
+              aria-label={open ? "Close navigation" : "Open navigation"}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen((value) => !value)}
+            >
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
       </header>
       <div className={`af-mobile-menu ${open ? "af-mobile-menu--open" : ""}`} aria-hidden={!open} id="mobile-menu">
@@ -148,6 +151,7 @@ function Header({ onContact }: { onContact: () => void }) {
           ))}
           <button
             type="button"
+            tabIndex={open ? 0 : -1}
             onClick={() => {
               setOpen(false);
               onContact();
@@ -162,27 +166,22 @@ function Header({ onContact }: { onContact: () => void }) {
   );
 }
 
-
 function Lotus({ side = "right", className = "" }: { side?: "left" | "right"; className?: string }) {
   const petals = [-78, -60, -41, -21, 0, 21, 41, 60, 78];
 
   return (
     <div className={`af-lotus af-lotus--${side} ${className}`} aria-hidden="true" data-lotus>
       <svg viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
-        {/* Both arcs share the exact same centre: only the radius differs.
-            dash lengths interrupt the rings; rotating them cannot produce an intersection. */}
-        <circle className="af-orbit af-orbit--outer" cx="0" cy="360" r="353" pathLength="100"
-          strokeDasharray="22 12 24 42" />
-        <circle className="af-orbit af-orbit--inner" cx="0" cy="360" r="282" pathLength="100"
-          strokeDasharray="28 14 18 40" />
-
-        {/* The root is pinned to the side edge (0,360), rather than the bottom.
-            Each petal fans vertically from that same point. */}
+        <circle className="af-orbit af-orbit--outer" cx="0" cy="360" r="353" pathLength="100" strokeDasharray="22 12 24 42" />
+        <circle className="af-orbit af-orbit--inner" cx="0" cy="360" r="282" pathLength="100" strokeDasharray="28 14 18 40" />
         <g className="af-lotus-flower">
           {petals.map((angle, index) => (
-            <path key={angle} className={`af-petal af-petal-${index}`}
+            <path
+              key={angle}
+              className={`af-petal af-petal-${index}`}
               style={{ "--petal-rotation": `${angle}deg`, "--petal-delay": `${index * 70}ms` } as CSSProperties}
-              d="M0 360 C66 310 145 290 251 360 C145 430 66 410 0 360Z" />
+              d="M0 360 C66 310 145 290 251 360 C145 430 66 410 0 360Z"
+            />
           ))}
           <path className="af-lotus-root" d="M0 348 Q24 360 0 372" />
         </g>
@@ -385,6 +384,7 @@ function Footer({ onContact }: { onContact: () => void }) {
 export default function HomeExperience() {
   const [selected, setSelected] = useState(0);
   const [contactOpen, setContactOpen] = useState(false);
+  const [activePerson, setActivePerson] = useState<number | null>(null);
 
   useEffect(() => {
     const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal], [data-lotus]"));
@@ -405,6 +405,29 @@ export default function HomeExperience() {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (activePerson === null) return;
+    const onPointer = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as HTMLElement | null;
+      if (!target?.closest(".af-person")) setActivePerson(null);
+    };
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActivePerson(null);
+    };
+    document.addEventListener("mousedown", onPointer);
+    document.addEventListener("touchstart", onPointer, { passive: true });
+    window.addEventListener("keydown", onEscape);
+    return () => {
+      document.removeEventListener("mousedown", onPointer);
+      document.removeEventListener("touchstart", onPointer);
+      window.removeEventListener("keydown", onEscape);
+    };
+  }, [activePerson]);
+
+  const togglePerson = (index: number) => {
+    setActivePerson((current) => (current === index ? null : index));
+  };
 
   const active = practices[selected];
 
@@ -608,16 +631,26 @@ export default function HomeExperience() {
             <div className="af-people-grid">
               {people.map((person, index) => (
                 <Reveal key={person.name} delay={index * 85}>
-                  <article className="af-person">
+                  <article className={`af-person ${activePerson === index ? "af-person--active" : ""}`}>
                     <div className="af-person-media">
-                      <a className="af-person-main" href="/leadership-offices" aria-label={`Open ${person.name} profile`}>
+                      <button
+                        type="button"
+                        className="af-person-toggle"
+                        aria-expanded={activePerson === index}
+                        aria-controls={`af-person-actions-${index}`}
+                        onClick={() => togglePerson(index)}
+                        onTouchEnd={(event) => {
+                          event.preventDefault();
+                          togglePerson(index);
+                        }}
+                      >
                         <div className="af-portrait" aria-label={`Portrait placeholder for ${person.name}`}>
                           <div className="af-portrait-ring" />
                           <strong>{person.initials}</strong>
                           <span>Portrait to follow</span>
                         </div>
-                      </a>
-                      <div className="af-person-actions" aria-label={`Quick actions for ${person.name}`}>
+                      </button>
+                      <div id={`af-person-actions-${index}`} className={`af-person-actions ${activePerson === index ? "af-person-actions--open" : ""}`} aria-label={`Quick actions for ${person.name}`}>
                         <a
                           className="af-person-action af-person-action--mail"
                           href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Leadership enquiry - ${person.name}`)}`}
