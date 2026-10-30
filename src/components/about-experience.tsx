@@ -17,7 +17,7 @@ const NAV = [
   { label: "Careers", href: "/careers" },
 ];
 
-function Arrow({ diagonal = false, size = 20 }: { diagonal?: boolean; size?: number }) {
+export function Arrow({ diagonal = false, size = 20 }: { diagonal?: boolean; size?: number }) {
   return (
     <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       {diagonal ? <path d="M5 19 19 5M8 5h11v11" /> : <path d="M3 12h18m-7-7 7 7-7 7" />}
@@ -25,7 +25,7 @@ function Arrow({ diagonal = false, size = 20 }: { diagonal?: boolean; size?: num
   );
 }
 
-function MailIcon({ size = 18 }: { size?: number }) {
+export function MailIcon({ size = 18 }: { size?: number }) {
   return (
     <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -34,7 +34,7 @@ function MailIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-function LinkedInIcon({ size = 18 }: { size?: number }) {
+export function LinkedInIcon({ size = 18 }: { size?: number }) {
   return (
     <svg aria-hidden="true" width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M6.94 8.5A1.44 1.44 0 1 1 6.94 5.62 1.44 1.44 0 0 1 6.94 8.5ZM5.68 9.62h2.52V18H5.68V9.62Zm3.96 0h2.41v1.15h.03c.34-.64 1.16-1.32 2.39-1.32 2.55 0 3.02 1.68 3.02 3.86V18h-2.51v-4.14c0-.99-.02-2.27-1.38-2.27-1.38 0-1.59 1.08-1.59 2.2V18H9.64V9.62Z" />
@@ -42,7 +42,7 @@ function LinkedInIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-function Brand({ footer = false }: { footer?: boolean }) {
+export function Brand({ footer = false }: { footer?: boolean }) {
   const [source, setSource] = useState("/afii-logo.jpg");
   const [fallback, setFallback] = useState(false);
 
@@ -64,7 +64,7 @@ function Brand({ footer = false }: { footer?: boolean }) {
   );
 }
 
-function Header({ onContact }: { onContact: () => void }) {
+export function Header({ onContact }: { onContact: () => void }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -166,7 +166,7 @@ function Lotus({ side = "right", className = "" }: { side?: "left" | "right"; cl
   );
 }
 
-function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
+export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   return (
     <div data-reveal className={className} style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}>
       {children}
@@ -200,7 +200,7 @@ function ResponsiveImage({ src, alt, className = "" }: { src: string; alt: strin
   );
 }
 
-function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {
     if (!open) return;
     const previous = document.body.style.overflow;
@@ -235,7 +235,7 @@ function ContactModal({ open, onClose }: { open: boolean; onClose: () => void })
   );
 }
 
-function Footer({ onContact }: { onContact: () => void }) {
+export function Footer({ onContact }: { onContact: () => void }) {
   return (
     <footer className="af-footer">
       <div className="af-container">
@@ -340,7 +340,7 @@ export default function AboutExperience() {
           <div className="af-about-hero-grid">
             <Reveal className="af-about-hero-copy">
               <p className="af-about-kicker">About AFII</p>
-              <h1 id="af-about-heading">Built around projects. Structured for long-term outcomes.</h1>
+              <h1 id="af-about-heading">Built Around Projects. Structured For Long-Term Outcomes.</h1>
               <p className="af-about-lead">Since 1996, AFII has worked across proprietary investments, infrastructure and real estate advisory, structured trade finance and long-horizon capital solutions.</p>
               <div className="af-about-links">
                 <a href="#afii-story" className="af-inline-link">Read our story <Arrow diagonal size={17} /></a>
@@ -377,7 +377,7 @@ export default function AboutExperience() {
             </Reveal>
             <Reveal className="af-about-story-copy" delay={90}>
               <p className="af-about-kicker">How the firm evolved</p>
-              <h2>From proprietary investments to a broader advisory platform.</h2>
+              <h2>From Proprietary Investments To A Broader Advisory Platform.</h2>
               <p>AFII was founded in 1996 to manage the company’s proprietary investments. In 2001 the firm was reorganized to provide infrastructure and real estate financial advisory services, widening the scope of its work across capital structuring and project-led advisory.</p>
               <p>Under the leadership of Dr. Mahesh P. S. Gandhi, Chairman of the Group, AFII also developed and managed structured trade finance products for State Bank of India, advised infrastructure companies on complex equity and debt structuring and supported capital raising for promoter-led positions through global mezzanine finance.</p>
               <p>Over time, the practice expanded into project incubation, public-enterprise collaboration and a broader fund-management outlook designed to apply structured-finance knowledge across infrastructure, real estate and SMEs in India, Eastern Europe and Africa.</p>
@@ -391,7 +391,7 @@ export default function AboutExperience() {
             <Reveal className="af-about-section-head">
               <div>
                 <p className="af-about-kicker">A continuing timeline</p>
-                <h2>Key steps in the AFII story.</h2>
+                <h2>Key Steps In The AFII Story.</h2>
               </div>
               <p>The business has widened carefully over time—each stage building on specific project, sector and institutional experience.</p>
             </Reveal>
@@ -413,7 +413,7 @@ export default function AboutExperience() {
           <div className="af-container af-about-values-grid">
             <Reveal>
               <p className="af-about-kicker">What shapes the approach</p>
-              <h2>Practical thinking. Institutional discipline. Project responsibility.</h2>
+              <h2>Practical Thinking. Institutional Discipline. Project Responsibility.</h2>
             </Reveal>
             <div className="af-about-values-list">
               {aboutValues.map((item, index) => (
@@ -434,14 +434,13 @@ export default function AboutExperience() {
             <Reveal className="af-about-section-head">
               <div>
                 <p className="af-about-kicker">Business lines</p>
-                <h2>How the work is organized.</h2>
+                <h2>How The Work Is Organized.</h2>
               </div>
               <p>AFII’s current platform spans connected practice areas. They bring together advisory, structuring, distribution, investment-platform and principal-investment capabilities.</p>
             </Reveal>
             <div className="af-about-practice-grid">
               {practices.map((item, index) => (
                 <Reveal key={item.name} delay={index * 75} className="af-about-practice-card">
-                  <span className="af-about-practice-order">0{index + 1}</span>
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>
                   <div className="af-about-practice-links">
@@ -457,7 +456,7 @@ export default function AboutExperience() {
           <div className="af-container af-about-footprint-grid">
             <Reveal className="af-about-footprint-copy">
               <p className="af-about-kicker">Markets & execution</p>
-              <h2>Supported by senior professionals and a distributed office footprint.</h2>
+              <h2>Supported By Senior Professionals And A Distributed Office Footprint.</h2>
               <p>AFII works with a dedicated team of senior professionals across functional disciplines. Its spread of offices and working relationships allows it to support varied transactions, capital programmes and on-ground project initiatives.</p>
               <div className="af-about-footprint-tags">
                 {aboutFootprint.map((location) => (
@@ -480,7 +479,7 @@ export default function AboutExperience() {
               <Reveal>
                 <Breadcrumb trail="Leadership & Offices" />
                 <h2>
-                  The people behind <span>the work.</span>
+                  The People Behind <span>The Work.</span>
                 </h2>
               </Reveal>
               <Reveal delay={100}>
@@ -527,6 +526,7 @@ export default function AboutExperience() {
                 </Reveal>
               ))}
             </div>
+            <div className="af-leadership-directory-link"><a href="/leadership-offices" className="af-inline-link">Meet Our Full Leadership And Office Network <Arrow diagonal size={17} /></a></div>
           </div>
         </section>
 

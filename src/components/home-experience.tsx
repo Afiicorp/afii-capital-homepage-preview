@@ -442,7 +442,7 @@ export default function HomeExperience() {
           <div className="af-hero-grid">
             <Reveal className="af-hero-title">
               <h1 id="af-hero-heading">
-                Finance for <span>what comes next.</span>
+                Finance For <span>What Comes Next.</span>
               </h1>
             </Reveal>
             <Reveal className="af-hero-summary" delay={130}>
@@ -463,7 +463,7 @@ export default function HomeExperience() {
           <div className="af-container af-intro-grid">
             <Reveal>
               <h2>
-                Good finance begins with <span>understanding.</span>
+                Good Finance Begins With <span>Understanding.</span>
               </h2>
             </Reveal>
             <Reveal className="af-intro-text" delay={110}>
