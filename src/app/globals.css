@@ -92,7 +92,7 @@
 @media(max-width:740px){.af-header-inner{grid-template-columns:68px 39px 39px}.af-brand img{width:46px;height:46px}.af-contact-trigger{width:39px;height:39px}.af-principle{padding:22px 22px 24px;border-radius:24px}.af-practice-image img{max-height:340px}.af-person-actions{width:122px;height:60px;padding-top:8px}.af-person-action{width:36px;height:36px}.af-lotus{width:clamp(240px,64vw,360px)!important;opacity:.34}.af-lotus--left{left:-92px;transform:translate3d(-46px,20px,0)}.af-lotus--right{right:-92px;transform:translate3d(46px,20px,0)}.af-introduction .af-lotus{top:8%;right:-30%}.af-principles .af-lotus{bottom:-48px;left:-28%}.af-transaction .af-lotus{right:-24%}}
 
 
-/* AFII v1.5.2 ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â edge-rooted lotus + concentric, independently rotating broken arcs.
+/* AFII v1.5.2 ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â edge-rooted lotus + concentric, independently rotating broken arcs.
    The old ring pseudo-elements are removed: each SVG circle has one fixed radius. */
 .af-lotus {
   position: absolute;
@@ -1555,7 +1555,7 @@
 /* AFII_ABOUT_V1_6_2_END */
 
 /* AFII_V17_BEGIN */
-/* AFII v1.7 Ã¢â‚¬â€ Visual, timeline, directory and geography refinements */
+/* AFII v1.7 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â Visual, timeline, directory and geography refinements */
 :root { --af-brand-navy:#293464; --af-deep:#103946; --af-gold:#dbb66f; --af-offwhite:#f5f8fa; }
 html, body, main, .af-introduction, .af-about-hero, .af-about-story, .af-about-timeline, .af-about-practices, .af-about-footprint, .af-leadership { background:#fff; }
 .af-about-values { background:#102f41; color:#fff; }
@@ -1686,7 +1686,7 @@ html, body, main, .af-introduction, .af-about-hero, .af-about-story, .af-about-t
 .af-directory-person-body span{font-size:14px;color:#829096;}
 .af-directory-note {color:#718289;font-size:14px;line-height:1.65;margin-top:28px;}
 
-/* World map Ã¢â‚¬â€ navy ocean, white land, gold office markers */
+/* World map ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â navy ocean, white land, gold office markers */
 .af-geography {background:linear-gradient(135deg,#111e44,#194366 52%,#0a2b47);color:#fff;padding:95px 0 75px;position:relative;overflow:hidden;}
 .af-geography:before {content:"";position:absolute;inset:-35%;background:radial-gradient(circle at 75% 45%,rgba(75,136,152,.29),transparent 55%);pointer-events:none;}
 .af-map-heading-row {display:flex;align-items:end;justify-content:space-between;gap:50px;position:relative;z-index:1;margin-bottom:32px;}
@@ -1764,7 +1764,7 @@ html, body, main, .af-introduction, .af-about-hero, .af-about-story, .af-about-t
  .af-map-detail{padding:18px 20px;}
  .af-geography{padding:77px 0 62px;}
  .af-about-milestone-card {padding:19px;}
- .af-map-viewport:after{content:"Swipe The Map To Explore Ã¢â€ â€™";position:sticky;left:10px;color:#f6dc9d;display:inline-block;font-size:13px;padding:10px;}
+ .af-map-viewport:after{content:"Swipe The Map To Explore ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢";position:sticky;left:10px;color:#f6dc9d;display:inline-block;font-size:13px;padding:10px;}
 }
 @media(hover:none){
   .af-directory-person:hover .af-directory-socials{transform:translateY(104%);opacity:0;pointer-events:none;}
@@ -1790,7 +1790,7 @@ body { background:#fff !important; }
 /* The page, not an off-white/yellow canvas, provides the neutral ground. */
 .af-about-anniversary-wrap,.af-hero-title,.af-hero-summary {background:transparent;}
 
-/* Smaller, still detached glass navigation â€” consistent across all routes. */
+/* Smaller, still detached glass navigation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â consistent across all routes. */
 .af-header {
   top:15px;
   width:min(1400px,calc(100% - 84px));
@@ -1972,3 +1972,105 @@ body { background:#fff !important; }
 }
 @media(prefers-reduced-motion:reduce){.af-location-card-media img{transition:none;}}
 /* AFII_V18_END */
+
+/* AFII_V191_BEGIN: restore v1.8 navy section; correct card contrast; preserve compact width only */
+
+/* Keep the underlying site canvas entirely white without repainting the
+   intentionally dark editorial section or its edge-grown lotus. */
+html, body, main { background-color: #ffffff; }
+
+/* The navy editorial panel from v1.8 is intentional.  The old v1.9 override
+   accidentally repainted it white; return the original dark section. */
+.af-principles.af-section {
+  background: #102f42;
+  color: #ffffff;
+  border: 0;
+}
+.af-principles .af-principles-grid > div:first-child h2 {
+  color: #ffffff;
+}
+.af-principles .af-principles-grid > div:first-child h2 span {
+  color: #e1be7d;
+}
+.af-principles .af-principles-grid > div:first-child > p {
+  color: #d9e7ec;
+}
+
+/* Clear cards sitting on navy: strong contrast in their normal state. */
+.af-principles .af-principle,
+.af-principles .af-principle--left,
+.af-principles .af-principle--right {
+  color: #113844;
+  background: #ffffff;
+  border: 1px solid #d7e2e5;
+  box-shadow: 0 11px 25px rgba(0, 13, 22, .15);
+  transition: transform .42s cubic-bezier(.2,.76,.24,1),
+              background-color .3s ease,
+              border-color .3s ease,
+              box-shadow .3s ease;
+}
+.af-principles .af-principle:first-child {
+  border-top: 1px solid #d7e2e5;
+}
+.af-principles .af-principle h3 {
+  color: #113844;
+  transition: color .3s ease;
+}
+.af-principles .af-principle p,
+.af-principles.af-section .af-principle p {
+  color: #415b65;
+  opacity: 1;
+  transition: color .3s ease;
+}
+
+/* Hover on the card itself, including after its scroll-reveal animation.
+   The card remains visually distinct from the navy section behind it. */
+@media (hover: hover) {
+  .af-principles .af-principle.af-visible:hover,
+  .af-principles .af-principle:hover {
+    transform: translateY(-7px);
+    background: #1d4b5b;
+    border-color: #d9b66f;
+    box-shadow: 0 21px 40px rgba(0, 12, 22, .25);
+    padding-left: 30px;
+  }
+  .af-principles .af-principle:hover h3 {
+    color: #f1c979;
+  }
+  .af-principles .af-principle:hover p,
+  .af-principles.af-section .af-principle:hover p {
+    color: #f3f7f8;
+    opacity: 1;
+  }
+}
+.af-principles .af-principle:focus-within {
+  background: #1d4b5b;
+  border-color: #d9b66f;
+  box-shadow: 0 21px 40px rgba(0, 12, 22, .25);
+}
+.af-principles .af-principle:focus-within h3 { color: #f1c979; }
+.af-principles .af-principle:focus-within p,
+.af-principles.af-section .af-principle:focus-within p { color: #f3f7f8; }
+
+/* Keep the v1.8 lotus placement, rotation and subtle visibility on navy. */
+.af-principles .af-lotus { opacity: .24; }
+
+/* Only the width remains 25% smaller than v1.8 (1400 -> 1050).
+   Do not shrink logo, navigation type, header height or paddings. The existing
+   v1.8 header styles underneath provide all of those original dimensions. */
+@media (min-width: 1281px) {
+  .af-header { width: min(1050px, calc(100% - 84px)); }
+}
+@media (min-width: 1051px) and (max-width: 1280px) {
+  .af-header { width: min(1050px, calc(100% - 52px)); }
+}
+
+@media (max-width: 740px) and (hover: hover) {
+  .af-principles .af-principle:hover { padding-left: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .af-principles .af-principle,
+  .af-principles .af-principle h3,
+  .af-principles .af-principle p { transition: none; }
+}
+/* AFII_V191_END */
