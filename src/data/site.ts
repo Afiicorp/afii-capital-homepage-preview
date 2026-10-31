@@ -5,7 +5,11 @@
  * Media are temporary remotely hosted stock assets; see MEDIA_CREDITS.md.
  */
 export const media = {
-  hero: "https://images.unsplash.com/photo-1511578194003-00c80e42dc9b?auto=format&fit=crop&w=2400&q=88",
+  hero: "/afii-office-hero.png",
+  // AFII_V22: prior hero retained in source and timestamped backup
+  heroBeforeBoardroom: "https://images.unsplash.com/photo-1768101715599-ac4b5190b2cb?auto=format&fit=crop&w=2400&q=88",
+  // AFII_VISUAL_REFINEMENT_V21_HERO: former image retained for reuse/rollback
+  heroArchive: "https://images.unsplash.com/photo-1511578194003-00c80e42dc9b?auto=format&fit=crop&w=2400&q=88",
   heroFallback: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=85",
   finance: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85",
   trade: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1400&q=85",

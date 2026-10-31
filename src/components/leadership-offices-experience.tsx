@@ -73,6 +73,7 @@ function LocationCard({place}:{place:MapPlace}) {
   const [imageFailed,setImageFailed] = useState(false);
   return (
     <article className={`af-location-card af-location-card--${place.kind}`}>
+      <a className="af-location-card-primary-link" href={`/leadership-offices/${place.id}`} aria-label={`View details for ${place.city}, ${place.region}`} />
       <div className="af-location-card-media">
         {!imageFailed && place.image ? <img src={place.image} loading="lazy" alt={`Representative city view of ${place.region}`} onError={()=>setImageFailed(true)}/> : <span className="af-location-media-fallback" aria-hidden="true">{place.region}</span>}
       </div>
@@ -83,6 +84,7 @@ function LocationCard({place}:{place:MapPlace}) {
         <address>{place.address}</address>
         <p>{place.description}</p>
         {place.detail && <p className="af-location-extra">{place.detail}</p>}
+        <span className="af-location-card-view" aria-hidden="true">View Location <Arrow diagonal size={15}/></span>
         <a href={`mailto:reachus@afii.eu?subject=${encodeURIComponent('AFII '+place.region+' enquiry')}`}>Enquire <Arrow diagonal size={15}/></a>
       </div>
     </article>

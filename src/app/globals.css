@@ -2074,3 +2074,446 @@ html, body, main { background-color: #ffffff; }
   .af-principles .af-principle p { transition: none; }
 }
 /* AFII_V191_END */
+
+/* AFII_INDUSTRIES_V20_BEGIN */
+/* Scoped industry pages: clean white / AFII navy / muted gold; Arial throughout. */
+.afi-ind-page{background:#fff;color:#123844;font-family:Arial,Helvetica,sans-serif;overflow:clip}
+.afi-ind-page *{box-sizing:border-box}
+.afi-ind-page .af-container{position:relative}
+.afi-ind-page h1,.afi-ind-page h2,.afi-ind-page h3{font-family:Arial,Helvetica,sans-serif;letter-spacing:-.043em;margin:0;font-weight:650}
+.afi-ind-page p{font-size:clamp(17px,1.4vw,21px);line-height:1.6;margin:0;color:#4b626a}
+.afi-ind-page em{font-style:normal;color:#b39557}
+.afi-ind-section{padding:clamp(74px,8.5vw,134px) 0}
+.afi-ind-overline{display:block;text-transform:uppercase;letter-spacing:.12em;font-size:13px;font-weight:700;color:#9b804d;margin-bottom:24px}
+.afi-ind-page h2{font-size:clamp(42px,4.8vw,72px);line-height:1.07}
+.afi-ind-crumb{display:flex;align-items:center;gap:13px;font-size:15px;letter-spacing:.01em;color:inherit;margin-bottom:36px;flex-wrap:wrap}
+.afi-ind-crumb a{transition:color .2s ease}
+.afi-ind-crumb a:hover{color:#deb970}
+.afi-ind-hero,.afi-ind-detail-hero{min-height:570px;position:relative;display:flex;align-items:end;overflow:hidden;background:#123844;color:#fff}
+.afi-ind-hero-photo,.afi-ind-detail-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 47%;display:block}
+.afi-ind-hero-overlay,.afi-ind-detail-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,39,52,.85) 0%,rgba(7,39,52,.56) 46%,rgba(7,39,52,.15) 100%)}
+.afi-ind-hero-copy{width:100%;padding-top:168px;padding-bottom:76px;z-index:2}
+.afi-ind-hero h1{font-size:clamp(44px,5.25vw,80px);line-height:1.09;max-width:1010px;color:#fff}
+.afi-ind-hero p{color:#f5f6f6;margin-top:27px;font-size:clamp(18px,1.46vw,23px);max-width:720px}
+.afi-ind-opening{background:#fff}
+.afi-ind-opening-grid,.afi-ind-crossroads-grid,.afi-ind-section-heading,.afi-ind-conversation-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:clamp(48px,8vw,135px)}
+.afi-ind-prose p+p{margin-top:23px}
+.afi-ind-opening-grid .afi-ind-prose{padding-top:44px}
+.afi-ind-showcase{background:#f4f7f8}
+.afi-ind-section-heading{align-items:end;margin-bottom:56px}
+.afi-ind-section-heading>p{max-width:520px;align-self:end}
+.afi-ind-tile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.afi-ind-tile{height:clamp(360px,32vw,440px);position:relative;min-width:0;contain:layout paint;border-radius:22px;overflow:hidden;background:#0f3440;border:1px solid rgba(10,50,63,.2);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease}
+.afi-ind-tile:hover,.afi-ind-tile:focus-within{transform:translateY(-8px);box-shadow:0 25px 60px rgba(10,49,63,.20)}
+.afi-ind-tile--selected{outline:3px solid #cba55e;outline-offset:3px}
+.afi-ind-tile-button{display:block;width:100%;height:100%;position:relative;border:0;padding:0;text-align:left;background:transparent;color:#fff;cursor:pointer;overflow:hidden}
+.afi-ind-tile-button>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.65,.2,1);filter:saturate(.82)}
+.afi-ind-tile:hover img,.afi-ind-tile:focus-within img{transform:scale(1.045)}
+.afi-ind-tile-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,41,52,.32) 0%,rgba(8,36,46,.07) 35%,rgba(5,30,39,.88) 100%);transition:background .32s}
+.afi-ind-tile:hover .afi-ind-tile-shade{background:linear-gradient(180deg,rgba(10,41,52,.55),rgba(7,32,43,.22) 38%,rgba(5,30,39,.96))}
+.afi-ind-tile-icon{position:absolute;top:24px;left:27px;width:67px;height:67px;display:grid;place-items:center;border-radius:100%;border:1px solid rgba(223,194,136,.8);background:rgba(10,45,58,.46);color:#eed09a;backdrop-filter:blur(7px)}
+.afi-ind-tile-meta{position:absolute;top:47px;right:24px;left:110px;text-align:right;line-height:1.3;font-size:11px;font-weight:700;letter-spacing:.105em;text-transform:uppercase;color:#f8efe1}
+.afi-ind-tile-bottom{position:absolute;bottom:34px;left:30px;right:28px;display:flex;flex-direction:column;gap:13px;padding-right:35px;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.afi-ind-tile-bottom strong{font-size:clamp(25px,2vw,34px);line-height:1.1;letter-spacing:-.045em;font-weight:650}
+.afi-ind-tile-bottom>span:not(.afi-ind-tile-plus){font-size:16px;line-height:1.45;color:#e9f1f2;max-width:330px}
+.afi-ind-tile-plus{position:absolute;right:0;top:3px;font-size:31px;line-height:1;font-weight:400;color:#f3d4a4}
+.afi-ind-tile-hover{position:absolute;bottom:0;left:0;right:0;min-height:63px;display:flex;align-items:center;justify-content:space-between;background:#d6b47b;color:#0f3440;font-weight:700;font-size:14px;padding:17px 28px;transform:translateY(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.afi-ind-tile:hover .afi-ind-tile-hover,.afi-ind-tile:focus-within .afi-ind-tile-hover{transform:translateY(0)}
+.afi-ind-tile:hover .afi-ind-tile-bottom,.afi-ind-tile:focus-within .afi-ind-tile-bottom{transform:translateY(-38px)}
+.afi-ind-tile-hover span{font-size:23px;font-weight:400}
+.afi-ind-expansion{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .5s ease,opacity .4s ease;overflow:hidden}
+.afi-ind-expansion--open{grid-template-rows:1fr;opacity:1;margin-top:30px}
+.afi-ind-expansion-inner{min-height:0;overflow:hidden;display:grid;grid-template-columns:31% 1fr;border:1px solid #dce5e7;border-radius:22px;background:#fff;box-shadow:0 18px 34px rgba(14,44,55,.05)}
+.afi-ind-expansion-art{display:grid;place-items:center;min-height:292px;color:#113844}
+.afi-ind-expansion-text{padding:48px clamp(30px,5vw,70px)}
+.afi-ind-expansion-text h3{font-size:clamp(32px,3.1vw,48px);margin-bottom:17px}
+.afi-ind-expansion-text p{max-width:800px}
+.afi-ind-expansion-controls{display:flex;align-items:center;gap:27px;margin-top:26px;flex-wrap:wrap}
+.afi-ind-pill{border:1px solid #123844;border-radius:100px;display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 25px;background:#123844;color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:background .24s ease,border-color .24s ease,transform .24s ease}
+.afi-ind-pill:hover,.afi-ind-pill:focus-visible{background:#205264;border-color:#d4b47c;transform:translateY(-2px)}
+.afi-ind-close{border:0;background:none;color:#496572;cursor:pointer;font-weight:700;font-size:15px}
+.afi-ind-close span{font-size:23px;vertical-align:middle;margin-left:9px}
+.afi-ind-philosophy{background:#102f42;color:#fff;position:relative;overflow:hidden}
+.afi-ind-philosophy .afi-ind-overline{color:#e0bb7d}
+.afi-ind-philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(55px,10vw,160px);align-items:center;z-index:2}
+.afi-ind-philosophy h2{color:#fff}
+.afi-ind-philosophy p{color:#e1ecf0}
+.afi-ind-philosophy p+p{margin-top:25px}
+.afi-ind-philosophy-rings{position:absolute;left:-310px;top:-250px;width:830px;height:830px;border:1px solid rgba(202,172,108,.42);border-radius:50%;pointer-events:none}
+.afi-ind-philosophy-rings span{position:absolute;inset:70px;border:1px solid rgba(202,172,108,.26);border-radius:50%}
+.afi-ind-philosophy-rings span:nth-child(2){inset:165px;border-color:rgba(212,225,228,.15)}
+.afi-ind-philosophy-rings span:nth-child(3){inset:255px;background:rgba(44,105,122,.14);border:0}
+.afi-ind-outline-link{display:inline-flex;align-items:center;gap:18px;margin-top:38px;border:1px solid #bcb0a1;border-radius:100px;padding:15px 21px;font-weight:700;color:#fff;transition:background .3s ease,border-color .3s ease,color .3s ease}
+.afi-ind-outline-link:hover{background:#fff;border-color:#fff;color:#123844}
+.afi-ind-crossroads{background:#fff}
+.afi-ind-crossroads-grid{align-items:center}
+.afi-ind-crossroads-grid p+p{margin-top:24px}
+.afi-ind-conversation{padding:94px 0;background:#e9eff2}
+.afi-ind-conversation-grid{align-items:center}
+.afi-ind-conversation p{margin-bottom:27px}
+/* Individual sector pages */
+.afi-ind-detail-hero{min-height:560px}
+.afi-ind-detail-hero-inner{width:100%;padding-top:167px;padding-bottom:78px;z-index:2}
+.afi-ind-detail-label{display:block;color:#efcf99;text-transform:uppercase;letter-spacing:.15em;font-weight:700;font-size:13px;margin-bottom:20px}
+.afi-ind-detail-hero h1{font-size:clamp(49px,5.5vw,88px);max-width:1060px;line-height:1.04;color:#fff}
+.afi-ind-detail-hero p{margin-top:24px;max-width:700px;color:#f0f6f6;font-size:clamp(19px,1.7vw,26px)}
+.afi-ind-detail-introduction{background:#fff}
+.afi-ind-detail-intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,8vw,132px)}
+.afi-ind-detail-intro-title h2{font-size:clamp(39px,4.2vw,62px)}
+.afi-ind-detail-intro-grid .afi-ind-prose{padding-top:35px}
+.afi-ind-detail-considerations{background:#f2f6f7}
+.afi-ind-detail-topline{display:flex;gap:24px;align-items:center;margin-bottom:40px}
+.afi-ind-detail-topline .afi-ind-overline{margin:0}
+.afi-ind-detail-icon{background:#123844;color:#deb970;width:80px;height:80px;border-radius:50%;display:grid;place-items:center}
+.afi-ind-detail-considerations-head{display:grid;grid-template-columns:1fr .67fr;gap:70px;align-items:end;margin-bottom:50px}
+.afi-ind-detail-essay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.afi-ind-detail-essay{padding:35px 30px 41px;border:1px solid #d5e0e3;background:#fff;border-radius:18px;min-height:280px;transition:transform .3s,background .3s,color .3s,box-shadow .3s,border-color .3s}
+.afi-ind-detail-essay h3{font-size:26px;margin-bottom:18px}
+.afi-ind-detail-essay p{font-size:17px;line-height:1.65}
+.afi-ind-detail-essay:hover{transform:translateY(-6px);background:#123844;border-color:#cda961;color:#fff;box-shadow:0 18px 35px rgba(8,45,56,.13)}
+.afi-ind-detail-essay:hover h3{color:#eed09a}
+.afi-ind-detail-essay:hover p{color:#fff}
+.afi-ind-detail-approach{background:#102f42;color:#fff}
+.afi-ind-detail-approach .afi-ind-overline{color:#d9b97f}
+.afi-ind-detail-approach-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(60px,9vw,144px)}
+.afi-ind-detail-approach-left>p{color:#e2ecef;margin-top:29px}
+.afi-ind-detail-approach-list{border-top:1px solid rgba(255,255,255,.3)}
+.afi-ind-detail-approach-list article{padding:29px 0 34px;border-bottom:1px solid rgba(255,255,255,.27);transition:padding-left .3s ease,background .3s ease}
+.afi-ind-detail-approach-list article:hover{padding-left:12px}
+.afi-ind-detail-approach-list h3{color:#f1d3a0;font-size:28px;margin-bottom:14px}
+.afi-ind-detail-approach-list p{color:#e6eff0;font-size:18px}
+.afi-ind-detail-quote{background:#fff;padding:92px 0}
+.afi-ind-detail-quote-inner{display:grid;grid-template-columns:190px 1fr;gap:70px;align-items:start}
+.afi-ind-detail-quote-inner>span{font-size:18px;color:#b4955d;font-weight:700;letter-spacing:.15em;padding-top:12px}
+.afi-ind-detail-quote-inner>p{font-size:clamp(28px,3.4vw,50px);line-height:1.25;color:#133a47;letter-spacing:-.035em;font-weight:600}
+.afi-ind-detail-related{background:#f4f7f8}
+.afi-ind-related-heading{margin-bottom:42px}
+.afi-ind-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.afi-ind-related-link{background:#fff;border:1px solid #d7e3e4;border-radius:18px;min-height:190px;padding:26px;display:flex;flex-direction:column;align-items:start;gap:20px;position:relative;transition:transform .28s ease,background .28s ease,color .28s ease,border-color .28s ease}
+.afi-ind-related-link strong{font-size:25px;letter-spacing:-.04em;line-height:1.2}
+.afi-ind-related-link>span:last-child{position:absolute;right:22px;top:20px;font-size:25px}
+.afi-ind-related-icon{color:#b18c4e}
+.afi-ind-related-link:hover{background:#123844;color:#fff;transform:translateY(-5px);border-color:#b18c4e}
+.afi-ind-related-link:hover .afi-ind-related-icon{color:#f1cd85}
+/* Global nav Industries flyout: desktop only, without altering the existing nav sizing. */
+.af-desktop-nav .afi-ind-nav{position:relative;display:flex;align-items:center;gap:3px;z-index:160}
+.af-desktop-nav .afi-ind-nav-main{display:inline-block}
+.afi-ind-nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:22px;height:32px;padding:0;border:0;background:transparent;color:#123844;cursor:pointer;transition:transform .2s}
+.afi-ind-nav--open .afi-ind-nav-toggle{transform:rotate(180deg)}
+.afi-ind-flyout{position:absolute;z-index:1000;top:calc(100% + 22px);left:50%;width:min(730px,calc(100vw - 50px));padding:29px 33px 22px;border-radius:24px;background:#083949;color:#fff;box-shadow:0 28px 65px rgba(9,40,51,.22);opacity:0;visibility:hidden;pointer-events:none;transform:translate(-40%,-9px);transition:opacity .28s ease,transform .28s ease,visibility .28s}
+.afi-ind-flyout:before{content:"";position:absolute;height:28px;top:-26px;left:0;right:0}
+.afi-ind-nav:hover .afi-ind-flyout,.afi-ind-nav:focus-within .afi-ind-flyout,.afi-ind-nav--open .afi-ind-flyout{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-40%,0)}
+.afi-ind-flyout-top{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.22);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.af-desktop-nav .afi-ind-flyout-top a{font-size:14px;color:#f0cc8e;letter-spacing:0;text-transform:none;padding:0}
+.afi-ind-flyout-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 12px;padding:24px 0 19px}
+.af-desktop-nav .afi-ind-flyout-link{display:flex;align-items:center;gap:13px;padding:13px 10px;border-radius:10px;color:#fff;font-size:14px;font-weight:600;white-space:normal;line-height:1.35;transition:background .2s}
+.af-desktop-nav .afi-ind-flyout-link:hover{background:rgba(255,255,255,.11);color:#fff}
+.afi-ind-flyout-link svg{color:#e3c084;flex-shrink:0}
+.afi-ind-flyout-bottom{font-size:13px;line-height:1.4;padding-top:12px;border-top:1px solid rgba(255,255,255,.18);color:#a7c2cc;white-space:normal}
+.afi-ind-nav .afi-ind-flyout a:after{display:none}
+@media(max-width:1240px){
+ .afi-ind-tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .afi-ind-tile{height:390px}
+ .afi-ind-flyout{width:min(670px,calc(100vw - 54px));transform:translate(-26%,-9px)}
+ .afi-ind-nav:hover .afi-ind-flyout,.afi-ind-nav:focus-within .afi-ind-flyout,.afi-ind-nav--open .afi-ind-flyout{transform:translate(-26%,0)}
+}
+@media(max-width:980px){
+ .afi-ind-hero,.afi-ind-detail-hero{min-height:535px}
+ .afi-ind-opening-grid,.afi-ind-crossroads-grid,.afi-ind-section-heading,.afi-ind-conversation-grid,.afi-ind-philosophy-grid,.afi-ind-detail-intro-grid,.afi-ind-detail-approach-grid{grid-template-columns:1fr;gap:33px}
+ .afi-ind-opening-grid .afi-ind-prose,.afi-ind-detail-intro-grid .afi-ind-prose{padding:0}
+ .afi-ind-detail-considerations-head{grid-template-columns:1fr;gap:18px}
+ .afi-ind-detail-essay-grid{grid-template-columns:1fr 1fr}
+ .afi-ind-related-grid{grid-template-columns:1fr 1fr}
+ .af-desktop-nav .afi-ind-nav{display:none}
+}
+@media(max-width:680px){
+ .afi-ind-section{padding:73px 0}
+ .afi-ind-page h2{font-size:clamp(37px,9vw,52px)}
+ .afi-ind-hero,.afi-ind-detail-hero{min-height:530px}
+ .afi-ind-hero-copy,.afi-ind-detail-hero-inner{padding-top:157px;padding-bottom:52px}
+ .afi-ind-hero h1,.afi-ind-detail-hero h1{font-size:clamp(40px,10vw,55px)}
+ .afi-ind-hero p,.afi-ind-detail-hero p{font-size:18px}
+ .afi-ind-tile-grid{grid-template-columns:1fr;gap:15px}
+ .afi-ind-tile{height:370px}
+ .afi-ind-tile-meta{font-size:10px}
+ .afi-ind-tile-bottom strong{font-size:30px}
+ .afi-ind-tile-hover{transform:translateY(100%)}
+ .afi-ind-tile:focus-within .afi-ind-tile-hover{transform:translateY(0)}
+ .afi-ind-expansion-inner{grid-template-columns:1fr}
+ .afi-ind-expansion-art{min-height:145px}
+ .afi-ind-expansion-art svg{width:70px;height:70px}
+ .afi-ind-expansion-text{padding:27px 24px 35px}
+ .afi-ind-philosophy-rings{left:-660px}
+ .afi-ind-detail-essay-grid,.afi-ind-related-grid{grid-template-columns:1fr}
+ .afi-ind-detail-essay{min-height:0}
+ .afi-ind-detail-quote-inner{grid-template-columns:1fr;gap:14px}
+ .afi-ind-detail-quote-inner>p{font-size:32px}
+ .afi-ind-detail-considerations-head{margin-bottom:35px}
+ .afi-ind-conversation{padding:70px 0}
+}
+@media(prefers-reduced-motion:reduce){.afi-ind-tile,.afi-ind-tile img,.afi-ind-tile-hover,.afi-ind-expansion,.afi-ind-flyout{transition:none!important}}
+/* AFII_INDUSTRIES_V20_END */
+
+/* AFII_VISUAL_REFINEMENT_V21_BEGIN
+ * Targeted refinement only: hero proportions, first-letter typography,
+ * and homepage photography. Does not change the navbar, leadership, or data.
+ */
+
+/* Normal-sized, restrained emphasis for every editorial paragraph opening.
+   Preserve each section's existing first-letter colour on light/dark surfaces. */
+main p::first-letter,
+footer p::first-letter {
+  font-size: 1em !important;
+  font-weight: 600 !important;
+  letter-spacing: normal !important;
+  line-height: inherit !important;
+  font-style: inherit !important;
+}
+
+/* Industries directory: retain cinematic hero image but show more of the next
+   section above the fold; align text with the rest of the site shell. */
+.afi-ind-page .afi-ind-hero,
+.afi-ind-page .afi-ind-detail-hero {
+  min-height: 490px;
+}
+.afi-ind-page .afi-ind-hero-copy.af-container,
+.afi-ind-page .afi-ind-detail-hero-inner.af-container {
+  width: var(--shell);
+  max-width: 1470px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.afi-ind-page .afi-ind-hero-copy {
+  padding-top: 132px;
+  padding-bottom: 45px;
+}
+.afi-ind-page .afi-ind-detail-hero-inner {
+  padding-top: 133px;
+  padding-bottom: 46px;
+}
+.afi-ind-page .afi-ind-crumb {
+  margin-bottom: 24px;
+}
+.afi-ind-page .afi-ind-hero p,
+.afi-ind-page .afi-ind-detail-hero p {
+  margin-top: 20px;
+}
+
+/* Homepage keeps its existing words, layout and spacing, with a more polished,
+   wide architectural image. No zoom, fades or filters over the photograph. */
+.af-hero .af-hero-photo {
+  border-radius: 15px;
+  border: 1px solid #e1e7e9;
+  background: #f4f7f9;
+}
+.af-hero .af-hero-photo img {
+  width: 100%;
+  height: clamp(300px, 26vw, 410px);
+  object-fit: cover;
+  object-position: center 48%;
+  transform: none !important;
+  filter: none;
+}
+
+@media (max-width: 980px) {
+  .afi-ind-page .afi-ind-hero,
+  .afi-ind-page .afi-ind-detail-hero {
+    min-height: 470px;
+  }
+}
+@media (max-width: 680px) {
+  .afi-ind-page .afi-ind-hero,
+  .afi-ind-page .afi-ind-detail-hero {
+    min-height: 445px;
+  }
+  .afi-ind-page .afi-ind-hero-copy,
+  .afi-ind-page .afi-ind-detail-hero-inner {
+    padding-top: 123px;
+    padding-bottom: 34px;
+  }
+  .afi-ind-page .afi-ind-crumb {
+    margin-bottom: 18px;
+  }
+  .afi-ind-page .afi-ind-hero p,
+  .afi-ind-page .afi-ind-detail-hero p {
+    margin-top: 18px;
+  }
+  .af-hero .af-hero-photo img {
+    height: 247px;
+    object-position: center 48%;
+  }
+}
+/* AFII_VISUAL_REFINEMENT_V21_END */
+
+/* AFII_OFFICE_HERO_AND_LOCATION_DETAILS_V22_BEGIN */
+/* Homepage: editorial cinematic hero, using the supplied original local photo. */
+.af-hero.af-container {
+  width:100%; max-width:none; margin:0; min-height:625px;
+  position:relative; isolation:isolate; overflow:hidden;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:157px max(52px,calc((100vw - 1470px)/2)) 58px;
+  background:#142d3e;
+}
+.af-hero.af-container::after {
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(8,34,49,.84) 0%,rgba(8,34,49,.65) 48%,rgba(8,34,49,.17) 100%),linear-gradient(0deg,rgba(8,34,49,.35),transparent 46%);
+}
+.af-hero .af-hero-photo {
+  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+  z-index:-2!important;margin:0!important;overflow:hidden!important;display:block!important;
+  padding:0!important;border:0!important;border-radius:0!important;
+  background:#132b3d!important;box-shadow:none!important;opacity:1!important;
+  transform:none!important;transition:none!important;
+}
+.af-hero .af-hero-photo img {
+  position:absolute!important;inset:0;width:100%!important;height:100%!important;
+  min-height:100%!important;display:block;object-fit:cover!important;
+  object-position:50% 53%!important;transform:none!important;filter:none!important;
+}
+.af-hero .af-hero-caption{display:none!important}
+.af-hero .af-hero-breadcrumb,.af-hero .af-hero-grid{position:relative;z-index:2;width:100%;}
+.af-hero .af-hero-breadcrumb{margin:0 0 27px!important;color:#fff}
+.af-hero .af-breadcrumb,.af-hero .af-breadcrumb a,.af-hero .af-breadcrumb span{color:#f6f7f8!important}
+.af-hero .af-hero-grid {
+  display:flex!important;flex-direction:column;align-items:flex-start;justify-content:center;
+  gap:28px!important;min-height:330px;margin:0!important;
+}
+.af-hero .af-hero-title,.af-hero .af-hero-summary{width:min(980px,100%);padding:0!important;background:none!important;}
+.af-hero h1,.af-hero .af-hero-title h1 {
+  color:#fff!important;font-size:clamp(53px,6.3vw,100px)!important;
+  line-height:1.04!important;letter-spacing:-.058em!important;
+  max-width:1000px!important;font-weight:650!important;
+  text-wrap:balance;
+}
+.af-hero h1 span{color:#e2bd76!important;display:block}
+.af-hero .af-hero-summary p {
+  color:#eef4f5!important;font-size:clamp(18px,1.38vw,22px)!important;
+  line-height:1.52!important;max-width:680px!important;margin:0 0 22px!important;
+  text-shadow:0 1px 2px rgba(0,0,0,.18);
+}
+.af-hero .af-hero-summary .af-inline-link {
+  background:#fff!important;color:#113844!important;border:1px solid rgba(255,255,255,.65)!important;
+  border-radius:100px!important;padding:13px 23px!important;
+  display:inline-flex;align-items:center;gap:14px;
+  box-shadow:0 8px 27px rgba(0,0,0,.11);
+  text-decoration:none!important;
+}
+.af-hero .af-hero-summary .af-inline-link:hover{background:#293464!important;color:#fff!important;border-color:#dcb878!important;transform:translateY(-2px)}
+/* Leadership/Offices hero matches the higher editorial position used on Industries. */
+.af-lead-hero{height:clamp(490px,37vw,555px)!important;min-height:490px}
+.af-lead-hero .af-lead-hero-content{
+  justify-content:flex-start!important;padding-top:132px!important;padding-bottom:30px!important;
+}
+.af-lead-hero .af-lead-breadcrumb{margin-bottom:23px!important}
+.af-lead-hero h1{font-size:clamp(51px,5.4vw,82px)!important;line-height:1.065!important;margin-bottom:18px!important}
+.af-lead-hero .af-lead-hero-content>p{font-size:clamp(18px,1.4vw,22px)!important;line-height:1.48!important;max-width:770px}
+/* Every location image and card can open its dedicated page; email remains independent. */
+.af-location-card{position:relative!important;cursor:pointer}
+.af-location-card-primary-link{position:absolute;inset:0;display:block;z-index:2;border-radius:inherit;outline-offset:3px}
+.af-location-card-primary-link:focus-visible{outline:3px solid #d4af68}
+.af-location-card .af-location-card-body>a:not(.af-location-card-primary-link){position:relative;z-index:3}
+.af-location-card-view{display:flex;align-items:center;gap:7px;color:#b18747;font-weight:700;font-size:14px;margin:-1px 0 15px;transition:gap .2s ease}
+.af-location-card:hover .af-location-card-view{gap:13px}
+/* Dedicated location pages - deliberately distinct from generic cards. */
+.af-place-page{background:#fff;color:#113844}
+.af-place-hero{height:clamp(440px,36vw,550px);min-height:440px;position:relative;overflow:hidden;background:linear-gradient(130deg,#112e45,#2b4863)}
+.af-place-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.af-place-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,32,48,.83),rgba(8,32,48,.52) 51%,rgba(8,32,48,.15)),linear-gradient(0deg,rgba(7,25,40,.37),transparent 60%)}
+.af-place-hero-content{position:relative;z-index:1;max-width:1470px;width:var(--shell);margin:0 auto;padding-top:155px;color:#fff}
+.af-place-crumb{display:flex;flex-wrap:wrap;gap:12px;align-items:center;font-size:15px;color:#e4edf0;margin-bottom:34px}
+.af-place-crumb a:hover{color:#e5c27d}
+.af-place-eyebrow{color:#e6c180;font-size:14px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;margin-bottom:17px}
+.af-place-hero h1{font-size:clamp(47px,5.6vw,86px);letter-spacing:-.058em;line-height:1.05;max-width:1050px;color:#fff;margin:0 0 20px}
+.af-place-hero-summary{font-size:clamp(18px,1.7vw,24px);color:#ebf0f2;max-width:760px;line-height:1.48}
+.af-place-intro{padding:108px 0 110px;background:#fff}
+.af-place-columns{width:var(--shell);max-width:1470px;margin:auto;display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(45px,8vw,145px)}
+.af-place-section-kicker{display:block;color:#ad8449;font-size:14px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;margin-bottom:19px}
+.af-place-intro h2,.af-place-contact h2{font-size:clamp(39px,4.6vw,68px);line-height:1.09;letter-spacing:-.05em;margin:0 0 24px;color:#123743}
+.af-place-intro p{font-size:clamp(18px,1.42vw,21px);line-height:1.7;color:#48616b;margin-bottom:22px}
+.af-place-facts{border-top:1px solid #dce5e8;padding-top:3px}
+.af-place-fact{padding:25px 0;border-bottom:1px solid #dce5e8}
+.af-place-fact dt{color:#a07b40;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.af-place-fact dd{margin:0;color:#123844;font-size:19px;line-height:1.5}
+.af-place-fact address{font-style:normal}
+.af-place-contact{padding:82px 0;background:#102f42;color:#fff}
+.af-place-contact .af-place-columns{align-items:center}
+.af-place-contact h2{color:#fff}
+.af-place-contact p{font-size:19px;line-height:1.6;color:#dfebef;max-width:540px}
+.af-place-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:flex-start}
+.af-place-cta{display:inline-flex;gap:13px;align-items:center;justify-content:center;padding:17px 26px;border-radius:100px;background:#e3bd77;color:#112f40;font-size:16px;font-weight:700;transition:transform .25s ease,background .25s ease}
+.af-place-cta:hover{transform:translateY(-3px);background:#fff}
+.af-place-cta--outline{background:transparent;color:#fff;border:1px solid #c9ae7c}
+.af-place-cta--outline:hover{background:#fff;color:#123844}
+.af-place-disclaimer{font-size:14px!important;color:#7a8b92!important;margin-top:28px}
+@media(max-width:980px){
+ .af-hero.af-container{min-height:600px;padding:145px 37px 52px}
+ .af-hero .af-hero-grid{gap:25px!important;min-height:320px}
+ .af-lead-hero .af-lead-hero-content{padding-top:128px!important}
+ .af-place-columns{grid-template-columns:1fr;gap:42px}
+}
+@media(max-width:680px){
+ .af-hero.af-container{min-height:625px;padding:125px 20px 45px}
+ .af-hero .af-hero-breadcrumb{margin-bottom:25px!important}
+ .af-hero .af-hero-grid{min-height:0;gap:28px!important}
+ .af-hero h1,.af-hero .af-hero-title h1{font-size:clamp(47px,11.5vw,66px)!important;line-height:1.05!important;max-width:100%}
+ .af-hero .af-hero-photo img{object-position:61% 50%!important}
+ .af-hero .af-hero-summary p{font-size:18px!important;line-height:1.56!important}
+ .af-hero.af-container::after{background:linear-gradient(90deg,rgba(8,34,49,.84),rgba(8,34,49,.47)),linear-gradient(0deg,rgba(8,34,49,.55),transparent 70%)}
+ .af-lead-hero{height:495px!important;min-height:495px!important}
+ .af-lead-hero .af-lead-hero-content{padding-top:123px!important;padding-bottom:20px!important}
+ .af-lead-hero h1{font-size:clamp(43px,10.8vw,57px)!important}
+ .af-lead-hero .af-lead-hero-content>p{font-size:18px!important}
+ .af-place-hero{height:490px;min-height:490px}
+ .af-place-hero-content{padding-top:123px;width:calc(100% - 36px)}
+ .af-place-crumb{font-size:13px;margin-bottom:23px;gap:8px}
+ .af-place-hero h1{font-size:clamp(44px,11vw,61px)}
+ .af-place-intro{padding:75px 0}
+ .af-place-contact{padding:64px 0}
+ .af-place-intro h2,.af-place-contact h2{font-size:clamp(36px,9vw,51px)}
+ .af-place-actions{display:flex;flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+ .af-location-card-view,.af-place-cta,.af-hero .af-hero-summary .af-inline-link{transition:none!important}
+}
+/* AFII_OFFICE_HERO_AND_LOCATION_DETAILS_V22_END */
+
+/* AFII_HERO_COMPACT_V23_BEGIN */
+/*
+ * Homepage only: reveal meaningful content below the office-boardroom hero.
+ * The photo, typography, floating navigation, links and animations are unchanged.
+ * This amendment intentionally does not apply to the Industries or Offices hero.
+ */
+@media (min-width: 981px) {
+  .af-hero.af-container {
+    min-height: 635px !important;
+    padding-top: 125px !important;
+    padding-bottom: 35px !important;
+  }
+  .af-hero .af-hero-breadcrumb {
+    margin-bottom: 18px !important;
+  }
+  /* Show the beginning of the existing introduction instead of empty white. */
+  .af-hero + .af-introduction {
+    padding-top: 54px !important;
+  }
+}
+@media (min-width: 681px) and (max-width: 980px) {
+  .af-hero.af-container {
+    min-height: 590px !important;
+    padding-top: 131px !important;
+    padding-bottom: 37px !important;
+  }
+  .af-hero .af-hero-breadcrumb {
+    margin-bottom: 21px !important;
+  }
+  .af-hero + .af-introduction {
+    padding-top: 68px !important;
+  }
+}
+@media (max-width: 680px) {
+  /* Preserve the full hero text and CTA on narrow screens. */
+  .af-hero + .af-introduction {
+    padding-top: 67px !important;
+  }
+}
+/* AFII_HERO_COMPACT_V23_END */

@@ -1,4 +1,5 @@
 "use client";
+import IndustryNavigation from "@/components/industry-navigation";
 
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
@@ -118,9 +119,13 @@ function Header({ onContact }: { onContact: () => void }) {
           <Brand />
           <nav className="af-desktop-nav" aria-label="Main navigation">
             {NAV.map((item) => (
-              <a href={item.href} key={item.label}>
-                {item.label}
-              </a>
+              item.label === "Industries" ? (
+                <IndustryNavigation key={item.href} />
+              ) : (
+                <a href={item.href} key={item.label}>
+                  {item.label}
+                </a>
+              )
             ))}
           </nav>
           <div className="af-header-actions">
@@ -454,7 +459,7 @@ export default function HomeExperience() {
             </Reveal>
           </div>
           <Reveal className="af-hero-photo" delay={210}>
-            <ResponsiveImage src={media.hero} alt="Container port infrastructure and international trade" />
+            <ResponsiveImage src={media.hero} alt="Illustrative executive boardroom overlooking a financial district" />
             <div className="af-hero-caption">AFII <span>·</span> Structured Finance & Infrastructure Investments</div>
           </Reveal>
         </section>

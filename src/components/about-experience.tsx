@@ -1,4 +1,5 @@
 "use client";
+import IndustryNavigation from "@/components/industry-navigation";
 
 import { useEffect, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
@@ -94,9 +95,13 @@ export function Header({ onContact }: { onContact: () => void }) {
           <Brand />
           <nav className="af-desktop-nav" aria-label="Main navigation">
             {NAV.map((item) => (
-              <a href={item.href} key={item.label}>
-                {item.label}
-              </a>
+              item.label === "Industries" ? (
+                <IndustryNavigation key={item.href} />
+              ) : (
+                <a href={item.href} key={item.label}>
+                  {item.label}
+                </a>
+              )
             ))}
           </nav>
           <div className="af-header-actions">
