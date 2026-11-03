@@ -1,0 +1,27 @@
+/* AFII_EXPERTISE_V25 */
+"use client";
+import { useState, type CSSProperties } from "react";
+import { expertise, EXPERTISE_HERO_IMAGE } from "@/data/expertise";
+import ExpertiseIcon from "@/components/expertise-icon";
+import { ExpertiseFrame,ExpertiseCrumb,TxReferences } from "@/components/expertise-shared";
+import { Arrow } from "@/components/about-experience";
+
+export default function ExpertiseExperience(){
+ const [selected,setSelected]=useState<string|null>(null);
+ const active=expertise.find(d=>d.slug===selected);
+ return <ExpertiseFrame>
+  <section className="afi-exp-hero"><div className="afi-exp-hero-photo"><img src={EXPERTISE_HERO_IMAGE.src} alt={EXPERTISE_HERO_IMAGE.alt}/></div><div className="afi-exp-hero-shade"/><div className="af-container afi-exp-hero-inside"><ExpertiseCrumb items={[{label:"Expertise"}]}/><span className="afi-exp-eyebrow afi-exp-eyebrow--gold">What We Do</span><h1>Advice Built Around<br/><em>Real Financial Decisions.</em></h1><p>Five connected business lines, from the first financing conversation through development, investment and the responsibilities that follow.</p></div></section>
+  <section className="afi-exp-intro afi-exp-section"><div className="af-container afi-exp-split"><div><span className="afi-exp-eyebrow">Our Practice</span><h2>A Financing Problem<br/>Rarely Comes In One Piece.</h2></div><div><p>An industrial business may need imported machinery, working capital and a new investor at the same time. A public infrastructure programme may begin with institutional coordination long before it is ready for finance. AFII brings those disciplines into the same conversation, without treating every assignment as the same type of transaction.</p><p>The business lines below follow the firm's internal working structure. Each contains specialist services with their own commercial and practical considerations.</p></div></div></section>
+  <section className="afi-exp-directory afi-exp-section" id="practice-directory"><div className="af-container"><div className="afi-exp-directory-header"><div><span className="afi-exp-eyebrow">Explore The Business Lines</span><h2>Different Capabilities.<br/><em>One Connected View.</em></h2></div><p>Explore each business line through large-format service links and detailed practice pages designed around the way mandates are actually discussed.</p></div>
+    <div className="afi-exp-directory-grid">{expertise.map((d,index)=><article className={`afi-exp-div-card afi-exp-reveal ${selected===d.slug?"afi-exp-div-card--active":""}`} key={d.slug} style={{"--card-tint":d.accent} as CSSProperties}>
+      <div className="afi-exp-div-photo"><img src={d.image} alt={d.imageAlt} loading="lazy"/><div className="afi-exp-div-photo-shade"/></div>
+      <div className="afi-exp-div-top"><span className="afi-exp-div-icon"><ExpertiseIcon type={d.icon} size={29}/></span><a href={`/expertise/${d.slug}`} aria-label={`Open ${d.title}`}><Arrow diagonal size={19}/></a></div>
+      <div className="afi-exp-div-bottom"><h3>{d.title}</h3><p>{d.statement}</p><div className="afi-exp-div-actions"><button type="button" onClick={()=>setSelected(v=>v===d.slug?null:d.slug)} aria-expanded={selected===d.slug} aria-controls="afi-exp-selected">{selected===d.slug?"Close Overview":"Explore Services"}<span>{selected===d.slug?"−":"+"}</span></button><a href={`/expertise/${d.slug}`}>Full Practice <Arrow diagonal size={14}/></a></div></div>
+    </article>)}</div>
+    {active&&<div className="afi-exp-open-panel" id="afi-exp-selected" key={active.slug}><div className="afi-exp-open-intro"><span className="afi-exp-eyebrow">Inside The Practice</span><h3>{active.title}</h3><p>{active.introduction}</p><a href={`/expertise/${active.slug}`} className="afi-exp-button">Read About This Practice <Arrow diagonal size={17}/></a></div><div className="afi-exp-service-mini">{active.services.map(s=><a key={s.slug} href={`/expertise/${active.slug}/${s.slug}`}><span>{s.title}</span><Arrow diagonal size={16}/></a>)}</div></div>}
+  </div></section>
+  <section className="afi-exp-dark-break"><div className="af-container afi-exp-dark-split"><div><span className="afi-exp-eyebrow afi-exp-eyebrow--gold">The Way We Work</span><h2>First Understand<br/>The Commercial Reality.</h2></div><div><p>Capital cannot be separated from the people, contracts and assets that stand behind it. Good advisory work clarifies which risks can be carried, which obligations are fixed and where another institution must take responsibility.</p><p>That discipline matters as much for a smaller enterprise seeking a suitable lender as it does for a cross-border project with several public and private participants.</p></div></div></section>
+  <section className="afi-exp-section afi-exp-allservices"><div className="af-container"><div className="afi-exp-list-header"><span className="afi-exp-eyebrow">Specialist Areas</span><h2>Specialist Services<br/><em>Across The Group.</em></h2></div><div className="afi-exp-list">{expertise.map(d=><div className="afi-exp-list-row afi-exp-reveal" key={d.slug}><a className="afi-exp-list-title" href={`/expertise/${d.slug}`}><span className="afi-exp-list-symbol"><ExpertiseIcon type={d.icon} size={27}/></span><strong>{d.shortTitle}</strong></a><div className="afi-exp-list-links">{d.services.map(s=><a href={`/expertise/${d.slug}/${s.slug}`} key={s.slug}>{s.title}<span aria-hidden="true">↗</span></a>)}</div></div>)}</div></div></section>
+  <TxReferences ids={[1,3,7,16,20,22]} title="Experience Across Different Mandates."/>
+ </ExpertiseFrame>
+}

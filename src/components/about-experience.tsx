@@ -1,5 +1,6 @@
 "use client";
 import IndustryNavigation from "@/components/industry-navigation";
+import ExpertiseNavigation from "@/components/expertise-navigation";
 
 import { useEffect, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
@@ -95,7 +96,9 @@ export function Header({ onContact }: { onContact: () => void }) {
           <Brand />
           <nav className="af-desktop-nav" aria-label="Main navigation">
             {NAV.map((item) => (
-              item.label === "Industries" ? (
+              item.label === "Expertise" ? (
+                <ExpertiseNavigation key={item.href} />
+              ) : item.label === "Industries" ? (
                 <IndustryNavigation key={item.href} />
               ) : (
                 <a href={item.href} key={item.label}>

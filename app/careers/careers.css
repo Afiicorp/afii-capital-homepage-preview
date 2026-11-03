@@ -1,0 +1,44 @@
+
+.afi-careers-root{--careers-navy:#102f3d;--careers-ink:#133c49;--careers-gold:#c19a5d;background:#fff;color:var(--careers-ink);font-family:Arial,Helvetica,sans-serif}
+.afi-careers-root h1,.afi-careers-root h2,.afi-careers-root h3{font-family:Arial,Helvetica,sans-serif;letter-spacing:-.048em;font-weight:600;margin-top:0}
+.afi-careers-root p{font-size:clamp(17px,1.35vw,21px);line-height:1.68;color:#4f6770;margin-top:0}
+.afi-careers-hero{position:relative;min-height:600px;height:78vh;max-height:760px;background:#0a2836;color:#fff;overflow:hidden}
+.afi-careers-video,.afi-careers-overlay{position:absolute;inset:0;width:100%;height:100%}
+.afi-careers-video{object-fit:cover}
+.afi-careers-overlay{background:linear-gradient(90deg,rgba(5,27,36,.92) 0%,rgba(5,27,36,.7) 42%,rgba(7,34,47,.22) 100%)}
+.afi-careers-hero-inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding-top:160px;padding-bottom:54px}
+.afi-careers-crumb{margin-bottom:auto;color:rgba(255,255,255,.9);font-size:15px;display:flex;gap:12px;align-items:center}
+.afi-careers-eyebrow{display:block;color:#9b804f;text-transform:uppercase;letter-spacing:.13em;font-size:13px;font-weight:700;margin-bottom:22px}
+.afi-careers-eyebrow--gold{color:#e3c384}
+.afi-careers-hero h1{font-size:clamp(46px,5.5vw,86px);line-height:1.04;color:#fff;max-width:1020px;margin-bottom:20px}
+.afi-careers-hero h1 em,.afi-careers-root h2 em{color:#dfbd80;font-style:normal}
+.afi-careers-hero p{color:#edf3f5;max-width:760px;margin-bottom:30px}
+.afi-careers-hero-actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.afi-careers-button{display:inline-flex;align-items:center;gap:24px;background:#293461;color:#fff;border:1px solid #293461;border-radius:999px;padding:16px 24px;font-size:16px;font-weight:700;transition:transform .25s,background .25s,color .25s}
+.afi-careers-button:hover{transform:translateY(-3px);background:#fff;color:#293461}
+.afi-careers-button--light{background:#fff;color:#183645;border-color:#fff}
+.afi-careers-button--light:hover{background:#e3bd82;border-color:#e3bd82;color:#163543}
+.afi-careers-link{display:inline-flex;align-items:center;font-size:16px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:8px}
+.afi-careers-intro,.afi-careers-benefits{padding:96px 0;background:#fff}
+.afi-careers-values{padding:92px 0;background:#f4f7f8}
+.afi-careers-dark{padding:100px 0;background:#102d3b;color:#fff;position:relative;overflow:hidden}
+.afi-careers-dark:before{content:"";position:absolute;width:560px;height:560px;border-radius:50%;left:-380px;top:-160px;border:1px solid rgba(230,190,130,.24);box-shadow:0 0 0 55px rgba(230,190,130,.04),0 0 0 120px rgba(230,190,130,.03)}
+.afi-careers-cta{padding:96px 0;background:#122f3e;color:#fff}
+.afi-careers-split,.afi-careers-cta-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:min(9vw,120px);align-items:start}
+.afi-careers-split--dark{position:relative;z-index:1;margin-bottom:40px}
+.afi-careers-root h2{font-size:clamp(40px,4.6vw,72px);line-height:1.07}
+.afi-careers-grid,.afi-careers-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.afi-careers-card,.afi-careers-path-card{background:#fff;border:1px solid #d9e3e7;border-radius:22px;padding:32px;min-height:260px;transition:transform .26s,box-shadow .26s,background .26s,color .26s,border-color .26s}
+.afi-careers-card:hover,.afi-careers-path-card:hover{transform:translateY(-6px);box-shadow:0 18px 30px rgba(9,40,50,.12);background:#173a49;color:#fff;border-color:#173a49}
+.afi-careers-card h3,.afi-careers-path-card h3{font-size:clamp(24px,2vw,32px);line-height:1.18;margin-bottom:16px}
+.afi-careers-card:hover p,.afi-careers-path-card:hover p{color:#dce8eb}
+.afi-careers-dark .afi-careers-path-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);backdrop-filter:blur(3px)}
+.afi-careers-dark .afi-careers-path-card p,.afi-careers-dark p{color:#dce6ea}
+.afi-careers-benefit-list{display:grid;gap:18px}
+.afi-careers-benefit-item{display:grid;grid-template-columns:36px 1fr;gap:18px;align-items:start;padding:20px 0;border-top:1px solid #dde6ea}
+.afi-careers-benefit-item:last-child{border-bottom:1px solid #dde6ea}
+.afi-careers-benefit-item span{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid #d8b87e;color:#b38b52;font-weight:700}
+.afi-careers-benefit-item p{margin-bottom:0}
+.afi-careers-cta p{color:#dce7ea}
+@media(max-width:1040px){.afi-careers-grid,.afi-careers-path-grid{grid-template-columns:1fr 1fr}.afi-careers-split,.afi-careers-cta-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:720px){.afi-careers-hero{height:auto;min-height:560px}.afi-careers-hero-inner{min-height:560px;padding-top:128px;padding-bottom:42px}.afi-careers-grid,.afi-careers-path-grid{grid-template-columns:1fr}.afi-careers-root h2{font-size:clamp(34px,8.5vw,48px)}.afi-careers-hero h1{font-size:clamp(38px,10vw,56px)}.afi-careers-intro,.afi-careers-values,.afi-careers-dark,.afi-careers-benefits,.afi-careers-cta{padding:68px 0}}

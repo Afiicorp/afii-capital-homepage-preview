@@ -1,0 +1,17 @@
+/* AFII_EXPERTISE_V25 */
+"use client";
+import { getServiceHero, type Division, type Service } from "@/data/expertise";
+import { ExpertiseFrame,ExpertiseCrumb,TxReferences,IndustryReferences } from "@/components/expertise-shared";
+import { Arrow } from "@/components/about-experience";
+
+export default function ExpertiseServiceExperience({division:d,service:s}:{division:Division;service:Service}){
+ const more=d.services.filter(x=>x.slug!==s.slug).slice(0,4);
+ return <ExpertiseFrame>
+ <section className="afi-exp-hero afi-exp-service-hero"><div className="afi-exp-hero-photo"><img src={getServiceHero(s.slug).src} alt={getServiceHero(s.slug).alt}/></div><div className="afi-exp-hero-shade"/><div className="af-container afi-exp-hero-inside"><ExpertiseCrumb items={[{label:"Expertise",href:"/expertise"},{label:d.shortTitle,href:`/expertise/${d.slug}`},{label:s.title}]}/><span className="afi-exp-eyebrow afi-exp-eyebrow--gold">{s.kicker}</span><h1>{s.title}</h1><p>{s.summary}</p></div></section>
+ <section className="afi-exp-section afi-exp-service-intro"><div className="af-container afi-exp-split"><div><span className="afi-exp-eyebrow">Understanding The Mandate</span><h2>{s.question}</h2><div className="afi-exp-tag">{d.title}</div></div><div className="afi-exp-prose"><p>{s.opening}</p><p>{s.perspective}</p></div></div></section>
+ <section className="afi-exp-service-essay afi-exp-section"><div className="af-container"><div className="afi-exp-section-heading"><div><span className="afi-exp-eyebrow">The Issues That Matter</span><h2>What The Structure<br/><em>Needs To Address.</em></h2></div><p>Each mandate needs a different balance of structure, commercial judgement and execution. These themes explain the practical issues that usually shape the work.</p></div><div className="afi-exp-essay-grid">{s.delivery.map((part,i)=><article className="afi-exp-essay-card afi-exp-reveal" key={part.title}><span className="afi-exp-essay-index">{i+1}</span><h3>{part.title}</h3><p>{part.text}</p></article>)}</div></div></section>
+ <section className="afi-exp-service-perspective"><div className="af-container afi-exp-dark-split"><div><span className="afi-exp-eyebrow afi-exp-eyebrow--gold">A Practical Perspective</span><h2>Work From The<br/><em>Underlying Facts.</em></h2></div><div><p>Nothing replaces the review of contracts, financial information and the particular circumstances of the borrower, project or investment. Each engagement remains specific to the transaction, counterparties and jurisdiction involved.</p><a className="afi-exp-button afi-exp-button--light" href="mailto:reachus@afii.eu?subject=AFII%20Service%20Enquiry">Discuss This Requirement <Arrow diagonal size={17}/></a></div></div></section>
+ <IndustryReferences slugs={s.industrySlugs}/>
+ <TxReferences ids={s.relatedIds} title="Related Published References."/>
+ <section className="afi-exp-section afi-exp-related-services"><div className="af-container"><span className="afi-exp-eyebrow">More From This Practice</span><div className="afi-exp-section-heading"><h2>Connected Services.</h2><a className="afi-exp-text-link" href={`/expertise/${d.slug}`}>About This Practice <Arrow diagonal size={17}/></a></div><div className="afi-exp-related-grid">{more.map(x=><a key={x.slug} href={`/expertise/${d.slug}/${x.slug}`}><span>{x.kicker}</span><strong>{x.title}</strong><Arrow diagonal size={20}/></a>)}</div></div></section>
+ </ExpertiseFrame>}
