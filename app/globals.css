@@ -3140,3 +3140,235 @@ html, body, body > main, main { background-color: #ffffff; }
   }
 }
 /* AFII_HOME_ORBIT_SIDE_V3_2_END */
+
+/* AFII_HOME_ORBIT_RIGHT_V3_3_1_BEGIN
+   Focused override: mirror the introduction orbit from LEFT to RIGHT.
+   Intentionally leaves original typography, dimensions, animation, tone,
+   and all other orbit/lotus decorations unchanged. */
+.af-introduction .af-intro-grid > .af-orbit-disc,
+.af-introduction .af-intro-grid > .af-orbit-disc--right {
+  left: auto !important;
+  right: calc((100% - 100vw) / 2 - clamp(200px, 18vw, 305px)) !important;
+}
+
+@media (min-width: 741px) and (max-width: 980px) {
+  .af-introduction .af-intro-grid > .af-orbit-disc,
+  .af-introduction .af-intro-grid > .af-orbit-disc--right {
+    left: auto !important;
+    right: calc((100% - 100vw) / 2 - 180px) !important;
+  }
+}
+
+@media (max-width: 740px) {
+  .af-introduction .af-intro-grid > .af-orbit-disc,
+  .af-introduction .af-intro-grid > .af-orbit-disc--right {
+    left: auto !important;
+    right: calc((100% - 100vw) / 2 - 205px) !important;
+  }
+}
+/* AFII_HOME_ORBIT_RIGHT_V3_3_1_END */
+
+/* AFII_EXPERTISE_FOOTER_V3_4_BEGIN
+   Focused refinements — a single editorial expertise preview and visible
+   navy social icons. No other sections, brand assets, or links are changed. */
+
+/* The Reveal element is ONLY a layout wrapper. Remove the apparent second card. */
+.af-expertise .af-practice-detail {
+  min-width: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  align-self: start;
+}
+
+/* A single cohesive image + title + description + action surface. */
+.af-expertise .af-practice-detail-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff !important;
+  color: #123844;
+  border: 1px solid #d6e2e6;
+  border-radius: 27px;
+  box-shadow: 0 14px 38px rgba(13, 43, 61, .085);
+  transition: border-color .28s ease, box-shadow .28s ease, transform .28s ease;
+}
+.af-expertise .af-practice-detail-panel:hover,
+.af-expertise .af-practice-detail-panel:focus-within {
+  transform: translateY(-4px);
+  border-color: #c3ad7d;
+  box-shadow: 0 23px 52px rgba(13, 43, 61, .14);
+}
+.af-expertise .af-practice-detail-panel > .af-practice-image {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(240px, 24vw, 340px) !important;
+  min-height: 0 !important;
+  max-height: 340px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #e9eff2 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+.af-expertise .af-practice-detail-panel .af-practice-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1);
+}
+.af-expertise .af-practice-detail-panel:hover .af-practice-image img {
+  transform: scale(1.025) !important;
+}
+.af-expertise .af-practice-detail-panel > h3 {
+  color: #123844 !important;
+  font-size: clamp(27px, 2.25vw, 36px) !important;
+  line-height: 1.17 !important;
+  font-weight: 650 !important;
+  letter-spacing: -.035em;
+  margin: 27px 30px 11px !important;
+  padding: 0 !important;
+  overflow-wrap: break-word;
+}
+.af-expertise .af-practice-detail-panel > p {
+  color: #405a67 !important;
+  font-size: clamp(16px, 1.22vw, 19px) !important;
+  line-height: 1.62 !important;
+  font-weight: 400 !important;
+  margin: 0 30px 24px !important;
+  padding: 0 !important;
+  max-width: none !important;
+}
+.af-expertise .af-practice-detail-panel > .af-inline-link {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 15px;
+  width: auto;
+  min-height: 48px;
+  padding: 12px 23px !important;
+  margin: 0 30px 29px !important;
+  background: #293464 !important;
+  color: #fff !important;
+  border: 1px solid #293464 !important;
+  border-radius: 999px !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  white-space: normal;
+  transition: background .24s ease, border-color .24s ease, transform .24s ease, box-shadow .24s ease;
+}
+.af-expertise .af-practice-detail-panel > .af-inline-link:hover,
+.af-expertise .af-practice-detail-panel > .af-inline-link:focus-visible {
+  background: #153b50 !important;
+  border-color: #153b50 !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 9px 18px rgba(16, 45, 65, .16);
+}
+.af-expertise .af-practice-detail-panel > .af-inline-link svg {
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.af-expertise .af-practice-detail-panel > .af-inline-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Both social glyphs should be clearly visible in AFII navy at rest. */
+.af-footer .af-footer-social a,
+.af-footer-social a {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 43px !important;
+  height: 43px !important;
+  border: 1px solid #293464 !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  color: #293464 !important;
+  opacity: 1 !important;
+  transition: background .23s ease, color .23s ease, border-color .23s ease,
+    transform .23s ease, box-shadow .23s ease;
+}
+.af-footer .af-footer-social a svg,
+.af-footer-social a svg {
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  fill: currentColor !important;
+  color: inherit !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.af-footer .af-footer-social a svg path,
+.af-footer-social a svg path {
+  fill: currentColor !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.af-footer .af-footer-social a:hover,
+.af-footer .af-footer-social a:focus-visible,
+.af-footer-social a:hover,
+.af-footer-social a:focus-visible {
+  background: #293464 !important;
+  border-color: #293464 !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(41, 52, 100, .18);
+}
+.af-footer-social a:focus-visible,
+.af-expertise .af-practice-detail-panel > .af-inline-link:focus-visible {
+  outline: 2px solid #c4a263;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1080px) {
+  .af-expertise .af-practice-detail { position: static !important; }
+  .af-expertise .af-practice-detail-panel > .af-practice-image {
+    height: clamp(230px, 39vw, 340px) !important;
+  }
+}
+@media (max-width: 640px) {
+  .af-expertise .af-practice-detail-panel { border-radius: 22px; }
+  .af-expertise .af-practice-detail-panel > .af-practice-image {
+    height: clamp(210px, 57vw, 290px) !important;
+  }
+  .af-expertise .af-practice-detail-panel > h3 {
+    font-size: clamp(25px, 6.4vw, 32px) !important;
+    margin: 23px 21px 10px !important;
+  }
+  .af-expertise .af-practice-detail-panel > p {
+    font-size: 16px !important;
+    margin: 0 21px 21px !important;
+  }
+  .af-expertise .af-practice-detail-panel > .af-inline-link {
+    margin: 0 21px 23px !important;
+    padding: 11px 20px !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .af-expertise .af-practice-detail-panel,
+  .af-expertise .af-practice-detail-panel .af-practice-image img,
+  .af-expertise .af-practice-detail-panel > .af-inline-link,
+  .af-footer-social a { transition: none !important; }
+  .af-expertise .af-practice-detail-panel:hover,
+  .af-expertise .af-practice-detail-panel:focus-within,
+  .af-expertise .af-practice-detail-panel:hover .af-practice-image img,
+  .af-footer-social a:hover { transform: none !important; }
+}
+/* AFII_EXPERTISE_FOOTER_V3_4_END */
