@@ -2612,3 +2612,86 @@ footer p::first-letter {
 }
 /* AFII_HOME_TEAM_V26_END */
 
+/* AFII_EMPLOYEE_LOGIN_V1 */
+/* AFII HRMS: consistent navy capsule, accessible on desktop and mobile. */
+.af-header-inner {
+  grid-template-columns: 75px minmax(0, 1fr) auto;
+}
+.af-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+  white-space: nowrap;
+}
+.af-employee-login {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 8px;
+  min-height: 43px;
+  padding: 0 17px;
+  border: 1px solid #293464;
+  border-radius: 999px;
+  background: #293464;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(41, 52, 100, .10);
+  transition: background .22s ease, border-color .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+.af-employee-login svg {
+  width: 17px;
+  height: 17px;
+  flex: none;
+}
+.af-employee-login:hover {
+  background: #173b4c;
+  border-color: #173b4c;
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(17, 56, 68, .17);
+  transform: translateY(-2px);
+}
+.af-employee-login:focus-visible {
+  outline: 3px solid #dbb66f;
+  outline-offset: 3px;
+}
+.af-employee-login-short { display: none; }
+@media (min-width: 1051px) and (max-width: 1280px) {
+  .af-header-inner {
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+  }
+  .af-header-actions { gap: 7px; }
+  .af-employee-login { padding: 0 12px; }
+  .af-employee-login-full { display: none; }
+  .af-employee-login-short { display: inline; }
+}
+@media (max-width: 1050px) {
+  .af-header-inner { display: flex; }
+  .af-header-actions { margin-left: auto; gap: 9px; }
+}
+@media (max-width: 740px) {
+  .af-header-actions { gap: 6px; }
+  .af-employee-login {
+    min-height: 39px;
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .af-employee-login svg { width: 15px; height: 15px; }
+  .af-employee-login-full { display: none; }
+  .af-employee-login-short { display: inline; }
+}
+@media (max-width: 360px) {
+  .af-employee-login { padding: 0 9px; font-size: 12px; }
+  .af-header-actions { gap: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .af-employee-login { transition: none; }
+}
+/* AFII_EMPLOYEE_LOGIN_V1_END */

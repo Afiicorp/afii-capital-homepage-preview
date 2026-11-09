@@ -132,6 +132,19 @@ function Header({ onContact }: { onContact: () => void }) {
             ))}
           </nav>
           <div className="af-header-actions">
+            <a
+              className="af-employee-login"
+              href="https://erp.afii.biz"
+              aria-label="Employee Login - AFII HRMS"
+              title="AFII Employee Login"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="5" y="10" width="14" height="11" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+              <span className="af-employee-login-full">Employee Login</span>
+              <span className="af-employee-login-short">Login</span>
+            </a>
             <button className="af-contact-trigger" type="button" onClick={onContact} aria-label="Contact AFII">
               <MailIcon size={23} />
             </button>
