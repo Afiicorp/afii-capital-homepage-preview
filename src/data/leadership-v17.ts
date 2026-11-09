@@ -16,22 +16,25 @@ export type MapPlace = {
 };
 
 export const leadershipPeople = [
-  { name:"Dr. Mahesh M. Gandhi", initials:"MG", role:"Managing Director & President", city:"Frankfurt", linkedin:"https://www.linkedin.com/in/maheshmgandhi/" },
-  { name:"Kirti Gulati", initials:"KG", role:"Managing Director & Vice President", city:"Frankfurt", linkedin:"https://www.linkedin.com/in/kirtigulati/" },
-  { name:"Johann Mair", initials:"JM", role:"Senior Partner (K3M)", city:"Munich", linkedin:null },
-  { name:"Lt. Gen. (Retd.) Rafi Peled", initials:"RP", role:"Senior Partner — Israel Business", city:"Tel Aviv", linkedin:null },
-  { name:"Abhijit Avarsekar", initials:"AA", role:"Senior Advisor — Infrastructure Business", city:"Mumbai", linkedin:"https://www.linkedin.com/in/abhijit-avarrsekar/" },
-  { name:"Vinit Vidyarthi", initials:"VV", role:"Senior Partner — Insurance & Investment Banking", city:"New Delhi", linkedin:null },
-  { name:"Punam Bhasin", initials:"PB", role:"Director, AFII Corp (India)", city:"India", linkedin:"https://www.linkedin.com/in/punam-bhasin-gandhi-3821a4109/" },
-  { name:"Ralph Ketelhut", initials:"RK", role:"Senior Partner (K3M)", city:"Munich", linkedin:null },
-  { name:"Sidhartha Gandhi", initials:"SG", role:"Group Member — Role To Be Confirmed", city:"AFII Group", linkedin:"https://www.linkedin.com/in/sidsgandhi/" },
-  { name:"R. P. Gupta", initials:"RG", role:"Senior Advisor — Railways", city:"India", linkedin:"https://www.linkedin.com/in/rp-gupta-380a651b/" },
-  { name:"Jonathan Pallares", initials:"JP", role:"Business Partner", city:"Helsinki", linkedin:"https://www.linkedin.com/in/jonathan-pallares-78327436/" },
-  { name:"Kumar Aakash", initials:"KA", role:"Director, AFII Corp", city:"New Delhi", linkedin:"https://www.linkedin.com/in/kumar-aakash/" },
-  { name:"Arun Lohiya", initials:"AL", role:"Senior Advisor — Aviation Business", city:"Ahmedabad", linkedin:"https://linkedin.com/in/14111960" },
-  { name:"Nguyen Thi Thanh Nga", initials:"NN", role:"Head, Vietnam Business", city:"Vietnam", linkedin:"https://www.linkedin.com/in/nguyen-thanh-nga-776597162/" },
-  { name:"Matthias Lohmann", initials:"ML", role:"Senior Partner (K3M)", city:"Munich", linkedin:null },
-] as const;
+  { name:"Dr. Mahesh M. Gandhi", initials:"MG", role:"Managing Director & President", city:"Frankfurt", image:"/images/team-mahesh-gandhi.png", linkedin:"https://www.linkedin.com/in/maheshmgandhi/" },
+  { name:"Kirti Gulati", initials:"KG", role:"Managing Director & Vice President", city:"Frankfurt", image:"/images/team-kirti-gulati.jpg", linkedin:"https://www.linkedin.com/in/kirtigulati/" },
+  { name:"Sidhartha S. Gandhi", initials:"SG", role:"Government Advisory & Infrastructure Development", city:"India", image:"/images/team-sidhartha-gandhi.jpeg", linkedin:"https://www.linkedin.com/in/sidsgandhi/" },
+  { name:"Vinit Vidyarthi", initials:"VV", role:"Senior Partner — Insurance & Investment Banking", city:"New Delhi", image:"/images/team-vinit-vidyarthi.jpeg", linkedin:null },
+  { name:"Abhijit Avarsekar", initials:"AA", role:"Senior Advisor — Infrastructure Business", city:"Mumbai", image:"/images/team-abhijit-avar-sekar.png", linkedin:"https://www.linkedin.com/in/abhijit-avarrsekar/" },
+  { name:"Lt. Gen. (Retd.) Rafi Peled", initials:"RP", role:"Senior Partner — Israel Business", city:"Tel Aviv", image:"/images/team-rafi-peled.jpg", linkedin:null },
+  { name:"Nguyen Thi Thanh Nga", initials:"NN", role:"Head — Vietnam Business", city:"Vietnam", image:"/images/team-nguyen-thi-thanh-nga.jpg", linkedin:"https://www.linkedin.com/in/nguyen-thanh-nga-776597162/" },
+  { name:"K. Aakash", initials:"KA", role:"Director — AFII Corp", city:"New Delhi", image:"/images/team-kumar-aakash.png", linkedin:"https://www.linkedin.com/in/kumar-aakash/" },
+  { name:"Swapnil Gandhi", initials:"SW", role:"Government Advisory & Infrastructure Development", city:"India", image:"/images/team-swapnil-gandhi.jpg", linkedin:null },
+  { name:"Michel Buffat", initials:"MB", role:"Strategic Partner — AGENOVA", city:"Switzerland · Europe", image:"/images/team-michel-buffat.JPG", linkedin:null },
+  { name:"Vikram Kaushal", initials:"VK", role:"Asset Management & Investment Platforms", city:"India", image:"/images/team-vikram-kaushal.jpg", linkedin:null },
+  { name:"Johann Mair", initials:"JM", role:"Senior Partner", city:"Munich · K3M", image:"/images/team-johann-mair.png", linkedin:null },
+  { name:"Arun Lohiya", initials:"AL", role:"Senior Advisor — Aviation Business", city:"Ahmedabad", image:"/images/team-arun-lohiya.jpg", linkedin:"https://linkedin.com/in/14111960" },
+  { name:"Punam Bhasin", initials:"PB", role:"Director — AFII Corp (India)", city:"India", image:"/images/team-punam-bhasin.jpg", linkedin:"https://www.linkedin.com/in/punam-bhasin-gandhi-3821a4109/" },
+  { name:"Ralph Ketelhut", initials:"RK", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-ralph-ketelhut.jpg", linkedin:null },
+  { name:"Matthias Lohmann", initials:"ML", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-matthias-lohmann.png", linkedin:null },
+  { name:"Jonathan Pallares", initials:"JP", role:"Business Partner", city:"Helsinki", image:"/images/team-jonathan-pallares.jpg", linkedin:"https://www.linkedin.com/in/jonathan-pallares-78327436/" },
+  { name:"R. P. Gupta", initials:"RG", role:"Senior Advisor — Railways", city:"India", image:"/images/team-rp-gupta.png", linkedin:"https://www.linkedin.com/in/rp-gupta-380a651b/" },
+] as const; // AFII_TEAM_V26
 
 const sourceImages = "https://afii-capital-website.vercel.app/images/";
 

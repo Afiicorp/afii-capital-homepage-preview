@@ -520,9 +520,12 @@ export default function AboutExperience() {
                         <a className="af-person-action af-person-action--mail" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Leadership enquiry - ${person.name}`)}`} aria-label={`Email about ${person.name}`}>
                           <MailIcon />
                         </a>
-                        <a className="af-person-action af-person-action--linkedin" href={person.linkedin} aria-label={`LinkedIn placeholder for ${person.name}`}>
+                        {/* AFII_BUILD_FIX_V27_LINKEDIN: show the social icon only for real profile URLs */}
+                        {person.linkedin ? (
+                          <a className="af-person-action af-person-action--linkedin" href={person.linkedin} aria-label={`LinkedIn placeholder for ${person.name}`}>
                           <LinkedInIcon />
                         </a>
+                        ) : null}
                       </div>
                     </div>
                     <a className="af-person-copy" href="/leadership-offices">

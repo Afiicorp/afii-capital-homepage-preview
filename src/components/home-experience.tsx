@@ -633,7 +633,7 @@ export default function HomeExperience() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <p>Selected leadership and senior advisory contacts from AFII’s published team. Profiles and photography will be completed with approved material.</p>
+                <p>Leadership across financial structuring, infrastructure and international markets brings specialist perspectives to each mandate.</p>
               </Reveal>
             </div>
             <div className="af-people-grid">
@@ -652,10 +652,19 @@ export default function HomeExperience() {
                           togglePerson(index);
                         }}
                       >
-                        <div className="af-portrait" aria-label={`Portrait placeholder for ${person.name}`}>
+                        <div className="af-portrait" aria-label={`Portrait of ${person.name}`}>
                           <div className="af-portrait-ring" />
                           <strong>{person.initials}</strong>
                           <span>Portrait to follow</span>
+                          {/* AFII_TEAM_V26: portrait replaces monogram when the image is copied into public/images. */}
+                          <img
+                            className="af-portrait-photo"
+                            src={person.image}
+                            alt={person.name}
+                            loading="lazy"
+                            decoding="async"
+                            onError={(event) => { event.currentTarget.style.display = "none"; }}
+                          />
                         </div>
                       </button>
                       <div id={`af-person-actions-${index}`} className={`af-person-actions ${activePerson === index ? "af-person-actions--open" : ""}`} aria-label={`Quick actions for ${person.name}`}>
@@ -666,13 +675,17 @@ export default function HomeExperience() {
                         >
                           <MailIcon />
                         </a>
-                        <a
-                          className="af-person-action af-person-action--linkedin"
-                          href={person.linkedin}
-                          aria-label={`LinkedIn placeholder for ${person.name}`}
-                        >
-                          <LinkedInIcon />
-                        </a>
+                        {person.linkedin && (
+                          <a
+                            className="af-person-action af-person-action--linkedin"
+                            href={person.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`LinkedIn profile of ${person.name}`}
+                          >
+                            <LinkedInIcon />
+                          </a>
+                        )}
                       </div>
                     </div>
                     <a className="af-person-copy" href="/leadership-offices">

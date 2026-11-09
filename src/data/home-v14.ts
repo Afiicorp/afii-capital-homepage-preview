@@ -40,8 +40,8 @@ export const sectors = [
 ];
 
 export const people = [
-  { name: "Dr. Mahesh M. Gandhi", role: "Managing Director & President", city: "Frankfurt", initials: "MG", linkedin: "/leadership-offices" },
-  { name: "Kirti Gulati", role: "Managing Director & Vice President", city: "Frankfurt", initials: "KG", linkedin: "/leadership-offices" },
-  { name: "Abhijit Avarsekar", role: "Senior Advisor, Infrastructure", city: "Mumbai", initials: "AA", linkedin: "/leadership-offices" },
-  { name: "Vinit Vidyarthi", role: "Senior Partner, Insurance & Investment Banking", city: "New Delhi", initials: "VV", linkedin: "/leadership-offices" },
-];
+  { name: "Dr. Mahesh M. Gandhi", role: "Managing Director & President", city: "Frankfurt", initials: "MG", image:"/images/team-mahesh-gandhi.png", linkedin: "https://www.linkedin.com/in/maheshmgandhi/" },
+  { name: "Kirti Gulati", role: "Managing Director & Vice President", city: "Frankfurt", initials: "KG", image:"/images/team-kirti-gulati.jpg", linkedin: "https://www.linkedin.com/in/kirtigulati/" },
+  { name: "Sidhartha S. Gandhi", role: "Government Advisory & Infrastructure Development", city: "India", initials: "SG", image:"/images/team-sidhartha-gandhi.jpeg", linkedin: "https://www.linkedin.com/in/sidsgandhi/" },
+  { name: "Vinit Vidyarthi", role: "Senior Partner — Insurance & Investment Banking", city: "New Delhi", initials: "VV", image:"/images/team-vinit-vidyarthi.jpeg", linkedin: null },
+]; // AFII_TEAM_V26

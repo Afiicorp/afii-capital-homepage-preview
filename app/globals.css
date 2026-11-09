@@ -2538,3 +2538,77 @@ footer p::first-letter {
 @media(max-width:1180px){.afi-exp-flyout{left:35%;width:min(790px,calc(100vw - 40px))}.afi-exp-flyout-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.afi-exp-nav{display:none!important}.afi-exp-flyout{display:none!important}}
 /* AFII_EXPERTISE_NAV_V24_END */
+
+/* AFII_HOME_TEAM_V26_BEGIN */
+/* Keep the AFII expertise interaction and the right-hand preview: only the left list becomes a full-width vertical stack. */
+.af-expertise .af-practice-layout{
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  gap:5%;
+  align-items:start;
+}
+.af-expertise .af-practice-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:16px;
+}
+.af-expertise .af-practice-grid>.af-practice-reveal,
+.af-expertise .af-practice-grid>.af-practice-reveal:last-child{
+  grid-column:1;
+  width:100%;
+  max-width:none;
+  margin:0;
+  min-width:0;
+}
+.af-expertise .af-practice-pill{
+  width:100%;
+  min-height:140px;
+  padding:25px 34px;
+  border-radius:28px;
+}
+.af-expertise .af-practice-pill strong{max-width:calc(100% - 32px);}
+.af-expertise .af-practice-pill>span{max-width:92%;}
+/* Display real portrait files while keeping existing AFII card and mobile interactions. */
+.af-leadership .af-portrait{position:relative;isolation:isolate;}
+.af-leadership .af-portrait .af-portrait-photo{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 18%;
+  border-radius:inherit;
+  background:#edf1f2;
+  pointer-events:none;
+  transform:none;
+}
+.af-directory-portrait>button{position:relative;overflow:hidden;}
+.af-directory-portrait .af-directory-portrait-photo{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center 18%;
+  transform:none;
+  background:#edf1f2;
+  pointer-events:none;
+}
+.af-directory-socials{z-index:3;}
+@media(max-width:1080px){
+  .af-expertise .af-practice-layout{grid-template-columns:1fr;gap:32px;}
+  .af-expertise .af-practice-grid{grid-template-columns:1fr;}
+  .af-expertise .af-practice-detail{position:static;display:block;}
+  .af-expertise .af-practice-detail h3{margin-top:20px;}
+  .af-expertise .af-practice-detail p{grid-column:auto;margin:0 0 22px;}
+}
+@media(max-width:640px){
+  .af-expertise .af-practice-pill{min-height:120px;padding:20px 23px;border-radius:23px;}
+  .af-expertise .af-practice-pill strong{font-size:20px;}
+  .af-expertise .af-practice-pill>span{font-size:15px;line-height:1.45;}
+}
+/* AFII_HOME_TEAM_V26_END */
+

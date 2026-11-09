@@ -36,6 +36,7 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
+    "_afii_patch_backups",
     "node_modules"
   ]
 }

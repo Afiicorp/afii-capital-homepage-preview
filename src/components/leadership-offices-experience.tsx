@@ -50,14 +50,22 @@ function GeoMap() {
   );
 }
 
+// AFII_TEAM_V26 — photographs with accessible fallback and click/tap contact reveal.
 function PersonCard({person}:{person:typeof leadershipPeople[number]}) {
   const [open,setOpen] = useState(false);
+  const [photoFailed,setPhotoFailed] = useState(false);
   return (
     <article className={`af-directory-person ${open ? "af-directory-person--open":""}`}>
       <div className="af-directory-portrait">
         <button type="button" onClick={()=>setOpen((v)=>!v)} aria-expanded={open} aria-label={`${open?'Hide':'Show'} contact options for ${person.name}`}>
-          <span className="af-directory-monogram">{person.initials}</span>
-          <span className="af-directory-portrait-note">Profile Photo To Follow</span>
+          {!photoFailed ? (
+            <img className="af-directory-portrait-photo" src={person.image} alt={person.name} loading="lazy" decoding="async" onError={()=>setPhotoFailed(true)} />
+          ) : (
+            <>
+              <span className="af-directory-monogram">{person.initials}</span>
+              <span className="af-directory-portrait-note">Portrait to follow</span>
+            </>
+          )}
         </button>
         <div className="af-directory-socials" aria-hidden={!open}>
           <a href={`mailto:reachus@afii.eu?subject=${encodeURIComponent('Enquiry for '+person.name)}`} aria-label={`Contact AFII about ${person.name}`} tabIndex={open?0:-1}><MailIcon size={18}/></a>
@@ -113,7 +121,6 @@ export default function LeadershipOfficesExperience(){
         <div className="af-container af-directory-grid">
           {leadershipPeople.map((person)=><PersonCard key={person.name} person={person}/>)}
         </div>
-        <p className="af-container af-directory-note">Names And Roles Are Drawn From Published AFII Information And Require Business Verification Before Final Publication. Images Remain Placeholders Until Approved Portraits Are Supplied.</p>
       </section>
       <GeoMap />
       <section className="af-offices-directory af-section" id="offices-directory">
