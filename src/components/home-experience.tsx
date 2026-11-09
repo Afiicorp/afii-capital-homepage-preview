@@ -211,6 +211,20 @@ function Lotus({ side = "right", className = "" }: { side?: "left" | "right"; cl
   );
 }
 
+// AFII_PRODUCTION_POLISH_V3_0: concentric partial-arc disc, not a lotus.
+function OrbitDisk({ side = "right", className = "" }: { side?: "left" | "right"; className?: string }) {
+  return (
+    <div className={"af-orbit-disc af-orbit-disc--" + side + " " + className} aria-hidden="true">
+      <svg viewBox="0 0 300 300" fill="none" focusable="false">
+        <circle className="af-orbit-ring af-orbit-ring--outer" cx="150" cy="150" r="141"/>
+        <circle className="af-orbit-ring af-orbit-ring--inner" cx="150" cy="150" r="112"/>
+        <circle className="af-orbit-center" cx="150" cy="150" r="74"/>
+        <circle className="af-orbit-core" cx="150" cy="150" r="42"/>
+      </svg>
+    </div>
+  );
+}
+
 function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
   return (
     <div data-reveal className={className} style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}>
@@ -388,12 +402,20 @@ function Footer({ onContact }: { onContact: () => void }) {
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </div>
         </div>
+        <div className="af-footer-social" aria-label="AFII social media">
+          <a href="https://www.linkedin.com/company/afii-corporate-advisors-ltd-/" target="_blank" rel="noopener noreferrer" aria-label="AFII CORP on LinkedIn" title="AFII CORP on LinkedIn">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M5.75 8.25a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM4.2 9.8h3.1v9.1H4.2zm5.08 0h2.98v1.24h.04c.43-.78 1.47-1.45 3.06-1.45 3.28 0 3.89 2.08 3.89 4.8v4.51h-3.1v-4.0c0-.95-.02-2.16-1.4-2.16-1.41 0-1.63 1.07-1.63 2.09v4.07H9.28z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/afiicapitalgmbh/" target="_blank" rel="noopener noreferrer" aria-label="AFII Capital on Facebook" title="AFII Capital on Facebook">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M13.7 20v-7.2h2.45l.37-2.82H13.7V8.18c0-.82.22-1.37 1.41-1.37h1.51V4.28c-.27-.04-1.18-.11-2.24-.11-2.22 0-3.74 1.35-3.74 3.84v1.97H8.14v2.82h2.5V20z"/></svg>
+          </a>
+        </div>
         <div className="af-footer-line" />
         <div className="af-footer-bottom">
           <span>© {new Date().getFullYear()} AFII</span>
           <div>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/legal-notice">Legal Notice</a>
+            <a href="https://www.afiicorp.com/" target="_blank" rel="noopener noreferrer">AFII CORP</a>
+            <a href="mailto:reachus@afii.eu?subject=Legal%20enquiry">Legal Enquiries</a>
             <a href="/">Home</a>
           </div>
         </div>
@@ -495,7 +517,7 @@ export default function HomeExperience() {
                 <Arrow diagonal size={18} />
               </a>
             </Reveal>
-            <Lotus side="right" />
+            <OrbitDisk side="right" />
           </div>
         </section>
 
@@ -582,7 +604,7 @@ export default function HomeExperience() {
               ))}
             </div>
           </div>
-          <Lotus side="left" className="af-industry-lotus" />
+          <OrbitDisk side="left" className="af-industry-orbit" />
         </section>
 
         <VideoSection />
@@ -609,7 +631,7 @@ export default function HomeExperience() {
               </Reveal>
             </div>
           </div>
-          <Lotus side="right" className="af-approach-lotus" />
+          <OrbitDisk side="right" className="af-approach-orbit" />
         </section>
 
         <section className="af-principles af-section">
@@ -649,66 +671,16 @@ export default function HomeExperience() {
                 <p>Leadership across financial structuring, infrastructure and international markets brings specialist perspectives to each mandate.</p>
               </Reveal>
             </div>
-            <div className="af-people-grid">
-              {people.map((person, index) => (
-                <Reveal key={person.name} delay={index * 85}>
-                  <article className={`af-person ${activePerson === index ? "af-person--active" : ""}`}>
-                    <div className="af-person-media">
-                      <button
-                        type="button"
-                        className="af-person-toggle"
-                        aria-expanded={activePerson === index}
-                        aria-controls={`af-person-actions-${index}`}
-                        onClick={() => togglePerson(index)}
-                        onTouchEnd={(event) => {
-                          event.preventDefault();
-                          togglePerson(index);
-                        }}
-                      >
-                        <div className="af-portrait" aria-label={`Portrait of ${person.name}`}>
-                          <div className="af-portrait-ring" />
-                          <strong>{person.initials}</strong>
-                          <span>Portrait to follow</span>
-                          {/* AFII_TEAM_V26: portrait replaces monogram when the image is copied into public/images. */}
-                          <img
-                            className="af-portrait-photo"
-                            src={person.image}
-                            alt={person.name}
-                            loading="lazy"
-                            decoding="async"
-                            onError={(event) => { event.currentTarget.style.display = "none"; }}
-                          />
-                        </div>
-                      </button>
-                      <div id={`af-person-actions-${index}`} className={`af-person-actions ${activePerson === index ? "af-person-actions--open" : ""}`} aria-label={`Quick actions for ${person.name}`}>
-                        <a
-                          className="af-person-action af-person-action--mail"
-                          href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Leadership enquiry - ${person.name}`)}`}
-                          aria-label={`Email about ${person.name}`}
-                        >
-                          <MailIcon />
-                        </a>
-                        {person.linkedin && (
-                          <a
-                            className="af-person-action af-person-action--linkedin"
-                            href={person.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`LinkedIn profile of ${person.name}`}
-                          >
-                            <LinkedInIcon />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                    <a className="af-person-copy" href="/leadership-offices">
-                      <h3>{person.name}</h3>
-                      <p>{person.role}</p>
-                      <small>{person.city}</small>
-                    </a>
-                  </article>
-                </Reveal>
-              ))}
+                {/* AFII_PRODUCTION_POLISH_V3_0: full leadership directory holds the portraits; homepage is typographic. */}
+            <div className="af-leadership-editorial">
+              <div>
+                <p className="af-leadership-editorial-kicker">People &amp; Perspective</p>
+                <h3>Experience In Finance. Perspective Across Markets.</h3>
+              </div>
+              <div>
+                <p>AFII works through senior leadership, sector specialists and international partners. Advisory teams are assembled around the particular financing, institutional and execution requirements of each mandate.</p>
+                <a className="af-inline-link" href="/leadership-offices">Meet AFII Leadership <Arrow diagonal size={18}/></a>
+              </div>
             </div>
             <Reveal className="af-people-link">
               <a href="/leadership-offices" className="af-inline-link">
@@ -743,7 +715,7 @@ export default function HomeExperience() {
               </a>
             </Reveal>
           </div>
-          <Lotus side="right" />
+          <OrbitDisk side="right" />
         </section>
 
         <section className="af-cta" id="contact">

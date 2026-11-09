@@ -44,7 +44,7 @@ function GeoMap() {
           </div>
           <a href={`mailto:reachus@afii.eu?subject=${encodeURIComponent('AFII '+place.region+' enquiry')}`}>Enquire About This Location <Arrow diagonal size={16}/></a>
         </div>
-        <p className="af-map-disclaimer">Markers Use Approximate Geographic Positions. Partner-Network Contacts Are Not Presented As Registered Offices; Romania Is Shown At Country Level.</p>
+        <p className="af-map-disclaimer">Map pins indicate general city or regional locations rather than building entrances. Partner-network locations are listed separately from group offices.</p>
       </div>
     </section>
   );
@@ -63,7 +63,7 @@ function PersonCard({person}:{person:typeof leadershipPeople[number]}) {
           ) : (
             <>
               <span className="af-directory-monogram">{person.initials}</span>
-              <span className="af-directory-portrait-note">Portrait to follow</span>
+              
             </>
           )}
         </button>
@@ -105,7 +105,7 @@ export default function LeadershipOfficesExperience(){
     <Header onContact={()=>setContactOpen(true)}/>
     <main>
       <section className="af-lead-hero" aria-labelledby="af-lead-title">
-        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1800&q=88&auto=format&fit=crop" alt="Illustrative professional team meeting; not an AFII staff photograph"/>
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1800&q=88&auto=format&fit=crop" alt="Professionals collaborating in a meeting"/>
         <div className="af-lead-hero-tint"/>
         <div className="af-container af-lead-hero-content">
           <div className="af-breadcrumb af-lead-breadcrumb"><a href="/">Home</a><span>/</span><span>Leadership &amp; Offices</span></div>
@@ -141,3 +141,5 @@ export default function LeadershipOfficesExperience(){
     <ContactModal open={contactOpen} onClose={()=>setContactOpen(false)}/>
   </>);
 }
+
+// AFII_PRODUCTION_POLISH_V3_0

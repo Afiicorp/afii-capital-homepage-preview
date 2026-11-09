@@ -277,12 +277,20 @@ export function Footer({ onContact }: { onContact: () => void }) {
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </div>
         </div>
+        <div className="af-footer-social" aria-label="AFII social media">
+          <a href="https://www.linkedin.com/company/afii-corporate-advisors-ltd-/" target="_blank" rel="noopener noreferrer" aria-label="AFII CORP on LinkedIn" title="AFII CORP on LinkedIn">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M5.75 8.25a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5ZM4.2 9.8h3.1v9.1H4.2zm5.08 0h2.98v1.24h.04c.43-.78 1.47-1.45 3.06-1.45 3.28 0 3.89 2.08 3.89 4.8v4.51h-3.1v-4.0c0-.95-.02-2.16-1.4-2.16-1.41 0-1.63 1.07-1.63 2.09v4.07H9.28z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/afiicapitalgmbh/" target="_blank" rel="noopener noreferrer" aria-label="AFII Capital on Facebook" title="AFII Capital on Facebook">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M13.7 20v-7.2h2.45l.37-2.82H13.7V8.18c0-.82.22-1.37 1.41-1.37h1.51V4.28c-.27-.04-1.18-.11-2.24-.11-2.22 0-3.74 1.35-3.74 3.84v1.97H8.14v2.82h2.5V20z"/></svg>
+          </a>
+        </div>
         <div className="af-footer-line" />
         <div className="af-footer-bottom">
           <span>© {new Date().getFullYear()} AFII</span>
           <div>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/legal-notice">Legal Notice</a>
+            <a href="https://www.afiicorp.com/" target="_blank" rel="noopener noreferrer">AFII CORP</a>
+            <a href="mailto:reachus@afii.eu?subject=Legal%20enquiry">Legal Enquiries</a>
             <a href="/">Home</a>
           </div>
         </div>
@@ -504,51 +512,13 @@ export default function AboutExperience() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <p>Selected leadership and senior advisory contacts from AFII’s published structure. Profiles and photography will be completed with approved material.</p>
+                <p>AFII leadership brings together financial, infrastructure and sector experience across its international offices and advisory network.</p>
               </Reveal>
             </div>
-            <div className="af-people-grid">
-              {people.map((person, index) => (
-                <Reveal key={person.name} delay={index * 85}>
-                  <article className={`af-person ${activePerson === index ? "af-person--active" : ""}`}>
-                    <div className="af-person-media">
-                      <button
-                        type="button"
-                        className="af-person-toggle"
-                        aria-expanded={activePerson === index}
-                        aria-controls={`af-about-person-actions-${index}`}
-                        onClick={() => togglePerson(index)}
-                        onTouchEnd={(event) => {
-                          event.preventDefault();
-                          togglePerson(index);
-                        }}
-                      >
-                        <div className="af-portrait" aria-label={`Portrait placeholder for ${person.name}`}>
-                          <div className="af-portrait-ring" />
-                          <strong>{person.initials}</strong>
-                          <span>Portrait to follow</span>
-                        </div>
-                      </button>
-                      <div id={`af-about-person-actions-${index}`} className={`af-person-actions ${activePerson === index ? "af-person-actions--open" : ""}`} aria-label={`Quick actions for ${person.name}`}>
-                        <a className="af-person-action af-person-action--mail" href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Leadership enquiry - ${person.name}`)}`} aria-label={`Email about ${person.name}`}>
-                          <MailIcon />
-                        </a>
-                        {/* AFII_BUILD_FIX_V27_LINKEDIN: show the social icon only for real profile URLs */}
-                        {person.linkedin ? (
-                          <a className="af-person-action af-person-action--linkedin" href={person.linkedin} aria-label={`LinkedIn placeholder for ${person.name}`}>
-                          <LinkedInIcon />
-                        </a>
-                        ) : null}
-                      </div>
-                    </div>
-                    <a className="af-person-copy" href="/leadership-offices">
-                      <h3>{person.name}</h3>
-                      <p>{person.role}</p>
-                      <small>{person.city}</small>
-                    </a>
-                  </article>
-                </Reveal>
-              ))}
+                {/* AFII_PRODUCTION_POLISH_V3_0: keep the full portrait gallery in the leadership directory. */}
+            <div className="af-leadership-editorial">
+              <div><p className="af-leadership-editorial-kicker">Our People</p><h3>Advice Shaped By Experience.</h3></div>
+              <div><p>Our leadership and advisory network brings together specialists in capital structuring, public infrastructure, investment and cross-border commercial arrangements.</p><a className="af-inline-link" href="/leadership-offices">Explore Leadership &amp; Offices <Arrow diagonal size={18}/></a></div>
             </div>
             <div className="af-leadership-directory-link"><a href="/leadership-offices" className="af-inline-link">Meet Our Full Leadership And Office Network <Arrow diagonal size={17} /></a></div>
           </div>

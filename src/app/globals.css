@@ -2695,3 +2695,448 @@ footer p::first-letter {
   .af-employee-login { transition: none; }
 }
 /* AFII_EMPLOYEE_LOGIN_V1_END */
+
+
+/* AFII_PRODUCTION_POLISH_V3_0 – Institutional refinements, 09 Nov 2026 */
+:root { --white:#ffffff; }
+html, body {background:#ffffff !important;}
+.af-about-hero, .af-about-story, .af-about-timeline, .af-about-practices,
+.af-about-footprint, .af-introduction, .af-industries, .af-approach,
+.af-leadership, .af-directory-intro, .af-offices-directory,
+.af-footer, .afi-ind-opening, .afi-ind-detail-introduction,
+.afi-exp-intro, .afi-exp-division-intro, .afi-careers-intro,
+.afi-careers-benefits { background-color:#ffffff !important; }
+/* Remove decorative bold/dropcap from paragraph initials, including nested legacy rules. */
+main p::first-letter, footer p::first-letter, main article p::first-letter,
+.af-about-story-copy p::first-letter, .af-about-milestone-card p::first-letter,
+.af-about-value-card p::first-letter, .af-about-practice-card p::first-letter,
+.af-about-footprint-copy p::first-letter, .af-hero-summary p::first-letter,
+.af-intro-text p::first-letter, .af-directory-intro-grid p::first-letter,
+.af-location-card p::first-letter {
+  font-size:inherit !important;
+  font-weight:inherit !important;
+  font-style:inherit !important;
+  color:inherit !important;
+  line-height:inherit !important;
+  letter-spacing:inherit !important;
+}
+/* A disciplined common media band; let every next section begin within the same viewport. */
+.af-hero.af-container {
+  height:535px !important; min-height:535px !important;
+  padding-top:135px !important; padding-bottom:29px !important;
+  justify-content:center !important;
+}
+.af-hero .af-hero-breadcrumb{margin-bottom:17px!important;}
+.af-hero .af-hero-grid{gap:18px!important;min-height:0!important;}
+.af-hero h1,.af-hero .af-hero-title h1{font-size:clamp(53px,5.35vw,88px)!important;line-height:1.045!important;}
+.af-hero .af-hero-summary p{margin-bottom:15px!important;line-height:1.45!important;}
+.afi-ind-page .afi-ind-hero, .afi-ind-page .afi-ind-detail-hero,
+.af-lead-hero, .afi-exp-hero, .afi-exp-division-hero,
+.tx-page .tx-hero, .tx-detail .tx-detail-hero,
+.afi-careers-hero {
+  height:535px!important;min-height:535px!important;max-height:none!important;
+}
+.afi-ind-page .afi-ind-hero-copy,.afi-ind-page .afi-ind-detail-hero-inner{
+  padding-top:132px!important;padding-bottom:36px!important;
+}
+.af-lead-hero .af-lead-hero-content{padding-top:132px!important;padding-bottom:25px!important;}
+.afi-exp-hero-inside{padding-top:137px!important;padding-bottom:36px!important;}
+.afi-careers-hero-inner{padding-top:137px!important;padding-bottom:36px!important;}
+.afi-ind-opening.afi-ind-section, .afi-ind-detail-introduction.afi-ind-section,
+.afi-exp-intro.afi-exp-section, .afi-exp-division-intro.afi-exp-section,
+.af-directory-intro.af-section, .tx-intro, .afi-careers-intro,
+.af-introduction.af-section {padding-top:52px!important;}
+.af-introduction.af-section{min-height:0!important;}
+/* Reserved, editorial rather than image-based homepage leadership panel. */
+.af-leadership-editorial{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,7vw,95px);align-items:center;
+  border-top:1px solid #d7e2e6;border-bottom:1px solid #d7e2e6;padding:43px 0 48px;}
+.af-leadership-editorial .af-leadership-editorial-kicker{margin:0 0 20px;font-size:13px!important;color:#a28652;font-weight:700;letter-spacing:.14em;text-transform:uppercase;}
+.af-leadership-editorial h3{font-size:clamp(30px,3.4vw,52px);line-height:1.16;margin:0;font-weight:600;letter-spacing:-.043em;color:#123844;}
+.af-leadership-editorial p{font-size:clamp(17px,1.4vw,21px);line-height:1.6;margin:0 0 26px;color:#475e67;}
+.af-leadership-editorial .af-inline-link{border-bottom-color:#a58b55;}
+.af-leadership .af-people-link {display:none;}
+/* Homepage orbit: geometrically concentric and animated in opposite directions. */
+.af-orbit-disc{width:clamp(240px,32vw,490px);height:auto;aspect-ratio:1;position:absolute;pointer-events:none;z-index:0;opacity:.26;}
+.af-orbit-disc svg{width:100%;height:100%;overflow:visible;display:block;}
+.af-orbit-disc--left{left:-12%;}
+.af-orbit-disc--right{right:-10%;}
+.af-orbit-disc .af-orbit-ring{fill:none;stroke-linecap:round;transform-origin:150px 150px;}
+.af-orbit-disc .af-orbit-ring--outer{stroke:#b99b66;stroke-width:1.25;stroke-dasharray:190 80 230 400;animation:af-orbit-cw 37s linear infinite;}
+.af-orbit-disc .af-orbit-ring--inner{stroke:#476576;stroke-width:1.3;stroke-dasharray:125 70 140 350;animation:af-orbit-ccw 30s linear infinite;}
+.af-orbit-disc .af-orbit-center{fill:#d1b37c;opacity:.42;stroke:#d1b37c;stroke-width:1.5;}
+.af-orbit-disc .af-orbit-core{fill:#193f52;opacity:.68;}
+@keyframes af-orbit-cw{to{transform:rotate(360deg)}}
+@keyframes af-orbit-ccw{to{transform:rotate(-360deg)}}
+.af-introduction .af-orbit-disc{top:-11%;}
+.af-industries .af-orbit-disc{top:12%;}
+.af-approach .af-orbit-disc{top:14%;}
+.af-transaction .af-orbit-disc{bottom:-100px;}
+.af-intro-grid>div.af-orbit-disc{z-index:0;}
+/* Explicitly retain the original lotus only in the dark 'Clarity' section. */
+.af-principles .af-lotus{display:block;}
+/* Social links on both header variants' shared footers. */
+.af-footer-social{display:flex;gap:12px;align-items:center;justify-content:flex-end;margin-top:1px;}
+.af-footer-social a{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid #d5e1e6;border-radius:50%;color:#143b4d;background:#fff;transition:color .22s,background .22s,border-color .22s,transform .22s;}
+.af-footer-social a:hover,.af-footer-social a:focus-visible{color:#fff;background:#293464;border-color:#293464;transform:translateY(-2px);}
+.af-footer-social svg{display:block;width:19px;height:19px;}
+@media(max-width:1050px){
+  .af-hero.af-container{height:auto!important;min-height:535px!important;}
+  .af-leadership-editorial{gap:30px;}
+}
+@media(max-width:740px){
+  .af-hero.af-container{height:auto!important;min-height:500px!important;padding:111px 20px 34px!important;}
+  .af-hero .af-hero-grid{gap:18px!important;}
+  .af-hero h1,.af-hero .af-hero-title h1{font-size:clamp(42px,10.6vw,59px)!important;}
+  .afi-ind-page .afi-ind-hero,.afi-ind-page .afi-ind-detail-hero,
+  .af-lead-hero,.afi-exp-hero,.afi-exp-division-hero,
+  .tx-page .tx-hero,.tx-detail .tx-detail-hero,.afi-careers-hero{
+    height:auto!important;min-height:465px!important;
+  }
+  .afi-ind-page .afi-ind-hero-copy,.afi-ind-page .afi-ind-detail-hero-inner{padding-top:120px!important;padding-bottom:27px!important;}
+  .afi-exp-hero-inside,.afi-careers-hero-inner{min-height:465px!important;padding-top:120px!important;padding-bottom:30px!important;}
+  .af-lead-hero .af-lead-hero-content{padding-top:120px!important;}
+  .afi-ind-opening.afi-ind-section,.afi-ind-detail-introduction.afi-ind-section,
+  .afi-exp-intro.afi-exp-section,.afi-exp-division-intro.afi-exp-section,
+  .af-directory-intro.af-section,.tx-intro,.afi-careers-intro,.af-introduction.af-section{padding-top:39px!important;}
+  .af-leadership-editorial{grid-template-columns:1fr;padding:25px 0;gap:22px;}
+  .af-leadership-editorial h3{font-size:31px;}
+  .af-footer-social{justify-content:flex-start;}
+  .af-orbit-disc{width:240px;opacity:.19;}
+  .af-orbit-disc--right{right:-125px;}.af-orbit-disc--left{left:-125px;}
+}
+@media(prefers-reduced-motion:reduce){.af-orbit-disc .af-orbit-ring{animation:none!important}.af-footer-social a{transition:none;}}
+
+/* AFII_HOME_TONE_V3_1 — editorial rhythm, unmistakable white, navy/gold orbit.
+   Additive to AFII Production Polish v3.0; intentionally does not change the
+   Clarity section's original lotus, navigation, photographs, or page content. */
+
+:root { --white: #ffffff; }
+html, body, body > main, main { background-color: #ffffff; }
+
+/* A white surface is pure white, without warm ivory/yellow tint. */
+.af-introduction, .af-industries, .af-approach, .af-leadership,
+.af-about-hero, .af-about-story, .af-about-timeline, .af-about-practices,
+.af-about-footprint, .af-directory-intro, .af-offices-directory,
+.af-footer, .afi-ind-opening, .afi-ind-detail-introduction,
+.afi-ind-crossroads, .afi-ind-detail-quote, .afi-exp-intro,
+.afi-exp-division-intro, .afi-exp-industry-links,
+.afi-careers-intro, .afi-careers-benefits,
+.af-leadership-editorial, .af-leadership-editorial > div {
+  background-color: #ffffff !important;
+}
+
+/* Pale-grey section backgrounds now read as an intentional cool-blue layer,
+   with clean white cards rather than yellowed/off-white surfaces. */
+.af-expertise.af-section, .af-transaction.af-section {
+  background: #e3edf3 !important;
+  border-top: 1px solid #cedde6;
+  border-bottom: 1px solid #cedde6;
+}
+.afi-ind-showcase, .afi-ind-detail-considerations, .afi-ind-detail-related,
+.afi-exp-directory, .afi-exp-division-services, .afi-exp-service-essay,
+.afi-exp-references, .tx-directory, .tx-next, .afi-careers-values {
+  background-color: #e4edf2 !important;
+}
+.af-expertise .af-practice-pill:not(.af-practice-pill--active):not(:hover),
+.af-principles .af-principle:not(:hover),
+.afi-ind-related-link, .afi-ind-detail-essay, .afi-exp-service-card,
+.afi-exp-essay-card, .afi-exp-tx, .tx-card, .afi-careers-card,
+.afi-careers-path-card, .af-location-card, .af-directory-person,
+.af-practice-image, .af-practice-detail-panel, .af-footer-social a {
+  background-color: #ffffff !important;
+}
+/* Preserve the dark Clarity panel and its dark hover/focus card states. */
+.af-principles.af-section { background-color: #102f42 !important; }
+.af-principles .af-principle:hover,
+.af-principles .af-principle:focus-within { background-color: #1d4b5b !important; }
+.af-expertise .af-practice-pill--active,
+.af-expertise .af-practice-pill:hover { background-color: #113844 !important; }
+.af-expertise .af-practice-pill:not(.af-practice-pill--active) {
+  border-color: #cad9e1;
+}
+
+/* FIX: the decorative disc must participate in the 3-part editorial layout.
+   V3 placed it absolutely so it appeared lower in a large empty white area. */
+.af-introduction.af-section,
+.af-hero + .af-introduction.af-section {
+  min-height: 0 !important;
+  padding-top: clamp(54px, 5.5vw, 86px) !important;
+  padding-bottom: clamp(54px, 5.8vw, 92px) !important;
+  overflow: hidden;
+}
+.af-introduction .af-intro-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(200px, .58fr) minmax(0, .98fr) !important;
+  align-items: center !important;
+  column-gap: clamp(24px, 2.8vw, 49px) !important;
+  row-gap: 0 !important;
+  min-height: 0 !important;
+}
+.af-introduction .af-intro-grid > :first-child {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+.af-introduction .af-intro-grid > .af-intro-text {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+  max-width: none !important;
+  align-self: center;
+  position: relative;
+  z-index: 2;
+}
+.af-introduction .af-intro-grid > .af-orbit-disc {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  width: min(100%, 310px) !important;
+  max-width: 310px !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  margin: 0 auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+  justify-self: center;
+  align-self: center;
+  z-index: 1 !important;
+  pointer-events: none;
+}
+.af-introduction h2 {
+  font-size: clamp(44px, 4.25vw, 69px) !important;
+  line-height: 1.09 !important;
+  letter-spacing: -.054em;
+  margin: 0 !important;
+  max-width: 100%;
+  text-wrap: balance;
+}
+.af-introduction .af-intro-text p {
+  font-size: clamp(17px, 1.3vw, 20px) !important;
+  line-height: 1.58 !important;
+  margin-bottom: 18px !important;
+  color: #344e5b;
+}
+.af-introduction .af-intro-text .af-inline-link {
+  margin-top: 9px !important;
+}
+
+/* The disc is an architectural brand detail: dark ink, precise metallic-gold
+   partial arcs, balanced radial contrast — no beige fill or low-opacity wash. */
+.af-orbit-disc svg { overflow: visible; }
+.af-introduction .af-orbit-disc svg {
+  filter: drop-shadow(0 14px 22px rgba(12, 47, 65, .08));
+}
+.af-orbit-disc .af-orbit-ring--outer {
+  stroke: #b18a4b !important;
+  stroke-width: 2.3px !important;
+  stroke-dasharray: 198 35 132 110 85 320;
+  opacity: 1 !important;
+  animation-duration: 39s;
+}
+.af-orbit-disc .af-orbit-ring--inner {
+  stroke: #24556a !important;
+  stroke-width: 2.4px !important;
+  stroke-dasharray: 155 58 145 345;
+  opacity: 1 !important;
+  animation-duration: 31s;
+}
+.af-orbit-disc .af-orbit-center {
+  fill: #eef3f6 !important;
+  stroke: #b9935a !important;
+  stroke-width: 2px !important;
+  opacity: 1 !important;
+}
+.af-orbit-disc .af-orbit-core {
+  fill: #102f42 !important;
+  stroke: #153d53 !important;
+  stroke-width: 1px !important;
+  opacity: 1 !important;
+}
+/* Retain a quieter version of the orbit on the other homepage sections. */
+.af-industries > .af-orbit-disc,
+.af-approach > .af-orbit-disc,
+.af-transaction > .af-orbit-disc {
+  opacity: .46;
+}
+
+/* Slightly more decisive typography and link contrast without heavy fonts. */
+.af-section h2 { color: #123844; }
+.af-expertise .af-section-header p,
+.af-transaction .af-transaction-grid p { color: #355665; }
+.af-leadership-editorial { border-color: #cad8df; }
+.af-footer { border-top: 1px solid #dce6eb; }
+
+@media (min-width: 981px) and (max-width: 1190px) {
+  .af-introduction .af-intro-grid {
+    grid-template-columns: minmax(0,1fr) minmax(168px,.49fr) minmax(0,1fr) !important;
+    column-gap: 22px !important;
+  }
+  .af-introduction h2 { font-size: clamp(42px, 4.35vw, 55px) !important; }
+}
+
+@media (min-width: 741px) and (max-width: 980px) {
+  .af-introduction .af-intro-grid {
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+    gap: 26px !important;
+  }
+  .af-introduction .af-intro-grid > :first-child { grid-column: 1; grid-row: 1; }
+  .af-introduction .af-intro-grid > .af-intro-text { grid-column: 2; grid-row: 1; }
+  .af-introduction .af-intro-grid > .af-orbit-disc {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    width: 205px !important;
+    transform: translate(-50%, -50%) !important;
+    opacity: .12 !important;
+    z-index: 0 !important;
+  }
+  .af-introduction h2 { font-size: clamp(42px, 5.3vw, 55px) !important; }
+}
+
+@media (max-width: 740px) {
+  .af-introduction.af-section,
+  .af-hero + .af-introduction.af-section {
+    padding-top: 43px !important;
+    padding-bottom: 53px !important;
+  }
+  .af-introduction .af-intro-grid {
+    grid-template-columns: 1fr !important;
+    row-gap: 23px !important;
+  }
+  .af-introduction .af-intro-grid > :first-child { grid-column: 1; grid-row: 1; }
+  .af-introduction .af-intro-grid > .af-orbit-disc {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    width: clamp(160px, 45vw, 215px) !important;
+    max-width: 215px !important;
+    margin: -2px auto !important;
+    opacity: 1 !important;
+  }
+  .af-introduction .af-intro-grid > .af-intro-text { grid-column: 1; grid-row: 3; }
+  .af-introduction h2 { font-size: clamp(41px, 9.2vw, 55px) !important; }
+  .af-introduction .af-intro-text p { font-size: 17px !important; }
+  .af-orbit-disc .af-orbit-ring--outer,
+  .af-orbit-disc .af-orbit-ring--inner { stroke-width: 2.6px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .af-orbit-disc .af-orbit-ring { animation: none !important; }
+}
+/* AFII_HOME_TONE_V3_1_END */
+
+/* AFII_HOME_ORBIT_SIDE_V3_2_BEGIN
+   Focused positioning correction to v3.1. Preserve the white/slate palette,
+   page copy, hero, Clarity lotus and other section animations unchanged. */
+
+/* Restore the intended TWO-column editorial layout: title / explanation.
+   The orbit is decorative, not a third column between them. */
+.af-introduction .af-intro-grid {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr) !important;
+  column-gap: clamp(50px, 6.4vw, 112px) !important;
+  row-gap: 0 !important;
+  align-items: center !important;
+  min-height: 0 !important;
+  isolation: isolate;
+}
+.af-introduction .af-intro-grid > :first-child {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  min-width: 0;
+  z-index: 2 !important;
+}
+.af-introduction .af-intro-grid > .af-intro-text {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  position: relative !important;
+  min-width: 0;
+  max-width: none !important;
+  align-self: center;
+  z-index: 2 !important;
+}
+
+/* Pin the orbit to the LEFT EDGE of the actual page, like the original
+   edge ornament. Increasing diameter from 310px to ~420–620px makes all
+   concentric circles larger without creating extra section height. */
+.af-introduction .af-intro-grid > .af-orbit-disc,
+.af-introduction .af-intro-grid > .af-orbit-disc--right {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  position: absolute !important;
+  width: clamp(420px, 39vw, 620px) !important;
+  max-width: none !important;
+  height: auto !important;
+  aspect-ratio: 1;
+  left: calc((100% - 100vw) / 2 - clamp(200px, 18vw, 305px)) !important;
+  right: auto !important;
+  top: 94% !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  transform: translateY(-50%) !important;
+  opacity: .70 !important;
+  z-index: 0 !important;
+  pointer-events: none;
+}
+/* Stay safely behind the typography; keep the navy and gold strokes from v3.1. */
+.af-introduction .af-intro-grid > .af-orbit-disc svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 741px) and (max-width: 980px) {
+  .af-introduction .af-intro-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    column-gap: clamp(28px, 4.5vw, 50px) !important;
+  }
+  .af-introduction .af-intro-grid > .af-orbit-disc,
+  .af-introduction .af-intro-grid > .af-orbit-disc--right {
+    width: clamp(355px, 46vw, 450px) !important;
+    left: calc((100% - 100vw) / 2 - 180px) !important;
+    top: 100% !important;
+    transform: translateY(-50%) !important;
+    opacity: .48 !important;
+  }
+}
+
+@media (max-width: 740px) {
+  .af-introduction .af-intro-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    row-gap: 20px !important;
+  }
+  .af-introduction .af-intro-grid > :first-child {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+  .af-introduction .af-intro-grid > .af-intro-text {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+  .af-introduction .af-intro-grid > .af-orbit-disc,
+  .af-introduction .af-intro-grid > .af-orbit-disc--right {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: clamp(295px, 78vw, 370px) !important;
+    max-width: none !important;
+    left: calc((100% - 100vw) / 2 - 205px) !important;
+    right: auto !important;
+    top: 65% !important;
+    bottom: auto !important;
+    margin: 0 !important;
+    transform: translateY(-50%) !important;
+    opacity: .32 !important;
+    z-index: 0 !important;
+  }
+}
+/* AFII_HOME_ORBIT_SIDE_V3_2_END */

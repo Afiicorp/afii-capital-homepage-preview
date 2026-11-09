@@ -33,7 +33,7 @@ export const leadershipPeople = [
   { name:"Ralph Ketelhut", initials:"RK", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-ralph-ketelhut.jpg", linkedin:null },
   { name:"Matthias Lohmann", initials:"ML", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-matthias-lohmann.png", linkedin:null },
   { name:"Jonathan Pallares", initials:"JP", role:"Business Partner", city:"Helsinki", image:"/images/team-jonathan-pallares.jpg", linkedin:"https://www.linkedin.com/in/jonathan-pallares-78327436/" },
-  { name:"R. P. Gupta", initials:"RG", role:"Senior Advisor — Railways", city:"India", image:"/images/team-rp-gupta.png", linkedin:"https://www.linkedin.com/in/rp-gupta-380a651b/" },
+
 ] as const; // AFII_TEAM_V26
 
 const sourceImages = "https://afii-capital-website.vercel.app/images/";
@@ -99,7 +99,9 @@ export const networkLocations: MapPlace[] = [
   },
   {
     id:"romania",city:"Romania",region:"Romania",category:"Partner Network",label:"Partner and mandate coverage",
-    address:"Romania — city/address not specified in the published directory",description:"Country-level partner-network coverage. Pin indicates Romania approximately, not a street address.",
+    address:"Romania",description:"Country-level partner-network coverage. Pin indicates Romania approximately, not a street address.",
     image:sourceImages+"office-romania.jpg",lat:45.9432,lng:24.9668,kind:"network"
   },
 ];
+
+// AFII_PRODUCTION_POLISH_V3_0
