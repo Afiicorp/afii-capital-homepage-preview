@@ -1,3 +1,4 @@
+import AfiiCookieConsent from "@/components/afii-cookie-consent";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -21,6 +22,6 @@ const schema = {
   sameAs: ["https://www.afiicorp.com/", "https://www.linkedin.com/company/afii-corporate-advisors-ltd-/", "https://www.facebook.com/afiicapitalgmbh/"]
 };
 export default function RootLayout({ children }: Readonly<{children:React.ReactNode}>) {
-  return <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />{children}</body></html>;
+  return <html lang="en"><body><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema)}} />{children}<AfiiCookieConsent /></body></html>;
 }
 // AFII_PRODUCTION_POLISH_V3_0

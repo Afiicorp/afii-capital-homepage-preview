@@ -3957,3 +3957,507 @@ body:has(.af-introduction) .af-orbit-disc,
   }
 }
 /* AFII_MAP_TEXT_REFINEMENT_V4_0_2_END */
+
+/* AFII_HOME_OFFICE_MAP_NAV_V4_0_3_BEGIN */
+/* Desktop navigation: no artificial outer columns/gaps; preserve generous link spacing. */
+@media (min-width: 1051px) {
+  .af-header {
+    width: max-content !important;
+    max-width: calc(100% - 36px) !important;
+    min-height: unset !important;
+  }
+  .af-header-inner {
+    display: flex !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    grid-template-columns: none !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    min-height: 78px !important;
+    padding: 9px 18px !important;
+    gap: 0 !important;
+  }
+  .af-header-inner > .af-brand {flex: 0 0 auto !important; margin: 0 !important;}
+  .af-desktop-nav {
+    display: flex !important;
+    flex: 0 1 auto !important;
+    width: auto !important;
+    justify-content: flex-start !important;
+    margin: 0 0 0 21px !important;
+    gap: clamp(17px, 1.45vw, 26px) !important;
+  }
+  .af-header .af-desktop-nav > a,
+  .af-header .af-desktop-nav .af-trust-single-link,
+  .af-header .af-desktop-nav .af-nav-link {
+    font-size: clamp(14.5px, 1.05vw, 16.5px) !important;
+    line-height: 1.25 !important;
+  }
+  .af-header-actions {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    margin: 0 0 0 21px !important;
+    gap: 10px !important;
+    justify-self: auto !important;
+    align-items: center !important;
+  }
+}
+@media (min-width: 1051px) and (max-width: 1280px) {
+  .af-desktop-nav { gap: 14px !important; margin-left: 14px !important; }
+  .af-header-actions { margin-left: 14px !important; gap: 8px !important; }
+  .af-header-inner { padding-inline: 13px !important; }
+  .af-header .af-desktop-nav > a,
+  .af-header .af-desktop-nav .af-trust-single-link { font-size: 13.5px !important; }
+}
+
+/* Home has no independent guessed coordinate map; it renders office GeoMap as-is. */
+.af-home-office-map-clone {
+  width: 100%;
+  max-width: 1250px;
+  margin: 26px auto 0;
+  position: relative;
+  isolation: isolate;
+}
+.af-home-office-map-clone .af-geography {
+  position: relative;
+  padding: 32px 0 23px !important;
+  border-radius: 26px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #0d2f40, #194c5e) !important;
+}
+.af-home-office-map-clone .af-geography > .af-container { width: calc(100% - 56px) !important; }
+.af-home-office-map-clone .af-map-heading-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-right: 178px;
+}
+.af-home-office-map-clone .af-map-heading-row .af-kicker-light {
+  font-size: 12px;
+  letter-spacing: .15em;
+  margin-bottom: 7px;
+}
+.af-home-office-map-clone .af-map-heading-row h2 {
+  font-size: clamp(25px, 2.3vw, 37px) !important;
+  line-height: 1.14;
+  margin-bottom: 0;
+}
+.af-home-office-map-clone .af-map-heading-row p:not(.af-kicker-light),
+.af-home-office-map-clone .af-map-legend,
+.af-home-office-map-clone .af-map-disclaimer { display: none !important; }
+.af-home-office-map-clone .af-map-viewport {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.af-home-office-map-clone .af-map-canvas {
+  width: 100% !important;
+  min-width: 880px !important;
+  max-width: 1050px !important;
+  aspect-ratio: 1440 / 610 !important;
+  position: relative;
+  margin: 0 auto;
+}
+.af-home-office-map-clone .af-map-canvas > img {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.af-home-office-map-clone .af-map-detail-wrap { margin-top: 3px; }
+.af-home-office-map-clone .af-map-detail {
+  padding: 13px 18px;
+  border-radius: 16px;
+  min-height: 0;
+}
+.af-home-office-map-clone .af-map-detail h3 { font-size: clamp(20px, 1.8vw, 27px); margin: 3px 0 5px; }
+.af-home-office-map-clone .af-map-detail p { font-size: 13px; margin-bottom: 3px; }
+.af-home-office-map-clone .af-map-detail-type { font-size: 11px; }
+.af-home-office-map-link {
+  position: absolute;
+  z-index: 4;
+  top: 36px;
+  right: 29px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(220,181,113,.72);
+  padding-bottom: 8px;
+  transition: color .2s, gap .2s;
+}
+.af-home-office-map-link:hover { color: #eac481; gap: 15px; }
+@media (max-width: 760px) {
+  .af-home-office-map-clone { margin-top: 20px; }
+  .af-home-office-map-clone .af-geography { padding: 25px 0 24px !important; border-radius: 19px; }
+  .af-home-office-map-clone .af-geography > .af-container { width: calc(100% - 32px) !important; }
+  .af-home-office-map-clone .af-map-heading-row { padding-right: 0; margin-bottom: 48px; }
+  .af-home-office-map-clone .af-map-heading-row h2 { font-size: 25px !important; }
+  .af-home-office-map-link { top: 92px; right: 16px; font-size: 13px; }
+  .af-home-office-map-clone .af-map-viewport { width: 100%; max-width: 100%; }
+  .af-home-office-map-clone .af-map-canvas { min-width: 880px !important; }
+  .af-home-office-map-clone .af-map-detail { display: block; }
+}
+/* AFII_HOME_OFFICE_MAP_NAV_V4_0_3_END */
+
+/* AFII_LOTUS_MAPHEADING_NAV_V4_0_4_BEGIN */
+/* HOME / Clarity: retain the original SVG lotus inside the navy section.
+   Restore its legibility without enabling decorations on any other section. */
+.af-principles .af-principles-grid > .af-lotus,
+.af-principles .af-principles-grid > .af-lotus.af-visible {
+  display: block !important;
+  visibility: visible !important;
+  opacity: .68 !important;
+  width: clamp(420px, 41vw, 610px) !important;
+  left: calc((100% - 100vw) / 2 + 10px) !important;
+  right: auto !important;
+  top: 66% !important;
+  bottom: auto !important;
+  transform: translateX(0) !important;
+  translate: 0 -50% !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+.af-principles .af-principles-grid > .af-lotus svg {
+  display: block !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-lotus-flower {
+  fill: rgba(231, 191, 205, .33) !important;
+  stroke: rgba(245, 204, 217, .86) !important;
+  stroke-width: 2.15px !important;
+  opacity: 1 !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-petal,
+.af-principles .af-principles-grid > .af-lotus.af-visible .af-petal {
+  opacity: .86 !important;
+  transform: rotate(var(--petal-rotation)) scale(1) !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-orbit--outer {
+  stroke: #d9b778 !important;
+  opacity: .69 !important;
+  animation: none !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-orbit--inner {
+  stroke: #7babb9 !important;
+  opacity: .46 !important;
+  animation: none !important;
+}
+@media (max-width: 740px) {
+  .af-principles .af-principles-grid > .af-lotus,
+  .af-principles .af-principles-grid > .af-lotus.af-visible {
+    width: 390px !important;
+    top: 74% !important;
+    left: -68px !important;
+    opacity: .41 !important;
+  }
+}
+/* HOME ONLY: the shared Leadership & Offices GeoMap heading must be high-contrast
+   when embedded in the compact, navy homepage map. */
+.af-home-office-map-clone .af-geography .af-map-heading-row,
+.af-home-office-map-clone .af-geography .af-map-heading-row h2,
+.af-home-office-map-clone .af-geography .af-map-heading-row h2 *,
+.af-home-office-map-clone .af-geography .af-map-heading-row p:not(.af-kicker-light) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+.af-home-office-map-clone .af-geography .af-map-heading-row .af-kicker-light,
+.af-home-office-map-clone .af-geography .af-map-heading-row .af-kicker-light * {
+  color: #e7be78 !important;
+  -webkit-text-fill-color: #e7be78 !important;
+  opacity: 1 !important;
+  letter-spacing: .13em;
+}
+/* Readable map instructions when present in the locally patched layout. */
+.af-home-office-map-clone .af-geography .af-map-heading-row + p,
+.af-home-office-map-clone .af-geography .af-home-map-hint,
+.af-home-office-map-clone .af-geography .af-map-swipe-hint {
+  color: #dceaf0 !important;
+  -webkit-text-fill-color: #dceaf0 !important;
+  opacity: 1 !important;
+}
+/* Keep existing pin positioning, map scale, country outlines and mobile swipe intact. */
+/* Slightly slimmer desktop navbar. Nav link font sizes and horizontal gaps unchanged. */
+@media (min-width: 1051px) {
+  .af-header-inner {
+    min-height: 70px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+  .af-header-inner > .af-brand img {
+    width: 53px !important;
+    height: 53px !important;
+  }
+  .af-header-actions .af-employee-login {
+    min-height: 43px !important;
+  }
+}
+/* AFII_LOTUS_MAPHEADING_NAV_V4_0_4_END */
+
+/* AFII_CLARITY_LOTUS_MAP_ALIGN_V4_0_5_BEGIN */
+/* Only the dark Clarity panel: center the existing lotus and put the two
+   interrupted rings back into independent, continuous rotation. */
+.af-principles .af-principles-grid > .af-lotus,
+.af-principles .af-principles-grid > .af-lotus.af-visible {
+  position: absolute !important;
+  display: block !important;
+  visibility: visible !important;
+  left: 45% !important;
+  right: auto !important;
+  top: 56% !important;
+  bottom: auto !important;
+  width: clamp(340px, 29vw, 460px) !important;
+  max-width: none !important;
+  aspect-ratio: 1 !important;
+  opacity: .64 !important;
+  translate: none !important;
+  transform: translate(-50%, -50%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+.af-principles .af-principles-grid > .af-lotus svg {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-lotus-flower {
+  fill: rgba(235, 199, 213, .26) !important;
+  stroke: rgba(243, 208, 221, .64) !important;
+  stroke-width: 1.9px !important;
+  opacity: .93 !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-petal,
+.af-principles .af-principles-grid > .af-lotus.af-visible .af-petal {
+  transform-box: view-box !important;
+  transform-origin: 50% 50% !important;
+  transform: rotate(var(--petal-rotation)) scale(1) !important;
+  opacity: .76 !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-orbit {
+  transform-box: fill-box !important;
+  transform-origin: center center !important;
+  stroke-linecap: round !important;
+  stroke-width: 2.2px !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-orbit--outer {
+  stroke: #dfba77 !important;
+  opacity: .90 !important;
+  animation: af-clarity-orbit-clockwise-v405 28s linear infinite !important;
+}
+.af-principles .af-principles-grid > .af-lotus .af-orbit--inner {
+  stroke: #7cabb9 !important;
+  opacity: .83 !important;
+  animation: af-clarity-orbit-counter-v405 34s linear infinite !important;
+}
+@keyframes af-clarity-orbit-clockwise-v405 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes af-clarity-orbit-counter-v405 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+/* Cards and editorial copy always remain legible above the ornament. */
+.af-principles .af-principles-grid > div:not(.af-lotus) {
+  position: relative;
+  z-index: 1;
+}
+/* HOME office map only: the swipe instruction must share the exact left
+   alignment of its heading, rather than touch the navy card's left edge. */
+.af-home-office-map-clone .af-geography > .af-map-mobile-hint {
+  display: block !important;
+  position: relative !important;
+  width: calc(100% - 56px) !important;
+  max-width: none !important;
+  margin: 10px auto 14px !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  left: auto !important;
+  transform: none !important;
+  color: #deebf1 !important;
+  -webkit-text-fill-color: #deebf1 !important;
+  font-size: clamp(13px, 1.05vw, 15px) !important;
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+  opacity: 1 !important;
+  box-sizing: border-box !important;
+}
+@media (max-width: 1040px) {
+  .af-principles .af-principles-grid > .af-lotus,
+  .af-principles .af-principles-grid > .af-lotus.af-visible {
+    left: 47% !important;
+    top: 28% !important;
+    width: min(72vw, 400px) !important;
+    opacity: .38 !important;
+  }
+}
+@media (max-width: 760px) {
+  .af-home-office-map-clone .af-geography > .af-map-mobile-hint {
+    width: calc(100% - 32px) !important;
+    margin: 10px auto 16px !important;
+    font-size: 12.5px !important;
+  }
+  .af-principles .af-principles-grid > .af-lotus,
+  .af-principles .af-principles-grid > .af-lotus.af-visible {
+    left: 50% !important;
+    top: 20% !important;
+    width: min(76vw, 335px) !important;
+    opacity: .25 !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .af-principles .af-principles-grid > .af-lotus .af-orbit--outer,
+  .af-principles .af-principles-grid > .af-lotus .af-orbit--inner {
+    animation: none !important;
+  }
+}
+/* AFII_CLARITY_LOTUS_MAP_ALIGN_V4_0_5_END */
+
+/* AFII_LOTUS_LEFT_ANCHOR_V4_0_6_BEGIN */
+/* This geometry is intentional: the SVG's 0,360 lotus root sits on the
+   navy panel's left edge, not in the middle of the page or over the cards.
+   The original v1.8 petals grow inwards from that root. */
+.af-principles .af-principles-grid > .af-lotus,
+.af-principles .af-principles-grid > .af-lotus.af-visible {
+  position: absolute !important;
+  left: calc((100% - 100vw) / 2 + 4px) !important;
+  right: auto !important;
+  top: 56% !important;
+  bottom: auto !important;
+  width: clamp(460px, 41vw, 620px) !important;
+  max-width: none !important;
+  aspect-ratio: 1 !important;
+  transform: translateY(-50%) !important;
+  translate: none !important;
+  opacity: .62 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+/* Original paths are authored around x=0/y=360. Rotate each petal around
+   that actual root, rather than the centre of the whole SVG viewBox. */
+.af-principles .af-principles-grid > .af-lotus .af-petal,
+.af-principles .af-principles-grid > .af-lotus.af-visible .af-petal {
+  transform-box: view-box !important;
+  transform-origin: 0px 360px !important;
+}
+/* The gold and teal partial rings continue their v4.0.5 counter-rotation.
+   The editorial text and white cards retain their existing foreground layer. */
+@media (max-width: 1040px) {
+  .af-principles .af-principles-grid > .af-lotus,
+  .af-principles .af-principles-grid > .af-lotus.af-visible {
+    left: calc((100% - 100vw) / 2 + 3px) !important;
+    top: 28% !important;
+    width: min(72vw, 480px) !important;
+    opacity: .43 !important;
+  }
+}
+@media (max-width: 760px) {
+  .af-principles .af-principles-grid > .af-lotus,
+  .af-principles .af-principles-grid > .af-lotus.af-visible {
+    left: calc((100% - 100vw) / 2 + 3px) !important;
+    top: 20% !important;
+    width: min(78vw, 390px) !important;
+    opacity: .32 !important;
+  }
+}
+/* AFII_LOTUS_LEFT_ANCHOR_V4_0_6_END */
+
+/* AFII_LOTUS_SECTION_EDGE_V4_0_7_BEGIN */
+/* A left-rooted decorative lotus centered vertically in the navy section.
+   The SVG path origin stays at x=0/y=360; only its container is positioned.
+   Moving the element outside the inner content grid prevents the previous
+   grid-based vertical offset from putting the flower in the top corner. */
+.af-principles.af-section {
+  position: relative;
+  overflow: hidden;
+}
+.af-principles.af-section > .af-principles-grid {
+  position: relative;
+  z-index: 1;
+}
+.af-principles.af-section > .af-lotus,
+.af-principles.af-section > .af-lotus.af-visible {
+  position: absolute !important;
+  top: 50% !important;
+  bottom: auto !important;
+  left: 0 !important;
+  right: auto !important;
+  width: clamp(460px, 41vw, 620px) !important;
+  max-width: none !important;
+  aspect-ratio: 1 !important;
+  transform: translate3d(0, -50%, 0) !important;
+  translate: none !important;
+  opacity: .56 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+/* Keep the flower's root exactly on the section's left edge, preserving
+   inward-growing petals and the existing independent orbit animations. */
+.af-principles.af-section > .af-lotus svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.af-principles.af-section > .af-lotus .af-petal {
+  transform-box: view-box !important;
+  transform-origin: 0px 360px !important;
+}
+@media (max-width: 1040px) {
+  .af-principles.af-section > .af-lotus,
+  .af-principles.af-section > .af-lotus.af-visible {
+    top: 49% !important;
+    width: min(72vw, 480px) !important;
+    opacity: .43 !important;
+  }
+}
+@media (max-width: 760px) {
+  .af-principles.af-section > .af-lotus,
+  .af-principles.af-section > .af-lotus.af-visible {
+    top: 46% !important;
+    width: min(78vw, 390px) !important;
+    opacity: .32 !important;
+  }
+}
+/* AFII_LOTUS_SECTION_EDGE_V4_0_7_END */
+
+/* AFII_LOTUS_LEFT_MID_HEIGHT_V4_0_8_BEGIN */
+/* Keep the flower rooted on the left edge of the navy Clarity panel.
+   Move its existing visual centre LOWER to align with the left-side copy,
+   instead of allowing it to appear against the section's top corner.
+   This patch does NOT alter petals, ring rotation, cards, layout or navigation. */
+.af-principles.af-section {
+  position: relative;
+  overflow: hidden;
+}
+.af-principles.af-section > .af-lotus.af-lotus--left,
+.af-principles.af-section > .af-lotus.af-lotus--left.af-visible {
+  position: absolute !important;
+  top: calc(50% + clamp(130px, 12vw, 205px)) !important;
+  left: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: translate3d(0, -50%, 0) !important;
+  translate: none !important;
+  margin: 0 !important;
+  pointer-events: none !important;
+}
+@media (max-width: 1040px) {
+  .af-principles.af-section > .af-lotus.af-lotus--left,
+  .af-principles.af-section > .af-lotus.af-lotus--left.af-visible {
+    top: calc(50% + 92px) !important;
+  }
+}
+@media (max-width: 760px) {
+  .af-principles.af-section > .af-lotus.af-lotus--left,
+  .af-principles.af-section > .af-lotus.af-lotus--left.af-visible {
+    top: calc(50% + 40px) !important;
+  }
+}
+/* AFII_LOTUS_LEFT_MID_HEIGHT_V4_0_8_END */

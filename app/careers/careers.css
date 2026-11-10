@@ -1,24 +1,24 @@
 
 .afi-careers-root{--careers-navy:#102f3d;--careers-ink:#133c49;--careers-gold:#c19a5d;background:#fff;color:var(--careers-ink);font-family:Arial,Helvetica,sans-serif}
 .afi-careers-root h1,.afi-careers-root h2,.afi-careers-root h3{font-family:Arial,Helvetica,sans-serif;letter-spacing:-.048em;font-weight:600;margin-top:0}
-.afi-careers-root p{font-size:clamp(17px,1.35vw,21px);line-height:1.68;color:#4f6770;margin-top:0}
+.afi-careers-root p{font-size:clamp(16.33px,1.35vw,20.33px);line-height:1.68;color:#4f6770;margin-top:0}
 .afi-careers-hero{position:relative;min-height:600px;height:78vh;max-height:760px;background:#0a2836;color:#fff;overflow:hidden}
 .afi-careers-video,.afi-careers-overlay{position:absolute;inset:0;width:100%;height:100%}
 .afi-careers-video{object-fit:cover}
 .afi-careers-overlay{background:linear-gradient(90deg,rgba(5,27,36,.92) 0%,rgba(5,27,36,.7) 42%,rgba(7,34,47,.22) 100%)}
 .afi-careers-hero-inner{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding-top:160px;padding-bottom:54px}
-.afi-careers-crumb{margin-bottom:auto;color:rgba(255,255,255,.9);font-size:15px;display:flex;gap:12px;align-items:center}
-.afi-careers-eyebrow{display:block;color:#9b804f;text-transform:uppercase;letter-spacing:.13em;font-size:13px;font-weight:700;margin-bottom:22px}
+.afi-careers-crumb{margin-bottom:auto;color:rgba(255,255,255,.9);font-size:14.33px;display:flex;gap:12px;align-items:center}
+.afi-careers-eyebrow{display:block;color:#9b804f;text-transform:uppercase;letter-spacing:.13em;font-size:12.33px;font-weight:700;margin-bottom:22px}
 .afi-careers-eyebrow--gold{color:#e3c384}
-.afi-careers-hero h1{font-size:clamp(46px,5.5vw,86px);line-height:1.04;color:#fff;max-width:1020px;margin-bottom:20px}
+.afi-careers-hero h1{font-size:clamp(44px,5.5vw,84px);line-height:1.04;color:#fff;max-width:1020px;margin-bottom:20px}
 .afi-careers-hero h1 em,.afi-careers-root h2 em{color:#dfbd80;font-style:normal}
 .afi-careers-hero p{color:#edf3f5;max-width:760px;margin-bottom:30px}
 .afi-careers-hero-actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-.afi-careers-button{display:inline-flex;align-items:center;gap:24px;background:#293461;color:#fff;border:1px solid #293461;border-radius:999px;padding:16px 24px;font-size:16px;font-weight:700;transition:transform .25s,background .25s,color .25s}
+.afi-careers-button{display:inline-flex;align-items:center;gap:24px;background:#293461;color:#fff;border:1px solid #293461;border-radius:999px;padding:16px 24px;font-size:15.33px;font-weight:700;transition:transform .25s,background .25s,color .25s}
 .afi-careers-button:hover{transform:translateY(-3px);background:#fff;color:#293461}
 .afi-careers-button--light{background:#fff;color:#183645;border-color:#fff}
 .afi-careers-button--light:hover{background:#e3bd82;border-color:#e3bd82;color:#163543}
-.afi-careers-link{display:inline-flex;align-items:center;font-size:16px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:8px}
+.afi-careers-link{display:inline-flex;align-items:center;font-size:15.33px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.45);padding-bottom:8px}
 .afi-careers-intro,.afi-careers-benefits{padding:96px 0;background:#fff}
 .afi-careers-values{padding:92px 0;background:#f4f7f8}
 .afi-careers-dark{padding:100px 0;background:#102d3b;color:#fff;position:relative;overflow:hidden}
@@ -26,11 +26,11 @@
 .afi-careers-cta{padding:96px 0;background:#122f3e;color:#fff}
 .afi-careers-split,.afi-careers-cta-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:min(9vw,120px);align-items:start}
 .afi-careers-split--dark{position:relative;z-index:1;margin-bottom:40px}
-.afi-careers-root h2{font-size:clamp(40px,4.6vw,72px);line-height:1.07}
+.afi-careers-root h2{font-size:clamp(38px,4.6vw,70px);line-height:1.07}
 .afi-careers-grid,.afi-careers-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
 .afi-careers-card,.afi-careers-path-card{background:#fff;border:1px solid #d9e3e7;border-radius:22px;padding:32px;min-height:260px;transition:transform .26s,box-shadow .26s,background .26s,color .26s,border-color .26s}
 .afi-careers-card:hover,.afi-careers-path-card:hover{transform:translateY(-6px);box-shadow:0 18px 30px rgba(9,40,50,.12);background:#173a49;color:#fff;border-color:#173a49}
-.afi-careers-card h3,.afi-careers-path-card h3{font-size:clamp(24px,2vw,32px);line-height:1.18;margin-bottom:16px}
+.afi-careers-card h3,.afi-careers-path-card h3{font-size:clamp(22px,2vw,30px);line-height:1.18;margin-bottom:16px}
 .afi-careers-card:hover p,.afi-careers-path-card:hover p{color:#dce8eb}
 .afi-careers-dark .afi-careers-path-card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15);backdrop-filter:blur(3px)}
 .afi-careers-dark .afi-careers-path-card p,.afi-careers-dark p{color:#dce6ea}
@@ -41,4 +41,132 @@
 .afi-careers-benefit-item p{margin-bottom:0}
 .afi-careers-cta p{color:#dce7ea}
 @media(max-width:1040px){.afi-careers-grid,.afi-careers-path-grid{grid-template-columns:1fr 1fr}.afi-careers-split,.afi-careers-cta-grid{grid-template-columns:1fr;gap:28px}}
-@media(max-width:720px){.afi-careers-hero{height:auto;min-height:560px}.afi-careers-hero-inner{min-height:560px;padding-top:128px;padding-bottom:42px}.afi-careers-grid,.afi-careers-path-grid{grid-template-columns:1fr}.afi-careers-root h2{font-size:clamp(34px,8.5vw,48px)}.afi-careers-hero h1{font-size:clamp(38px,10vw,56px)}.afi-careers-intro,.afi-careers-values,.afi-careers-dark,.afi-careers-benefits,.afi-careers-cta{padding:68px 0}}
+@media(max-width:720px){.afi-careers-hero{height:auto;min-height:560px}.afi-careers-hero-inner{min-height:560px;padding-top:128px;padding-bottom:42px}.afi-careers-grid,.afi-careers-path-grid{grid-template-columns:1fr}.afi-careers-root h2{font-size:clamp(32px,8.5vw,46px)}.afi-careers-hero h1{font-size:clamp(36px,10vw,54px)}.afi-careers-intro,.afi-careers-values,.afi-careers-dark,.afi-careers-benefits,.afi-careers-cta{padding:68px 0}}
+
+/* AFII_V36_CSS */
+/* AFII_CONSOLIDATED_V3_6: visual, accessibility, navigation, compact map and cookie interface */
+.af-header{width:min(1580px,calc(100% - 36px));}
+.af-header-inner{grid-template-columns:94px minmax(0,1fr) auto;gap:9px;padding-inline:23px;}
+.af-desktop-nav{gap:clamp(9px,1.25vw,22px);}
+.af-desktop-nav a{font-size:clamp(11.33px,.97vw,14.58px);}
+.af-trust-nav{position:relative;display:flex;align-items:center;min-height:60px;}
+.af-trust-nav>a{display:flex!important;align-items:center;gap:5px;}
+.af-trust-nav>a svg{transition:transform .2s;}
+.af-trust-nav:hover>a svg,.af-trust-nav:focus-within>a svg{transform:rotate(180deg)}
+.af-trust-menu{position:absolute;left:-25px;top:calc(100% - 2px);min-width:230px;padding:12px;display:grid;gap:3px;border:1px solid #d7e1e6;border-radius:17px;background:#fff;box-shadow:0 17px 35px rgba(11,46,60,.16);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .22s,transform .22s,visibility .22s;z-index:160;}
+.af-trust-nav:hover .af-trust-menu,.af-trust-nav:focus-within .af-trust-menu{opacity:1;visibility:visible;transform:translateY(0);}
+.af-desktop-nav .af-trust-menu a{padding:14px 13px;border-radius:9px;font-size:14.33px;color:#173d49;text-decoration:none;}
+.af-desktop-nav .af-trust-menu a:after{display:none!important;}
+.af-desktop-nav .af-trust-menu a:hover,.af-desktop-nav .af-trust-menu a:focus-visible{background:#e8eff3;color:#293464;}
+/* Deliberately stable orbit: two contrasting partial circular lines, no animation. */
+.af-introduction .af-orbit-disc .af-orbit-ring,.af-orbit-disc .af-orbit-ring{animation:none!important;transform:none!important;transition:none!important;transform-origin:center!important;}
+.af-orbit-disc .af-orbit-ring--outer{stroke:#bd9659!important;stroke-width:2.6px!important;opacity:1!important;}
+.af-orbit-disc .af-orbit-ring--inner{stroke:#245b74!important;stroke-width:2.6px!important;opacity:1!important;}
+/* The home-sector image and caption should read as one polished card. */
+.af-industries .af-industry-grid .af-industry-card{display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #cfdce3;border-radius:22px;box-shadow:0 4px 16px rgba(9,44,60,.035);transform:translateY(0);transition:transform .26s,border-color .26s,background .26s,box-shadow .26s;}
+.af-industries .af-industry-grid .af-industry-card:nth-child(2){background:#e9f0f4;}
+.af-industries .af-industry-grid .af-industry-card:nth-child(3){background:#eaf1ee;}
+.af-industries .af-industry-grid .af-industry-card:hover,.af-industries .af-industry-grid .af-industry-card:focus-visible{transform:translateY(-5px);border-color:#b9935a;box-shadow:0 16px 35px rgba(12,47,62,.12);background:#edf3f6;}
+.af-industries .af-industry-grid .af-industry-image{margin:0;border:0;border-radius:0;background:transparent;overflow:hidden;}
+.af-industries .af-industry-grid .af-industry-image img{display:block;width:100%;height:100%;object-fit:cover;max-width:none;max-height:none;transition:transform .5s ease!important;}
+.af-industries .af-industry-grid .af-industry-card:hover img{transform:scale(1.035)!important;}
+.af-industries .af-industry-grid .af-industry-caption{display:flex;flex:1;margin:0;padding:23px 24px 25px;gap:12px;border:0;align-items:flex-start;background:transparent;}
+.af-industries .af-industry-grid .af-industry-caption h3{color:#123844!important;}
+.af-industries .af-industry-grid .af-industry-caption p{color:#506a73!important;}
+/* Hover contrast: keep white cards white; never make white text disappear on them. */
+.afi-exp-root .afi-exp-service-card,.afi-exp-root .afi-exp-essay-card{background:#fff!important;color:#123844!important;}
+.afi-exp-root .afi-exp-service-card:hover,.afi-exp-root .afi-exp-service-card:focus-visible,.afi-exp-root .afi-exp-essay-card:hover,.afi-exp-root .afi-exp-essay-card:focus-visible{background:#fff!important;color:#123844!important;border-color:#b99150!important;transform:translateY(-4px);box-shadow:0 19px 36px rgba(13,47,65,.13);}
+.afi-exp-root .afi-exp-service-card h3,.afi-exp-root .afi-exp-service-card:hover h3,.afi-exp-root .afi-exp-service-card:focus-visible h3,.afi-exp-root .afi-exp-essay-card h3,.afi-exp-root .afi-exp-essay-card:hover h3{color:#123844!important;opacity:1!important;-webkit-text-fill-color:#123844!important;}
+.afi-exp-root .afi-exp-service-card p,.afi-exp-root .afi-exp-service-card:hover p,.afi-exp-root .afi-exp-service-card:focus-visible p,.afi-exp-root .afi-exp-essay-card p,.afi-exp-root .afi-exp-essay-card:hover p{color:#435f69!important;opacity:1!important;-webkit-text-fill-color:#435f69!important;}
+.afi-exp-root .afi-exp-service-card .afi-exp-service-kicker,.afi-exp-root .afi-exp-service-card:hover .afi-exp-service-kicker{color:#a2793c!important;opacity:1!important;}
+.afi-exp-root .afi-exp-service-card .afi-exp-service-foot,.afi-exp-root .afi-exp-service-card:hover .afi-exp-service-foot{color:#173c49!important;border-top-color:#d3e0e7!important;}
+/* Careers: high contrast on both white and navy cards, even with global background rules. */
+.afi-careers-root .afi-careers-card,.afi-careers-root .afi-careers-card:hover,.afi-careers-root .afi-careers-card:focus-within{background:#fff!important;color:#153947!important;border-color:#d2dfe5;}
+.afi-careers-root .afi-careers-card:hover{border-color:#b69357!important;transform:translateY(-4px);box-shadow:0 19px 34px rgba(12,48,64,.12)!important;}
+.afi-careers-root .afi-careers-card h3,.afi-careers-root .afi-careers-card:hover h3{color:#153947!important;}
+.afi-careers-root .afi-careers-card p,.afi-careers-root .afi-careers-card:hover p{color:#46616d!important;}
+.afi-careers-root .afi-careers-dark .afi-careers-path-card{background:#1b4456!important;color:#fff!important;border:1px solid #476b7b!important;box-shadow:none;}
+.afi-careers-root .afi-careers-dark .afi-careers-path-card:hover,.afi-careers-root .afi-careers-dark .afi-careers-path-card:focus-within{background:#26576a!important;transform:translateY(-4px);box-shadow:0 16px 35px rgba(0,0,0,.16);border-color:#d1ad6d!important;}
+.afi-careers-root .afi-careers-dark .afi-careers-path-card h3,.afi-careers-root .afi-careers-dark .afi-careers-path-card:hover h3{color:#fff!important;-webkit-text-fill-color:#fff!important;}
+.afi-careers-root .afi-careers-dark .afi-careers-path-card p,.afi-careers-root .afi-careers-dark .afi-careers-path-card:hover p{color:#e5edf1!important;-webkit-text-fill-color:#e5edf1!important;}
+.afi-careers-brand{position:absolute;left:max(24px,calc((100vw - 1470px)/2));top:28px;z-index:5;display:flex;align-items:center;gap:18px;text-decoration:none;color:#fff;font-weight:700;font-size:15.33px;letter-spacing:.05em;}
+.afi-careers-brand img{width:60px;height:60px;object-fit:contain;border-radius:3px;box-shadow:0 6px 24px rgba(0,0,0,.2);}
+.afi-careers-hero .afi-careers-crumb a{color:#fff;text-decoration:underline;text-underline-offset:5px;}
+.afi-careers-hero-inner{padding-top:155px;}
+.afi-careers-signoff{display:none;}
+/* Responsive AFII office locator, replacing four repetitive cards. */
+.af-leadership .af-mini-map{margin-top:40px;max-width:1120px;margin-inline:auto;background:linear-gradient(130deg,#113143,#19485c);border:1px solid #315f72;color:#fff;border-radius:24px;overflow:hidden;box-shadow:0 18px 39px rgba(10,41,56,.1);}
+.af-mini-map-top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:25px 30px 17px;}
+.af-mini-map-top span{color:#deb876;font-size:11.33px;letter-spacing:.15em;font-weight:700;}
+.af-mini-map-top h3{font-size:clamp(21px,2.5vw,33px);line-height:1.16;letter-spacing:-.04em;color:#fff;margin:8px 0 0;}
+.af-mini-map-full{display:inline-flex;gap:10px;align-items:center;color:#fff;font-size:14.33px;font-weight:700;border-bottom:1px solid #d9b77e;padding-bottom:7px;}
+.af-mini-map-full:hover{color:#f4d18f;}
+.af-mini-map-viewport{width:100%;height:clamp(245px,29vw,345px);overflow-x:auto;overflow-y:hidden;scrollbar-color:#c6a76c #173d50;scrollbar-width:thin;position:relative;overscroll-behavior-x:contain;}
+.af-mini-map-world{position:relative;width:100%;height:100%;min-width:650px;}
+.af-mini-map-world img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.94;pointer-events:none;}
+.af-mini-pin{position:absolute;display:grid;place-items:center;width:20px;height:20px;border:3px solid #d9b878;border-radius:50%;background:#143949;transform:translate(-50%,-50%);cursor:pointer;box-shadow:0 0 0 5px rgba(226,191,129,.12);transition:background .2s,box-shadow .2s,scale .2s;}
+.af-mini-pin span{display:block;width:6px;height:6px;border-radius:50%;background:#fff;}
+.af-mini-pin:hover,.af-mini-pin.is-active,.af-mini-pin:focus-visible{background:#b58e50;box-shadow:0 0 0 9px rgba(226,191,129,.22);scale:1.15;}
+.af-mini-map-foot{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:17px 30px 24px;background:rgba(255,255,255,.08);border-top:1px solid rgba(255,255,255,.15)}
+.af-mini-map-foot>div:first-child{display:grid;gap:4px}.af-mini-map-kind{font-size:11.33px!important;letter-spacing:.08em;color:#dfbf80!important;text-transform:uppercase;}
+.af-mini-map-foot a{display:flex;align-items:center;gap:17px;flex-wrap:wrap;}
+.af-mini-map-foot a strong{font-size:19.33px;color:#fff;}
+.af-mini-map-foot a span{font-size:13.33px;color:#d5e7eb;text-decoration:underline;text-underline-offset:4px;}
+.af-mini-map-pan{display:flex;gap:9px;}
+.af-mini-map-pan button{cursor:pointer;width:40px;height:40px;border:1px solid rgba(255,255,255,.4);border-radius:50%;background:transparent;color:#fff;font-size:27.33px;line-height:1;}
+.af-mini-map-pan button:hover{background:#fff;color:#143949;}
+/* Map on office directory: do not make mobile users traverse an oversized American ocean first. */
+@media(max-width:740px){
+ .af-map-viewport:after{content:none!important;display:none!important;}
+ .af-geography .af-map-canvas{width:760px!important;min-width:760px!important;height:310px!important;aspect-ratio:auto!important;margin:0!important;}
+ .af-geography .af-map-viewport{max-height:320px!important;height:320px!important;scroll-behavior:smooth;}
+ .af-geography{padding:55px 0 45px!important;}
+ .af-map-heading-row{margin-bottom:13px!important;}
+ .af-map-detail-wrap{margin-top:12px;}
+ .af-map-detail{padding:18px!important;}
+ .af-map-mobile-hint{margin:0 18px 8px;color:#f2d49a;font-size:12.33px;}
+ .af-mini-map-top{padding:19px 20px;align-items:flex-start;flex-direction:column;gap:12px;}
+ .af-mini-map-full{font-size:12.33px;}
+ .af-mini-map-world{width:760px;min-width:760px;}
+ .af-mini-map-viewport{height:265px;}
+ .af-mini-map-foot{padding:18px 20px;}
+ .af-mini-map-foot a strong{font-size:16.33px;}
+ .af-header{width:calc(100% - 18px);}
+ .af-header-inner{grid-template-columns:minmax(0,1fr) auto;}
+ .afi-careers-brand{top:20px;left:20px;font-size:12.33px;}
+ .afi-careers-brand img{width:45px;height:45px;}
+ .afi-careers-hero-inner{padding-top:140px;}
+ .af-industries .af-industry-grid .af-industry-image{height:220px;}
+ .af-industries .af-industry-grid .af-industry-caption{padding:19px;}
+}
+@media(min-width:741px) and (max-width:1100px){.af-mini-map-world{min-width:730px;}.af-desktop-nav{gap:8px;}.af-header-inner{grid-template-columns:70px 1fr auto;padding-inline:16px;}}
+/* Composed, keyboard-accessible email composer. */
+.af-enquiry-overlay{padding:18px;overflow-y:auto;align-items:flex-start;}
+.af-enquiry-dialog{position:relative;margin:auto;max-width:760px;width:100%;background:#fff;border-radius:21px;padding:clamp(24px,4vw,43px);max-height:calc(100dvh - 36px);overflow-y:auto;box-shadow:0 28px 70px rgba(0,0,0,.22);color:#153947;}
+.af-enquiry-close{position:absolute;right:21px;top:13px;background:none;border:0;color:#153947;font-size:29.33px;cursor:pointer;}
+.af-enquiry-kicker{font-size:11.33px!important;color:#aa864c!important;letter-spacing:.15em;font-weight:700;text-transform:uppercase;margin:0 0 12px!important;}
+.af-enquiry-dialog h2{font-size:clamp(31px,3.8vw,51px);line-height:1.1;letter-spacing:-.05em;margin:0 0 17px;color:#133b47;}
+.af-enquiry-intro{font-size:16.33px!important;color:#526973!important;line-height:1.5;margin-bottom:24px!important;}
+.af-enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.af-enquiry-grid>label{font-size:13.33px;color:#234a58;font-weight:700;display:flex;flex-direction:column;gap:7px;}
+.af-enquiry-wide{grid-column:1/-1;}
+.af-enquiry-grid input:not([type=checkbox]),.af-enquiry-grid select,.af-enquiry-grid textarea{width:100%;min-height:46px;border:1px solid #cbd9df;border-radius:11px;padding:11px 13px;color:#153947;background:#fff;font:inherit;font-weight:400;}
+.af-enquiry-grid textarea{resize:vertical;min-height:92px;}
+.af-enquiry-grid input:focus-visible,.af-enquiry-grid select:focus-visible,.af-enquiry-grid textarea:focus-visible{outline:2px solid #bf9e61;outline-offset:1px;}
+.af-enquiry-grid label.af-enquiry-consent{display:flex;flex-direction:row;align-items:start;gap:11px;font-size:12.33px;line-height:1.45;font-weight:400;}
+.af-enquiry-consent input{width:17px;height:17px;margin-top:2px;accent-color:#293464;flex:none;}
+.af-enquiry-consent a{text-decoration:underline;text-underline-offset:3px;}
+.af-enquiry-actions{display:flex;gap:17px;align-items:center;flex-wrap:wrap;}
+.af-enquiry-submit{background:#293464;border:1px solid #293464;border-radius:100px;color:#fff;font-weight:700;padding:13px 24px;cursor:pointer;}
+.af-enquiry-submit:hover{background:#123b4c;transform:translateY(-2px);}
+.af-enquiry-direct{color:#293464;font-size:13.33px;font-weight:700;text-decoration:underline;text-underline-offset:5px;}
+.af-enquiry-notice{font-size:13.33px!important;color:#274f4b!important;margin:15px 0 0!important;}
+.af-enquiry-disclosure{font-size:11.33px!important;color:#657a85!important;line-height:1.45;margin:13px 0 0!important;}
+@media(max-width:620px){.af-enquiry-grid{grid-template-columns:1fr;}.af-enquiry-dialog{padding:26px 19px;}.af-enquiry-overlay{padding:9px;}.af-enquiry-dialog{max-height:calc(100dvh - 18px);}}
+/* Privacy banner is never a full-screen blocker. Equal prominence for allow and reject. */
+.af-consent-panel{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:min(950px,calc(100% - 26px));background:#fff;color:#163948;z-index:250;border:1px solid #cddde4;border-radius:19px;padding:21px 25px;display:flex;align-items:center;gap:30px;box-shadow:0 15px 60px rgba(5,31,47,.24);}
+.af-consent-text{flex:1}.af-consent-text strong{font-size:17.33px}.af-consent-text p{font-size:12.33px;line-height:1.48;color:#526a75;margin:6px 0 0}.af-consent-text a{font-weight:700;text-decoration:underline}.af-consent-actions{display:flex;gap:8px;flex:none}.af-consent-actions button{background:#fff;border:1px solid #293464;border-radius:100px;color:#293464;font-size:13.33px;padding:12px 17px;font-weight:700;cursor:pointer}.af-consent-actions button.af-consent-accept{background:#293464;color:#fff}.af-consent-actions button:hover{box-shadow:0 6px 14px rgba(20,40,72,.16);transform:translateY(-2px)}
+@media(max-width:700px){.af-consent-panel{flex-direction:column;align-items:stretch;padding:18px;gap:14px;bottom:10px}.af-consent-actions{justify-content:stretch}.af-consent-actions button{flex:1;}}
+.af-footer-cookie-button{padding:0;border:0;background:transparent;color:#657b82;font:inherit;cursor:pointer}.af-footer-cookie-button:hover{color:#293464;text-decoration:underline}
+@media(prefers-reduced-motion:reduce){.af-industry-card,.afi-exp-service-card,.afi-exp-essay-card,.afi-careers-card,.afi-careers-path-card{transition:none!important;}}
+

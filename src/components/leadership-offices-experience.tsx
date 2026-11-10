@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Header, Footer, ContactModal, MailIcon, LinkedInIcon, Arrow } from "@/components/about-experience";
 import { leadershipPeople, offices, networkLocations, type MapPlace } from "@/data/leadership-v17";
 
 const locations: MapPlace[] = [...offices, ...networkLocations];
 
-function GeoMap() {
+export function GeoMap() {
   const [selected, setSelected] = useState("germany");
+  const viewportRef=useRef<HTMLDivElement>(null);
+  useEffect(()=>{const el=viewportRef.current;if(!el)return;const centre=()=>{if(window.innerWidth<=740)el.scrollLeft=Math.max(0,(el.scrollWidth-el.clientWidth)*.54)};centre();},[]);
   const place = locations.find((p) => p.id === selected) || offices[0];
   return (
     <section className="af-geography" id="global-map" aria-labelledby="af-map-heading">
@@ -19,7 +21,8 @@ function GeoMap() {
         </div>
         <div className="af-map-legend"><span><i className="af-dot-office"/>Office / Group Entity</span><span><i className="af-dot-network"/>Partner Network</span></div>
       </div>
-      <div className="af-map-viewport" aria-label="World map: office and partner location markers; horizontally scrollable on small screens" tabIndex={0}>
+      <p className="af-map-mobile-hint">Swipe horizontally to explore AFII office locations</p>
+      <div ref={viewportRef} className="af-map-viewport" aria-label="World map: office and partner location markers; horizontally scrollable on small screens" tabIndex={0}>
         <div className="af-map-canvas">
           <img src="/afii-world-land.svg" alt="" aria-hidden="true" />
           {locations.map((p) => (

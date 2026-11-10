@@ -1,5 +1,6 @@
 "use client";
-import { Arrow } from "@/components/about-experience";
+import { Arrow, Footer, ContactModal } from "@/components/about-experience";
+import {useState} from "react";
 
 const VALUES = [
   {
@@ -39,7 +40,9 @@ const BENEFITS = [
 ];
 
 export default function CareersExperience() {
+  const [contactOpen,setContactOpen]=useState(false);
   return (
+    <>
     <main className="afi-careers-root">
       <section className="afi-careers-hero">
         <video
@@ -55,7 +58,7 @@ export default function CareersExperience() {
         </video>
         <div className="afi-careers-overlay" />
         <div className="af-container afi-careers-hero-inner">
-          <div className="afi-careers-crumb">Home <span>/</span> Careers</div>
+          <nav className="afi-careers-crumb" aria-label="Breadcrumb"><a href="/" className="afi-careers-crumb-logo" aria-label="AFII homepage"><img src="/afii-logo.jpg" alt="AFII" /></a><a href="/">Home</a><span>/</span><span>Careers</span></nav>
           <span className="afi-careers-eyebrow">Careers At AFII</span>
           <h1>Build Work That Looks<br/><em>Global, Precise And Credible.</em></h1>
           <p>
@@ -186,5 +189,8 @@ export default function CareersExperience() {
         </div>
       </section>
     </main>
+    <Footer onContact={()=>setContactOpen(true)}/>
+    <ContactModal open={contactOpen} onClose={()=>setContactOpen(false)}/>
+    </>
   );
 }

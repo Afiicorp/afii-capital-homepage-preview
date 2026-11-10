@@ -1,4 +1,6 @@
 "use client";
+import AfiiContactForm from "@/components/afii-contact-form";
+import TrustVdrNavigation from "@/components/afii-trust-nav";
 import IndustryNavigation from "@/components/industry-navigation";
 import ExpertiseNavigation from "@/components/expertise-navigation";
 
@@ -16,6 +18,7 @@ const NAV = [
   { label: "Expertise", href: "/expertise" },
   { label: "Leadership & Offices", href: "/leadership-offices" },
   { label: "Transactions", href: "/transactions" },
+  { label: "Trust & VDR", href: "/trust" },
   { label: "Careers", href: "/careers" },
 ];
 
@@ -100,6 +103,8 @@ export function Header({ onContact }: { onContact: () => void }) {
                 <ExpertiseNavigation key={item.href} />
               ) : item.label === "Industries" ? (
                 <IndustryNavigation key={item.href} />
+              ) : item.label === "Trust & VDR" ? (
+                <TrustVdrNavigation key={item.href} />
               ) : (
                 <a href={item.href} key={item.label}>
                   {item.label}
@@ -146,6 +151,7 @@ export function Header({ onContact }: { onContact: () => void }) {
               <Arrow diagonal />
             </a>
           ))}
+          <a className="af-mobile-vdr-link" href="/trust#virtual-data-room" tabIndex={open ? 0 : -1} onClick={() => setOpen(false)}>Virtual Data Room <Arrow diagonal /></a>
           <button
             type="button"
             tabIndex={open ? 0 : -1}
@@ -222,38 +228,7 @@ function ResponsiveImage({ src, alt, className = "" }: { src: string; alt: strin
 }
 
 export function ContactModal({ open, onClose }: { open: boolean; onClose: () => void }) {
-  useEffect(() => {
-    if (!open) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const onKey = (ev: KeyboardEvent) => {
-      if (ev.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = previous;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [open, onClose]);
-
-  if (!open) return null;
-
-  return (
-    <div className="af-modal-backdrop" onMouseDown={(ev) => { if (ev.target === ev.currentTarget) onClose(); }}>
-      <div className="af-modal" role="dialog" aria-modal="true" aria-labelledby="af-about-modal-title">
-        <button className="af-modal-x" type="button" aria-label="Close" onClick={onClose}>
-          ×
-        </button>
-        <h2 id="af-about-modal-title">Contact AFII.</h2>
-        <p>For a financing or advisory enquiry, send a short note about your project and the support you are looking for.</p>
-        <a href={`mailto:${CONTACT_EMAIL}?subject=AFII%20-%20Project%20enquiry`} className="af-pill-link">
-          Write to {CONTACT_EMAIL}
-          <Arrow diagonal size={18} />
-        </a>
-        <small>This opens your email application; no information is submitted through this website.</small>
-      </div>
-    </div>
-  );
+  return <AfiiContactForm open={open} onClose={onClose} />;
 }
 
 export function Footer({ onContact }: { onContact: () => void }) {
@@ -289,8 +264,10 @@ export function Footer({ onContact }: { onContact: () => void }) {
         <div className="af-footer-bottom">
           <span>© {new Date().getFullYear()} AFII</span>
           <div>
-            <a href="https://www.afiicorp.com/" target="_blank" rel="noopener noreferrer">AFII CORP</a>
-            <a href="mailto:reachus@afii.eu?subject=Legal%20enquiry">Legal Enquiries</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/legal-notice">Legal Notice</a>
+            <a href="/cookies">Cookies</a>
+            <button type="button" className="af-footer-cookie-button" onClick={() => window.dispatchEvent(new Event("afii:manage-cookies"))}>Cookie Preferences</button>
             <a href="/">Home</a>
           </div>
         </div>
