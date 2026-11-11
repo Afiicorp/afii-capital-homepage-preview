@@ -33,8 +33,8 @@ export default function AfiiCookieConsent() {
         </p>
       </div>
       <div className="af-consent-actions">
-        <button type="button" onClick={() => choose("necessary")}>Reject optional</button>
-        <button className="af-consent-accept" type="button" onClick={() => choose("all")}>Allow optional</button>
+        <button type="button" onClick={() => choose("necessary")}>Reject</button>
+        <button className="af-consent-accept" type="button" onClick={() => choose("all")}>Allow</button>
       </div>
     </aside>
   );
