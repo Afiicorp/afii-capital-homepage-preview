@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Header, Footer, ContactModal, MailIcon, LinkedInIcon, Arrow } from "@/components/about-experience";
 import { leadershipPeople, offices, networkLocations, type MapPlace } from "@/data/leadership-v17";
+import { leaderProfiles } from "@/data/leadership-profiles-v53";
+import LeaderBiographyModal from "@/components/leader-biography-modal-v53";
 
 const locations: MapPlace[] = [...offices, ...networkLocations];
 
@@ -47,7 +49,7 @@ export function GeoMap() {
           </div>
           <a href={`mailto:reachus@afii.eu?subject=${encodeURIComponent('AFII '+place.region+' enquiry')}`}>Enquire About This Location <Arrow diagonal size={16}/></a>
         </div>
-        <p className="af-map-disclaimer">Map pins indicate general city or regional locations rather than building entrances. Partner-network locations are listed separately from group offices.</p>
+        <p className="af-map-disclaimer">Markers show approximate city or country locations, not verified building entrances. Registered offices, business contacts and partner-network locations are distinguished; each mandate is contracted by its relevant legal entity.</p>
       </div>
     </section>
   );
@@ -56,11 +58,13 @@ export function GeoMap() {
 // AFII_TEAM_V26 — photographs with accessible fallback and click/tap contact reveal.
 function PersonCard({person}:{person:typeof leadershipPeople[number]}) {
   const [open,setOpen] = useState(false);
+  const [profileOpen,setProfileOpen] = useState(false);
   const [photoFailed,setPhotoFailed] = useState(false);
   return (
+    <>
     <article className={`af-directory-person ${open ? "af-directory-person--open":""}`}>
       <div className="af-directory-portrait">
-        <button type="button" onClick={()=>setOpen((v)=>!v)} aria-expanded={open} aria-label={`${open?'Hide':'Show'} contact options for ${person.name}`}>
+        <button type="button" onClick={()=>{setOpen(true);setProfileOpen(true);}} aria-expanded={profileOpen} aria-label={`View biography of ${person.name}`}>
           {!photoFailed ? (
             <img className="af-directory-portrait-photo" src={person.image} alt={person.name} loading="lazy" decoding="async" onError={()=>setPhotoFailed(true)} />
           ) : (
@@ -75,8 +79,10 @@ function PersonCard({person}:{person:typeof leadershipPeople[number]}) {
           {person.linkedin && <a href={person.linkedin} target="_blank" rel="noopener noreferrer" tabIndex={open?0:-1} aria-label={`${person.name} on LinkedIn`}><LinkedInIcon size={18}/></a>}
         </div>
       </div>
-      <div className="af-directory-person-body"><h3>{person.name}</h3><p>{person.role}</p><span>{person.city||'AFII Group'}</span></div>
+      <div className="af-directory-person-body"><h3>{person.name}</h3><p>{person.role}</p><span>{person.city||'AFII Group'}</span><div className="af-v53-view-hint" aria-hidden="true">Select portrait for biography ↗</div></div>
     </article>
+    <LeaderBiographyModal person={person} profile={leaderProfiles[person.name]} open={profileOpen} onClose={()=>{setProfileOpen(false);setOpen(false);}} />
+    </>
   );
 }
 
@@ -128,7 +134,7 @@ export default function LeadershipOfficesExperience(){
       <GeoMap />
       <section className="af-offices-directory af-section" id="offices-directory">
         <div className="af-container">
-          <div className="af-directory-intro-grid"><div><p className="af-about-kicker">AFII Presence</p><h2>Offices &amp; Group Entities.</h2></div><p>Published AFII Entity And Contact Locations. Germany Is Identified As The Group Headquarters; London Is The UK Registered Office. Please Confirm Details Before Arranging A Visit.</p></div>
+          <div className="af-directory-intro-grid"><div><p className="af-about-kicker">AFII Presence</p><h2>Offices &amp; Group Entities.</h2></div><p>Published AFII Entity And Contact Locations. Germany And London Are Separately Identified Registered Offices. AFII Also Lists India, UAE And Swiss Entity Contacts. Please Confirm Details Before Arranging A Visit.</p></div>
           <div className="af-offices-directory-grid">
             {offices.map((p)=><LocationCard key={p.id} place={p}/>)}
           </div>

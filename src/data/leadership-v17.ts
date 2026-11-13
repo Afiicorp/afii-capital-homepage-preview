@@ -19,7 +19,7 @@ export const leadershipPeople = [
   { name:"Dr. Mahesh M. Gandhi", initials:"MG", role:"Managing Director & President", city:"Frankfurt", image:"/images/team-mahesh-gandhi.png", linkedin:"https://www.linkedin.com/in/maheshmgandhi/" },
   { name:"Kirti Gulati", initials:"KG", role:"Managing Director & Vice President", city:"Frankfurt", image:"/images/team-kirti-gulati.jpg", linkedin:"https://www.linkedin.com/in/kirtigulati/" },
   { name:"Sidhartha S. Gandhi", initials:"SG", role:"Government Advisory & Infrastructure Development", city:"India", image:"/images/team-sidhartha-gandhi.jpeg", linkedin:"https://www.linkedin.com/in/sidsgandhi/" },
-  { name:"Vinit Vidyarthi", initials:"VV", role:"Senior Partner — Insurance & Investment Banking", city:"New Delhi", image:"/images/team-vinit-vidyarthi.jpeg", linkedin:null },
+  { name:"Vinit Vidyarthi", initials:"VV", role:"Senior Partner — Insurance & Investment Banking", city:"New Delhi", image:"/images/team-vinit-vidyarthi.jpeg", linkedin:"https://www.linkedin.com/in/vinitvidyarthi/" },
   { name:"Abhijit Avarsekar", initials:"AA", role:"Senior Advisor — Infrastructure Business", city:"Mumbai", image:"/images/team-abhijit-avar-sekar.png", linkedin:"https://www.linkedin.com/in/abhijit-avarrsekar/" },
   { name:"Lt. Gen. (Retd.) Rafi Peled", initials:"RP", role:"Senior Partner — Israel Business", city:"Tel Aviv", image:"/images/team-rafi-peled.jpg", linkedin:null },
   { name:"Nguyen Thi Thanh Nga", initials:"NN", role:"Head — Vietnam Business", city:"Vietnam", image:"/images/team-nguyen-thi-thanh-nga.jpg", linkedin:"https://www.linkedin.com/in/nguyen-thanh-nga-776597162/" },
@@ -30,7 +30,7 @@ export const leadershipPeople = [
   { name:"Johann Mair", initials:"JM", role:"Senior Partner", city:"Munich · K3M", image:"/images/team-johann-mair.png", linkedin:null },
   { name:"Arun Lohiya", initials:"AL", role:"Senior Advisor — Aviation Business", city:"Ahmedabad", image:"/images/team-arun-lohiya.jpg", linkedin:"https://linkedin.com/in/14111960" },
   { name:"Punam Bhasin", initials:"PB", role:"Director — AFII Corp (India)", city:"India", image:"/images/team-punam-bhasin.jpg", linkedin:"https://www.linkedin.com/in/punam-bhasin-gandhi-3821a4109/" },
-  { name:"Ralph Ketelhut", initials:"RK", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-ralph-ketelhut.jpg", linkedin:null },
+  { name:"Ralph Ketelhut", initials:"RK", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-ralph-ketelhut.jpg", linkedin:"https://www.linkedin.com/in/ralph-ketelhut-28850529/" },
   { name:"Matthias Lohmann", initials:"ML", role:"Senior Partner (K3M)", city:"Munich", image:"/images/team-matthias-lohmann.png", linkedin:null },
   { name:"Jonathan Pallares", initials:"JP", role:"Business Partner", city:"Helsinki", image:"/images/team-jonathan-pallares.jpg", linkedin:"https://www.linkedin.com/in/jonathan-pallares-78327436/" },
 
@@ -40,7 +40,7 @@ const sourceImages = "https://afii-capital-website.vercel.app/images/";
 
 export const offices: MapPlace[] = [
   {
-    id:"germany",city:"Eschborn / Frankfurt",region:"Germany",category:"Group Headquarters",
+    id:"germany",city:"Eschborn / Frankfurt",region:"Germany",category:"Registered German Office",
     label:"AFII Structured Finance GmbH",address:"Alfred-Herrhausen-Allee 3–5, 65760 Eschborn, Germany",
     description:"Registered office of AFII Structured Finance GmbH. Amtsgericht Frankfurt am Main, HRB 140747.",
     detail:"Managing Directors: Dr. Mahesh Pal Singh Gandhi and Ms. Kirti Gulati.",
@@ -49,7 +49,7 @@ export const offices: MapPlace[] = [
   {
     id:"uk",city:"London",region:"United Kingdom",category:"Registered Office",
     label:"AFII Capital Partners Limited",address:"124–128 City Road, London EC1V 2NX, United Kingdom",
-    description:"Published United Kingdom office for AFII Capital Partners Limited.",
+    description:"Registered office of AFII Capital Partners Limited (Companies House no. 16535500). This is a distinct United Kingdom legal entity.",
     image:sourceImages+"uk-london.jpg",lat:51.5277,lng:-0.0888,kind:"office"
   },
   {
@@ -68,15 +68,15 @@ export const offices: MapPlace[] = [
   },
   {
     id:"uae",city:"Dubai",region:"United Arab Emirates",category:"Middle East Office",
-    label:"AFII Middle East LLC FZ",address:"5842+944, Dubai, United Arab Emirates",
-    description:"Middle East services and coordination with clients seeking capital or investment connections.",
+    label:"AFII Middle East LLC FZ",address:"Meydan Free Zone, Dubai, United Arab Emirates",
+    description:"AFII lists AFII Middle East LLC FZ in Meydan Free Zone for regional corporate and financing enquiries. Confirm a full visiting address before travel.",
     detail:"Published contact: Kirti Gulati; general enquiries via reachus@afii.eu.",
     image:sourceImages+"office-uae.jpg",lat:25.2048,lng:55.2708,kind:"office"
   },
   {
-    id:"switzerland",city:"Zug",region:"Switzerland",category:"Engineering & EPCM",
-    label:"AGENOVA | AFII Subsidiary",address:"Gotthardstrasse 14, 6300 Zug, Switzerland",
-    description:"AGENOVA provides engineering and EPCM services, including design coordination, procurement and construction supervision.",
+    id:"switzerland",city:"Zug",region:"Switzerland",category:"Swiss Registered Entity",
+    label:"AGENOVA AG",address:"Gotthardstrasse 14, 6300 Zug, Switzerland",
+    description:"AGENOVA AG (CHE-166.363.445) is registered in Zug. Its stated purpose includes engineering, procurement, construction management (EPCM) and related procurement-process support.",
     image:sourceImages+"office-switzerland.jpg",lat:47.1662,lng:8.5155,kind:"office"
   },
 ];

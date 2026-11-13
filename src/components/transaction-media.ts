@@ -111,6 +111,7 @@ function categoryFor(input: Deal | string): keyof typeof GALLERY {
 
 export function transactionFallbackImage(input: Deal | string): string {
   const category = categoryFor(input);
+  if (category === "rail") return "/images/afii-railway-editorial.svg";
   return pick(category, typeof input === "string" ? input : input.id);
 }
 
@@ -127,7 +128,8 @@ const SPECIAL: Partial<Record<number, string>> = {
 
 export function transactionImage(input: Deal | string): string {
   if (typeof input === "string") return transactionFallbackImage(input);
-  return SPECIAL[input.id] ?? transactionFallbackImage(input);
+  if (input.id === 14) return GALLERY.rail[0]; // Try the original photo; local SVG is the guaranteed fallback.
+  return SPECIAL[input.id] ?? pick(categoryFor(input), input.id);
 }
 
 export const TRANSACTION_HERO_PHOTO =

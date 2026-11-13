@@ -4461,3 +4461,31 @@ body:has(.af-introduction) .af-orbit-disc,
   }
 }
 /* AFII_LOTUS_LEFT_MID_HEIGHT_V4_0_8_END */
+
+
+/* AFII_GROUP_V53_LEADERSHIP_MODAL: additive, isolated, no changes to existing card hover styles */
+.af-directory-portrait > button { cursor: zoom-in; }
+.af-directory-person .af-v53-view-hint { display: inline-flex; font-size: 12px; color: #a47d42; margin-top: 9px; font-weight: 700; letter-spacing: .02em; }
+.af-directory-person:hover .af-v53-view-hint, .af-directory-person:focus-within .af-v53-view-hint { color: #edd3a4; }
+.af-v53-backdrop { position: fixed; inset: 0; z-index: 12000; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 3vw, 36px); background: rgba(5,24,33,.78); -webkit-backdrop-filter: blur(11px); backdrop-filter: blur(11px); }
+.af-v53-dialog { position: relative; overflow-y: auto; overscroll-behavior: contain; width: min(680px,100%); max-height: min(91dvh, 930px); background: #fff; color: #143641; border-radius: 17px; box-shadow: 0 28px 96px rgba(0,0,0,.32); scrollbar-gutter: stable; }
+.af-v53-close { position: sticky; top: 13px; margin: 13px 13px -58px auto; z-index: 2; width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.68); border-radius: 50%; color: #fff; background: rgba(6,35,47,.85); cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.af-v53-close:hover { background: #b18b4a; transform: rotate(90deg); }
+.af-v53-dialog-image { height: clamp(220px, 41vh, 395px); background: #edf2f5; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.af-v53-dialog-image img { display: block; height: 100%; width: 100%; object-fit: contain; object-position: center; }
+.af-v53-fallback { font-family: Georgia,serif; font-size: clamp(64px,12vw,110px); color: #a58a59; }
+.af-v53-dialog-body { padding: clamp(24px,4.3vw,44px); }
+.af-v53-eyebrow { font-size: 11px !important; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #ac864b !important; margin-bottom: 13px; }
+.af-v53-dialog h2 { font-size: clamp(30px,4vw,45px); letter-spacing: -.04em; line-height: 1.11; margin: 0 0 10px; color: #113744; }
+.af-v53-role { font-size: 16px; font-weight: 600; color: #284e60; line-height: 1.45; margin: 0 0 4px; }
+.af-v53-location { font-size: 13px; color: #7b8b92; margin: 0 0 28px; }
+.af-v53-biography { padding-bottom: 18px; border-bottom: 1px solid #e4e9ec; }
+.af-v53-biography h3, .af-v53-contact h3 { font-size: 16px; letter-spacing: -.01em; color: #143845; margin: 0 0 13px; }
+.af-v53-biography p { font-size: 15px; line-height: 1.76; color: #455b63; margin: 0 0 15px; }
+.af-v53-contact { padding-top: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 11px; }
+.af-v53-contact h3 { margin-bottom: 4px; }
+.af-v53-contact a { color: #17495e; font-size: 14px; font-weight: 600; text-decoration: underline; text-decoration-color: #ba995e; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.af-v53-contact a:hover { color: #a37d3d; }
+.af-v53-contact .af-v53-contact-note { font-size: 12px; line-height: 1.6; color: #7c8c92; margin: 9px 0 0; }
+@media (max-width: 600px) { .af-v53-backdrop { padding: 0; align-items: end; } .af-v53-dialog { width: 100%; border-radius: 18px 18px 0 0; max-height: 94dvh; } .af-v53-dialog-image { height: clamp(195px, 33dvh, 290px); } .af-v53-dialog-body { padding: 25px 24px 35px; } }
+@media (prefers-reduced-motion: reduce) { .af-v53-close { transition: none; } .af-v53-close:hover { transform: none; } }

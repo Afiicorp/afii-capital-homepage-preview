@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+<title id="title">Railway station editorial illustration</title>
+<desc id="desc">Stylised modern station canopy and a passenger train; this graphic does not depict an AFII project.</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c5d9df"/><stop offset=".56" stop-color="#e6eaeb"/><stop offset="1" stop-color="#f2e6d1"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d5869"/><stop offset="1" stop-color="#0a2938"/></linearGradient>
+<linearGradient id="train" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f9fbfa"/><stop offset="1" stop-color="#bacbd0"/></linearGradient>
+</defs>
+<rect width="1440" height="810" fill="url(#sky)"/>
+<path d="M0 395L210 218H1440V287H334L0 509Z" fill="#1a3b49"/>
+<path d="M0 377L210 218H1440V233H210L0 404Z" fill="#8b9ca1"/>
+<g fill="#607a83"><path d="M300 235h20v405h-20z"/><path d="M670 235h17v409h-17z"/><path d="M1054 235h19v411h-19z"/></g>
+<g opacity=".48" stroke="#d0dedf" stroke-width="4"><path d="M20 410L300 241"/><path d="M20 448L495 238"/><path d="M20 489L680 238"/><path d="M430 237L900 432"/><path d="M680 237L1140 437"/><path d="M950 237L1430 422"/></g>
+<path d="M0 631L1440 575V810H0Z" fill="#718e98"/>
+<path d="M0 671L1440 618V810H0Z" fill="#344c57"/>
+<path d="M130 810L623 629" stroke="#cbd8d8" stroke-width="7"/><path d="M420 810L842 622" stroke="#d3dddb" stroke-width="7"/>
+<path d="M720 810L1120 602" stroke="#cbd8d8" stroke-width="7"/><path d="M1010 810L1320 594" stroke="#d3dddb" stroke-width="7"/>
+<g><path d="M108 548C124 470 222 420 420 406L1301 370Q1370 374 1390 427L1388 608L58 646Z" fill="url(#train)" stroke="#516e76" stroke-width="6"/>
+<path d="M234 448Q263 413 413 405L1300 370Q1336 375 1361 404L1367 456L224 502Z" fill="url(#glass)"/>
+<g stroke="#9cc4ca" stroke-width="5"><path d="M433 403v87"/><path d="M620 393v91"/><path d="M804 384v96"/><path d="M987 380v91"/><path d="M1165 374v88"/></g>
+<path d="M102 604L1390 566V593L72 631Z" fill="#bd9554"/>
+<path d="M92 638L1390 607" stroke="#14323d" stroke-width="14"/>
+<path d="M185 547h76" stroke="#fff" stroke-width="13" stroke-linecap="round" opacity=".85"/>
+</g>
+<rect x="56" y="58" width="246" height="46" rx="4" fill="#133947" opacity=".96"/>
+<text x="78" y="88" fill="#e8d3a5" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">RAILWAY SECTOR</text>
+</svg>

@@ -1,0 +1,103 @@
+/* AFII GROUP V5.3.1: component-scoped styles avoid stale/unapplied global CSS. */
+.backdrop {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  overscroll-behavior: contain;
+}
+.dialog {
+  color: #133a48;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  isolation: isolate;
+}
+.photoArea {
+  position: relative;
+  height: clamp(240px, 35vh, 355px);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg,#e4ebef,#f2f4f5);
+}
+.photoArea > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.photoShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg,rgba(7,35,49,.27),transparent 42%);
+  pointer-events: none;
+}
+.photoCaption {
+  position: absolute;
+  bottom: 17px;
+  left: clamp(24px,4vw,44px);
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,.55);
+}
+.photoFallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: Georgia,serif;
+  font-size: 110px;
+  color: #b08e53;
+}
+.close {
+  position: absolute;
+  z-index: 5;
+  top: 18px;
+  right: 18px;
+  background: #fff;
+  border: 1px solid #dce6e9;
+  color: #173b4a;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 5px 20px rgba(9,35,46,.22);
+  cursor: pointer;
+}
+.close:hover { background: #142f43; color: #fff; }
+.close:focus-visible,.links a:focus-visible { outline: 3px solid #ae8543; outline-offset: 3px; }
+.content { padding: clamp(28px,4.2vw,48px); }
+.content h2 { font-size: clamp(30px,3.5vw,46px); letter-spacing: -.04em; line-height: 1.13; margin: 0 0 12px; color: #133a48; }
+.role { font-size: 17px; color: #255264; font-weight: 600; margin: 0 0 7px; line-height: 1.45; }
+.place { font-size: 13px; color: #72838a; margin: 0; }
+.rule { width: 64px; height: 2px; background: #bb9a60; margin: 27px 0; }
+.sectionTitle { font-size: 17px; font-weight: 700; margin: 0 0 18px; color: #183f4d; letter-spacing: -.02em; }
+.bio p { font-size: 15.5px; line-height: 1.77; color: #435963; margin: 0 0 17px; }
+.milestones { padding-top: 12px; }
+.timeline { list-style: none; margin: 0 0 28px; padding: 0; border-left: 1px solid #c8d6dc; }
+.timeline li { display: grid; grid-template-columns: 80px 1fr; gap: 14px; margin: 0; padding: 0 0 22px 22px; position: relative; }
+.timeline li::before { content: ''; position: absolute; width: 9px; height: 9px; left: -5px; top: 5px; background: #b59456; border-radius: 50%; }
+.year { color: #9a7841; font-size: 13px; font-weight: 700; padding-top: 2px; }
+.timeline h4 { color: #173c49; font-size: 15px; line-height: 1.4; font-weight: 700; margin: 0 0 5px; }
+.timeline p { color: #5d6c73; font-size: 14px; line-height: 1.65; margin: 0; }
+.contacts { border-top: 1px solid #e2e9eb; padding-top: 26px; margin-top: 8px; }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 11px; }
+.links a { display: inline-flex; align-items: center; gap: 14px; padding: 12px 16px; font-size: 13.5px; font-weight: 700; border: 1px solid #d1dee1; border-radius: 999px; color: #184555; text-decoration: none; max-width: 100%; overflow-wrap: anywhere; }
+.links a:hover { background: #eaf0f2; border-color: #95aeb8; }
+.links .enquire { color: #fff; background: #183f54; border-color: #183f54; }
+.links .enquire:hover { background: #235b74; color: #fff; }
+.contactNote { margin: 16px 0 0; font-size: 12px; line-height: 1.6; color: #7b8990; }
+@media(max-width:600px) {
+  .dialog { width: 100%; }
+  .photoArea { height: clamp(205px,29dvh,275px); }
+  .close { width: 42px; height: 42px; top: 12px; right: 12px; }
+  .content { padding: 26px 24px 36px; }
+  .timeline li { grid-template-columns: 66px 1fr; gap: 8px; padding-left: 15px; }
+  .links a { font-size: 12px; }
+}
+@media(prefers-reduced-motion:reduce) { .close { transition: none; } }
