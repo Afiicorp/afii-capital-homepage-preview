@@ -327,7 +327,7 @@ function VideoSection() {
           <ResponsiveImage src={media.filmPoster} alt="Urban infrastructure" />
         )}
         <div className="af-film-tools">
-          <span>Finance for the real economy.</span>
+          <span>Finance and infrastructure for the real economy.</span>
           {available && (
             <button
               type="button"
@@ -365,9 +365,9 @@ function Footer({ onContact }: { onContact: () => void }) {
           <div>
             <Brand footer />
             <p>
-              Structured finance and infrastructure advisory.
+              Financial advisory, infrastructure development and investment-related businesses.
               <br />
-              A practical perspective on capital and the projects behind it.
+              Specialist capabilities connected through AFII Group.
             </p>
           </div>
           <div className="af-footer-right">
@@ -467,7 +467,7 @@ export default function HomeExperience() {
               </h1>
             </Reveal>
             <Reveal className="af-hero-summary" delay={130}>
-              <p>Structured finance and advisory for infrastructure, business and international trade. We begin with the commercial realities of each project.</p>
+              <p>AFII Group brings together financial advisory, infrastructure development and international partnership capabilities for businesses, sponsors and public institutions.</p>
               <a href="#expertise" className="af-inline-link">
                 Explore our expertise
                 <Arrow diagonal size={18} />
@@ -488,8 +488,8 @@ export default function HomeExperience() {
               </h2>
             </Reveal>
             <Reveal className="af-intro-text" delay={110}>
-              <p>A new project, an established business and a cross-border transaction each call for a different approach to capital. The first task is to understand how the business works, where the risks sit and what the financing needs to achieve.</p>
-              <p>AFII advises on structured funding and related commercial arrangements for companies, sponsors and institutions working across sectors and borders.</p>
+              <p>A viable project requires more than available capital. Procurement, contractual obligations, delivery partners and institutional approvals can determine whether a sound investment case can proceed.</p>
+              <p>Through its specialist practices, AFII Group considers the financing structure alongside the commercial and institutional decisions required to make a project investable and implementable.</p>
               <a href="/about" className="af-inline-link">
                 About AFII
                 <Arrow diagonal size={18} />
@@ -509,7 +509,7 @@ export default function HomeExperience() {
                   <span>Different ways forward.</span>
                 </h2>
               </div>
-              <p>Our work extends across five connected practice areas. Each brings a different set of considerations to the table.</p>
+              <p>AFII Group works through five specialist practices, each with a distinct role in financial advisory, infrastructure development, business finance or investment.</p>
             </Reveal>
             <div className="af-practice-layout">
               <div className="af-practice-grid" role="group" aria-label="AFII areas of expertise">
@@ -560,7 +560,7 @@ export default function HomeExperience() {
                 </h2>
               </Reveal>
               <Reveal delay={90}>
-                <p>From essential energy systems to transport networks and manufacturing, each industry brings its own financing needs.</p>
+                <p>Transport, energy and manufacturing projects involve different operating risks, procurement requirements and capital commitments.</p>
               </Reveal>
             </div>
             <div className="af-industry-grid">
@@ -600,8 +600,8 @@ export default function HomeExperience() {
               </Reveal>
               <Reveal className="af-approach-copy" delay={100}>
                 <h3>Sound decisions start with the right questions.</h3>
-                <p>What will the capital fund? How will the asset operate? What obligations will remain after the financing closes?</p>
-                <p>We look at the full commercial picture, working through the structure, counterparties and practical constraints before recommending a way forward.</p>
+                <p>What must be financed? Who can authorise the project? Which parties carry the construction, operating and repayment obligations?</p>
+                <p>We assess the commercial case, test the institutional and contractual constraints, and identify the decisions and counterparties needed to proceed.</p>
                 <a href="/about" className="af-inline-link">
                   Our approach
                   <Arrow diagonal size={18} />
@@ -646,7 +646,7 @@ export default function HomeExperience() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <p>Leadership across financial structuring, infrastructure and international markets brings specialist perspectives to each mandate.</p>
+                <p>AFII draws on leadership and specialist experience across finance, infrastructure and international markets, with teams aligned to the needs of each mandate.</p>
               </Reveal>
             </div>
                 {/* AFII_PRODUCTION_POLISH_V3_0: full leadership directory holds the portraits; homepage is typographic. */}
@@ -656,7 +656,7 @@ export default function HomeExperience() {
                 <h3>Experience In Finance. Perspective Across Markets.</h3>
               </div>
               <div>
-                <p>AFII works through senior leadership, sector specialists and international partners. Advisory teams are assembled around the particular financing, institutional and execution requirements of each mandate.</p>
+                <p>AFII assignments bring together the relevant financial, institutional and sector specialists. The responsible business and its appointed partners are defined by the scope of the engagement.</p>
                 <a className="af-inline-link" href="/leadership-offices">Meet AFII Leadership <Arrow diagonal size={18}/></a>
               </div>
             </div>
@@ -682,7 +682,7 @@ export default function HomeExperience() {
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p>AFII’s published work spans infrastructure, finance and industrial activity. Individual transaction details are presented only where disclosure is appropriate.</p>
+              <p>Published AFII references span infrastructure, financing, industrial projects and partnerships. Each entry is presented in the context of the information publicly available for that assignment.</p>
               <a href="/transactions" className="af-inline-link">
                 Transactions
                 <Arrow diagonal size={18} />
@@ -702,7 +702,7 @@ export default function HomeExperience() {
               </h2>
             </Reveal>
             <Reveal delay={120} className="af-cta-right">
-              <p>For a project, financing requirement or advisory conversation, write to the team and we’ll direct your enquiry appropriately.</p>
+              <p>Tell us about the financing requirement, infrastructure programme or proposed partnership. Your enquiry will be directed to the relevant AFII practice.</p>
               <button type="button" onClick={() => setContactOpen(true)} className="af-pill-link">
                 Start a conversation
                 <Arrow diagonal size={18} />

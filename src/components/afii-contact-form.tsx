@@ -70,13 +70,13 @@ export default function AfiiContactForm({ open, onClose }: { open: boolean; onCl
         <img src="/afii-logo.jpg" alt="AFII" />
         <p className="af-enquiry-kicker">AFII · ENQUIRIES</p>
         <h2>Every project begins with a conversation.</h2>
-        <p>Tell us about the commercial context. We can then direct your enquiry towards the appropriate finance or advisory specialists.</p>
+        <p>Share the financing requirement, infrastructure programme, partnership opportunity or investment enquiry and the relevant jurisdiction. The appropriate AFII practice will review the details.</p>
         <a href={`mailto:${CONTACT_EMAIL}?subject=AFII%20enquiry`}>Write directly to {CONTACT_EMAIL} ↗</a>
       </div>
       <div className="af-enquiry-content">
         <p className="af-enquiry-kicker">START A CONVERSATION</p>
         <h3 id="af-enquiry-title">Discuss a mandate.</h3>
-        <p id="af-enquiry-description">Share a few details and prepare an email to the AFII team. No account is required.</p>
+        <p id="af-enquiry-description">Provide your organisation, jurisdiction and the nature of the mandate. The completed enquiry can be reviewed in your email application.</p>
         <form className="af-enquiry-grid" onSubmit={prepareEmail}>
           <label>Full name <input required value={name} maxLength={120} autoComplete="name" placeholder="Your full name" onChange={event => setName(event.target.value)} /></label>
           <label>Work email <input required type="email" value={email} maxLength={160} autoComplete="email" placeholder="name@organisation.com" onChange={event => setEmail(event.target.value)} /></label>

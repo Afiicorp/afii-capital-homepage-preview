@@ -113,13 +113,13 @@ export default function LeadershipOfficesExperience(){
         <div className="af-container af-lead-hero-content">
           <div className="af-breadcrumb af-lead-breadcrumb"><a href="/">Home</a><span>/</span><span>Leadership &amp; Offices</span></div>
           <h1 id="af-lead-title">People, Perspective<br/>And Presence.</h1>
-          <p>Experienced Professionals In Finance, Infrastructure And Cross-Border Advisory.</p>
+          <p>Professionals across financial advisory, infrastructure development, investment strategy and international commercial partnerships.</p>
         </div>
       </section>
       <section className="af-directory-intro af-section">
         <div className="af-container af-directory-intro-grid">
           <div><p className="af-about-kicker">Leadership &amp; Advisory</p><h2>People Behind The Mandates.</h2></div>
-          <div><p>The AFII Network Draws On Senior Partners, Directors And Specialists Across Markets. Team Selection Depends On The Sector, Location And Individual Requirements Of Each Mandate.</p><a className="af-inline-link" href="mailto:reachus@afii.eu">Contact The Team <Arrow diagonal size={17}/></a></div>
+          <div><p>AFII combines sector and finance experience through its constituent businesses and professional network. Engagement teams are assembled according to the commercial, institutional and jurisdictional requirements of the mandate.</p><a className="af-inline-link" href="mailto:reachus@afii.eu">Contact The Team <Arrow diagonal size={17}/></a></div>
         </div>
         <div className="af-container af-directory-grid">
           {leadershipPeople.map((person)=><PersonCard key={person.name} person={person}/>)}
@@ -132,7 +132,7 @@ export default function LeadershipOfficesExperience(){
           <div className="af-offices-directory-grid">
             {offices.map((p)=><LocationCard key={p.id} place={p}/>)}
           </div>
-          <div className="af-network-directory-intro"><p className="af-about-kicker">Wider Network</p><h2>Partner Locations.</h2><p>These Listings Describe Partner And Mandate Coverage. They Are Not Additional AFII Registered Offices.</p></div>
+          <div className="af-network-directory-intro"><p className="af-about-kicker">Wider Network</p><h2>Partner Locations.</h2><p>Partner-network locations indicate professional relationships and mandate coverage; they are separate from AFII group-office listings.</p></div>
           <div className="af-offices-directory-grid af-offices-network-grid">
             {networkLocations.map((p)=><LocationCard key={p.id} place={p}/>)}
           </div>

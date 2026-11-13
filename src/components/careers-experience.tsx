@@ -33,8 +33,8 @@ const PATHS = [
 ];
 
 const BENEFITS = [
-  "Work with a group positioned across advisory, infrastructure, investment and cross-border finance.",
-  "Professional standards shaped for a serious corporate environment rather than a generic startup template.",
+  "Work with teams active in financial advisory, infrastructure development and international projects.",
+  "Client-facing work is prepared and reviewed with the discipline expected in corporate and institutional advisory.",
   "Meaningful written and analytical work that contributes directly to live business activity.",
   "Exposure to global business communication, institutional content and sector-facing execution material.",
 ];

@@ -3,40 +3,40 @@ import { media } from "@/data/site";
 export const practices = [
   {
     name: "Investment banking & capital raising",
-    detail: "Project finance, capital structuring, equity and transactions.",
-    description: "We work with project sponsors and businesses on funding structures that reflect the transaction, its underlying assets and the way capital is expected to be repaid.",
+    detail: "Project and corporate finance, structured debt, equity and refinancing.",
+    description: "Capital strategy and transaction preparation for corporations and sponsors, including debt, equity, export credit and structured finance, with lender and investor engagement.",
     image: media.finance,
   },
   {
     name: "Government & infrastructure advisory",
-    detail: "Public infrastructure, programme finance and institutional coordination.",
-    description: "Public and infrastructure projects need careful alignment between funding, procurement, risk and the institutions responsible for delivery.",
+    detail: "Public-sector strategy, infrastructure development, procurement and partnerships.",
+    description: "Government-linked project origination, PPP and concession strategy, bid consortia and technical partnerships, with attention to the institutional route to implementation.",
     image: media.eca,
   },
   {
     name: "SME finance & banking distribution",
-    detail: "Equipment, business funding and export credit solutions.",
-    description: "Financing productive business assets calls for a practical understanding of cash flow, supplier arrangements and the business behind the borrowing.",
+    detail: "Business credit, working capital, equipment finance and lender coordination.",
+    description: "Credit preparation and financing-product coordination for eligible businesses through banks, NBFCs and other financing partners.",
     image: media.trade,
   },
   {
     name: "Asset management & investment platforms",
-    detail: "Investment structures, asset strategies and family office perspectives.",
-    description: "We consider long-term investment structures in the context of the underlying assets, commercial objectives and responsibilities of each participant.",
+    detail: "Asset aggregation strategies and investment-platform development.",
+    description: "Development of investment theses and platform structures for selected real assets, with attention to governance, operating performance and institutional capital requirements.",
     image: media.bridge,
   },
   {
     name: "Principal investments",
-    detail: "Project participation, strategic assets and co-investment opportunities.",
-    description: "Where appropriate, we explore the commercial and structural questions around direct participation in projects and asset-backed investment opportunities.",
+    detail: "Selective proprietary investment and strategic co-investment.",
+    description: "Assessment of selected direct investments and co-investments on their individual economics, ownership responsibilities and applicable approvals.",
     image: media.equipment,
   },
 ];
 
 export const sectors = [
-  { title: "Energy & transition", copy: "Renewables, power generation and energy systems", src: media.energy },
-  { title: "Transport & infrastructure", copy: "Aviation, rail, roads and logistics", src: media.transport },
-  { title: "Industry & international trade", copy: "Manufacturing, equipment and supply chains", src: media.industry },
+  { title: "Energy & transition", copy: "Generation, renewables, energy networks and operating assets", src: media.energy },
+  { title: "Transport & infrastructure", copy: "Rail, roads, aviation, urban transport and logistics", src: media.transport },
+  { title: "Industry & international trade", copy: "Industrial facilities, machinery, procurement and international trade", src: media.industry },
 ];
 
 export const people = [

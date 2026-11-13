@@ -239,9 +239,9 @@ export function Footer({ onContact }: { onContact: () => void }) {
           <div>
             <Brand footer />
             <p>
-              Structured finance and infrastructure advisory.
+              Financial advisory, infrastructure development and investment-related businesses.
               <br />
-              A practical perspective on capital and the projects behind it.
+              Specialist capabilities connected through AFII Group.
             </p>
           </div>
           <div className="af-footer-right">
@@ -347,7 +347,7 @@ export default function AboutExperience() {
             <Reveal className="af-about-hero-copy">
               <p className="af-about-kicker">About AFII</p>
               <h1 id="af-about-heading">Built Around Projects. Structured For Long-Term Outcomes.</h1>
-              <p className="af-about-lead">Since 1996, AFII has worked across proprietary investments, infrastructure and real estate advisory, structured trade finance and long-horizon capital solutions.</p>
+              <p className="af-about-lead">AFII Group brings together specialist advisory, infrastructure-development and investment-related businesses. Its corporate advisory heritage dates to 1996.</p>
               <div className="af-about-links">
                 <a href="#afii-story" className="af-inline-link">Read our story <Arrow diagonal size={17} /></a>
               </div>
@@ -384,9 +384,9 @@ export default function AboutExperience() {
             <Reveal className="af-about-story-copy" delay={90}>
               <p className="af-about-kicker">How the firm evolved</p>
               <h2>From Proprietary Investments To A Broader Advisory Platform.</h2>
-              <p>AFII was founded in 1996 to manage the company’s proprietary investments. In 2001 the firm was reorganized to provide infrastructure and real estate financial advisory services, widening the scope of its work across capital structuring and project-led advisory.</p>
+              <p>AFII’s corporate advisory origins date to 1996, with an expansion into infrastructure and real estate financial advisory in 2001. The work developed across structured capital, project finance and international commercial transactions.</p>
               <p>Under the leadership of Dr. Mahesh P. S. Gandhi, Chairman of the Group, AFII also developed and managed structured trade finance products for State Bank of India, advised infrastructure companies on complex equity and debt structuring and supported capital raising for promoter-led positions through global mezzanine finance.</p>
-              <p>Over time, the practice expanded into project incubation, public-enterprise collaboration and a broader fund-management outlook designed to apply structured-finance knowledge across infrastructure, real estate and SMEs in India, Eastern Europe and Africa.</p>
+              <p>Over time, AFII expanded its focus to infrastructure incubation, public-enterprise collaboration, enterprise finance and the development of investment-platform strategies. Today these activities sit within specialist practices with distinct responsibilities.</p>
             </Reveal>
           </div>
         </section>
@@ -399,7 +399,7 @@ export default function AboutExperience() {
                 <p className="af-about-kicker">A continuing timeline</p>
                 <h2>Key Steps In The AFII Story.</h2>
               </div>
-              <p>The business has widened carefully over time—each stage building on specific project, sector and institutional experience.</p>
+              <p>The timeline traces AFII’s advisory heritage and the development of its financial, infrastructure and investment-related practices.</p>
             </Reveal>
             <div className="af-about-milestones">
               {aboutMilestones.map((item, index) => (
@@ -442,7 +442,7 @@ export default function AboutExperience() {
                 <p className="af-about-kicker">Business lines</p>
                 <h2>How The Work Is Organized.</h2>
               </div>
-              <p>AFII’s current platform spans connected practice areas. They bring together advisory, structuring, distribution, investment-platform and principal-investment capabilities.</p>
+              <p>AFII Group organises its activities into five specialist practices. Financial advisory, infrastructure origination, SME finance, investment-platform development and principal investment retain distinct responsibilities.</p>
             </Reveal>
             <div className="af-about-practice-grid">
               {practices.map((item, index) => (
@@ -462,8 +462,8 @@ export default function AboutExperience() {
           <div className="af-container af-about-footprint-grid">
             <Reveal className="af-about-footprint-copy">
               <p className="af-about-kicker">Markets & execution</p>
-              <h2>Supported By Senior Professionals And A Distributed Office Footprint.</h2>
-              <p>AFII works with a dedicated team of senior professionals across functional disciplines. Its spread of offices and working relationships allows it to support varied transactions, capital programmes and on-ground project initiatives.</p>
+              <h2>A Cross-Border Network With Defined Responsibilities.</h2>
+              <p>AFII’s constituent businesses and professional relationships connect Europe, India, the Middle East and Southeast Asia. Local advisers and specialist partners support mandates in the relevant markets.</p>
               <div className="af-about-footprint-tags">
                 {aboutFootprint.map((location) => (
                   <span key={location}>{location}</span>
@@ -489,13 +489,13 @@ export default function AboutExperience() {
                 </h2>
               </Reveal>
               <Reveal delay={100}>
-                <p>AFII leadership brings together financial, infrastructure and sector experience across its international offices and advisory network.</p>
+                <p>AFII works with specialists in financing, infrastructure and international partnerships, selected according to the requirements of the engagement.</p>
               </Reveal>
             </div>
                 {/* AFII_PRODUCTION_POLISH_V3_0: keep the full portrait gallery in the leadership directory. */}
             <div className="af-leadership-editorial">
               <div><p className="af-leadership-editorial-kicker">Our People</p><h3>Advice Shaped By Experience.</h3></div>
-              <div><p>Our leadership and advisory network brings together specialists in capital structuring, public infrastructure, investment and cross-border commercial arrangements.</p><a className="af-inline-link" href="/leadership-offices">Explore Leadership &amp; Offices <Arrow diagonal size={18}/></a></div>
+              <div><p>The leadership and advisory network covers capital structuring, infrastructure development, investment strategy and cross-border commercial work.</p><a className="af-inline-link" href="/leadership-offices">Explore Leadership &amp; Offices <Arrow diagonal size={18}/></a></div>
             </div>
             <div className="af-leadership-directory-link"><a href="/leadership-offices" className="af-inline-link">Meet Our Full Leadership And Office Network <Arrow diagonal size={17} /></a></div>
           </div>
@@ -511,7 +511,7 @@ export default function AboutExperience() {
               </h2>
             </Reveal>
             <Reveal delay={120} className="af-cta-right">
-              <p>For a project, financing requirement or advisory conversation, write to the team and we’ll direct your enquiry appropriately.</p>
+              <p>Share the nature of your project or financing requirement and the relevant jurisdiction. The appropriate AFII practice will review your enquiry.</p>
               <button type="button" onClick={() => setContactOpen(true)} className="af-pill-link">
                 Start a conversation
                 <Arrow diagonal size={18} />

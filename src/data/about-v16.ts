@@ -1,7 +1,7 @@
 export const aboutFacts = [
   { value: "30+", label: "years of practice", note: "Active since 1996", icon: "calendar" },
   { value: "2001", label: "advisory expansion", note: "Infrastructure & real estate financial advisory", icon: "compass" },
-  { value: "5", label: "connected business lines", note: "Across advisory, structuring and investment activity", icon: "network" },
+  { value: "5", label: "specialist practices", note: "Across advisory, structuring and investment activity", icon: "network" },
   { value: "4", label: "current office hubs", note: "Frankfurt, New Delhi, Mumbai and UAE", icon: "shield" },
 ];
 
@@ -28,8 +28,8 @@ export const aboutMilestones = [
   },
   {
     year: "Today",
-    title: "Broader fund-management outlook",
-    copy: "The practice continues to broaden its fund-management capability, applying structured-product knowledge across infrastructure, real estate and SMEs in India, Eastern Europe and Africa.",
+    title: "Specialist practice development",
+    copy: "AFII continues to develop distinct financing, infrastructure, enterprise-credit and investment-platform capabilities for selected markets and mandates.",
   },
 ];
 

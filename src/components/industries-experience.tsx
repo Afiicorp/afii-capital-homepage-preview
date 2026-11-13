@@ -34,20 +34,20 @@ export default function IndustriesExperience() {
         <div className="af-container afi-ind-hero-copy">
           <nav aria-label="Breadcrumb" className="afi-ind-crumb"><a href="/">Home</a><span>/</span><span>Industries</span></nav>
           <h1 id="afi-ind-title">Understanding The Sectors<br/>Behind The Capital.</h1>
-          <p>Different industries call for different financial structures. Our work starts by understanding the business, its assets and the responsibilities that come with investment.</p>
+          <p>AFII Group works in capital-intensive sectors where procurement, operating performance and long-term contractual obligations shape the financing or delivery decision.</p>
         </div>
       </section>
 
       <section className="afi-ind-opening afi-ind-section">
         <div className="af-container afi-ind-opening-grid">
           <div><span className="afi-ind-overline">Sector Perspective</span><h2>Each Industry Has Its<br/><em>Own Financial Logic.</em></h2></div>
-          <div className="afi-ind-prose"><p>AFII works through five connected business lines: investment banking and capital raising, government and infrastructure advisory, SME finance and banking distribution, asset management and investment platforms, and principal investments.</p><p>Those capabilities are relevant to a defined set of industries. We do not approach a property development, a manufacturing expansion or a public infrastructure programme with the same assumptions. The funding approach must reflect what the underlying project or enterprise actually needs.</p></div>
+          <div className="afi-ind-prose"><p>AFII Group’s five specialist practices address different stages of corporate finance, public infrastructure development, enterprise credit, investment platforms and principal participation.</p><p>A property development, industrial expansion and public transport programme differ in their asset lives, counterparties and cash-flow profiles. Financing and commercial structures must follow those specific conditions.</p></div>
         </div>
       </section>
 
       <section className="afi-ind-showcase afi-ind-section" id="industry-directory">
         <div className="af-container">
-          <div className="afi-ind-section-heading"><div><span className="afi-ind-overline">Industries We Work Across</span><h2>A Focused View Of<br/>The Real Economy.</h2></div><p>Move over an industry for a closer view. Select it to open a short introduction, then continue to its dedicated page.</p></div>
+          <div className="afi-ind-section-heading"><div><span className="afi-ind-overline">Industries We Work Across</span><h2>A Focused View Of<br/>The Real Economy.</h2></div><p>Explore AFII’s sector experience and the principal financial and commercial considerations within each industry.</p></div>
           <div className="afi-ind-tile-grid">
             {industries.map((item, index) => <IndustryTile key={item.slug} item={item} position={index} isSelected={activeSlug === item.slug} onActivate={() => toggle(item.slug)}/>) }
           </div>
@@ -62,10 +62,10 @@ export default function IndustriesExperience() {
 
       <section className="afi-ind-philosophy afi-ind-section">
         <div className="afi-ind-philosophy-rings" aria-hidden="true"><span/><span/><span/></div>
-        <div className="af-container afi-ind-philosophy-grid"><div><span className="afi-ind-overline">A Commercial Starting Point</span><h2>First Understand<br/>The Asset.<br/><em>Then The Funding.</em></h2></div><div><p>Some opportunities are defined by land and a development schedule. Others depend on trade cycles, public institutions, equipment performance or the cash flow of a growing enterprise.</p><p>In each case, the useful financing conversation begins with the same discipline: who is responsible for what, where the risks sit, and how capital will be returned.</p><a href="/expertise" className="afi-ind-outline-link">Explore AFII Expertise <Arrow diagonal size={17}/></a></div></div>
+        <div className="af-container afi-ind-philosophy-grid"><div><span className="afi-ind-overline">A Commercial Starting Point</span><h2>First Understand<br/>The Asset.<br/><em>Then The Funding.</em></h2></div><div><p>The economic case may depend on land rights, contracted revenues, equipment performance, public procurement or a business’s cash-conversion cycle.</p><p>For each mandate we examine the responsible counterparties, allocation of risk and source of repayment before developing the financial approach.</p><a href="/expertise" className="afi-ind-outline-link">Explore AFII Expertise <Arrow diagonal size={17}/></a></div></div>
       </section>
 
-      <section className="afi-ind-crossroads afi-ind-section"><div className="af-container afi-ind-crossroads-grid"><div><span className="afi-ind-overline">Beyond A Single Sector</span><h2>Projects Often Cross<br/>Industry Boundaries.</h2></div><div><p>An industrial facility may require land, imported equipment and long-term financing. An infrastructure programme may involve public bodies, utilities and specialised operating assets. A transaction can rarely be understood through a sector label alone.</p><p>Our industry perspectives are a way to begin the conversation—not a substitute for analysing the particular mandate in front of us.</p></div></div></section>
+      <section className="afi-ind-crossroads afi-ind-section"><div className="af-container afi-ind-crossroads-grid"><div><span className="afi-ind-overline">Beyond A Single Sector</span><h2>Projects Often Cross<br/>Industry Boundaries.</h2></div><div><p>An industrial facility may require land, imported equipment and long-term financing. An infrastructure programme may involve public bodies, utilities and specialised operating assets. A transaction can rarely be understood through a sector label alone.</p><p>The sector informs the structure; the specific project contracts, cash flows and institutional requirements determine the mandate.</p></div></div></section>
 
       <section className="afi-ind-conversation"><div className="af-container afi-ind-conversation-grid"><div><span className="afi-ind-overline">Talk To AFII</span><h2>Discuss The Project<br/>Behind The Numbers.</h2></div><div><p>Tell us about the asset, business or financing requirement. We can help identify the right starting point for a more detailed discussion.</p><button type="button" className="afi-ind-pill" onClick={()=>setContactOpen(true)}>Start A Conversation <Arrow diagonal size={17}/></button></div></div></section>
     </main>
