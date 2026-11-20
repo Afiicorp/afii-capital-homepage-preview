@@ -5,16 +5,61 @@ import { Header, Footer, ContactModal, MailIcon, LinkedInIcon, Arrow } from "@/c
 import { leadershipPeople, offices, networkLocations, type MapPlace } from "@/data/leadership-v17";
 import { leaderProfiles } from "@/data/leadership-profiles-v53";
 import LeaderBiographyModal from "@/components/leader-biography-modal-v53";
+import homeMapV538 from "@/components/afii-home-map-v538.module.css";
 
 const locations: MapPlace[] = [...offices, ...networkLocations];
 
-export function GeoMap() {
+export function GeoMap({ homeCta = false }: { homeCta?: boolean } = {}) {
   const [selected, setSelected] = useState("germany");
   const viewportRef=useRef<HTMLDivElement>(null);
-  useEffect(()=>{const el=viewportRef.current;if(!el)return;const centre=()=>{if(window.innerWidth<=740)el.scrollLeft=Math.max(0,(el.scrollWidth-el.clientWidth)*.54)};centre();},[]);
+  useEffect(() => {
+    // AFII_V5_3_2: Start mobile map over India; users retain free two-way scrolling.
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    const canvas = viewport.querySelector<HTMLElement>(".af-map-canvas");
+    if (!canvas) return;
+
+    let centered = false;
+    let userInteracted = false;
+    const markInteraction = () => { userInteracted = true; };
+    const centerOnIndia = () => {
+      if (centered || userInteracted || window.innerWidth > 740) return;
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      if (maxScroll <= 0) return; // Wait for responsive layout before positioning.
+      // Approximate longitude 78°E; preserve map pins and both scroll directions.
+      const indiaX = canvas.offsetLeft + ((78 + 180) / 360) * canvas.clientWidth;
+      const target = Math.max(0, Math.min(maxScroll, indiaX - viewport.clientWidth / 2));
+      const originalBehavior = viewport.style.scrollBehavior;
+      viewport.style.scrollBehavior = "auto";
+      viewport.scrollLeft = target;
+      viewport.style.scrollBehavior = originalBehavior;
+      centered = true;
+    };
+    const observer = new ResizeObserver(centerOnIndia);
+    observer.observe(viewport);
+    observer.observe(canvas);
+    viewport.addEventListener("pointerdown", markInteraction, { passive: true });
+    viewport.addEventListener("wheel", markInteraction, { passive: true });
+    viewport.addEventListener("keydown", markInteraction);
+    const frame = window.requestAnimationFrame(centerOnIndia);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      observer.disconnect();
+      viewport.removeEventListener("pointerdown", markInteraction);
+      viewport.removeEventListener("wheel", markInteraction);
+      viewport.removeEventListener("keydown", markInteraction);
+    };
+  }, []);
   const place = locations.find((p) => p.id === selected) || offices[0];
   return (
-    <section className="af-geography" id="global-map" aria-labelledby="af-map-heading">
+    <section className={homeCta ? `af-geography ${homeMapV538.mapSection}` : "af-geography"} id="global-map" aria-labelledby="af-map-heading">
+      {homeCta && (
+        <div className={homeMapV538.ctaRow}>
+          <a className={homeMapV538.cta} href="/leadership-offices#global-map">
+            Explore all offices <Arrow diagonal size={15} />
+          </a>
+        </div>
+      )}
       <div className="af-container af-map-heading-row">
         <div>
           <p className="af-kicker-light">Offices &amp; Regional Contacts</p>
@@ -24,9 +69,9 @@ export function GeoMap() {
         <div className="af-map-legend"><span><i className="af-dot-office"/>Office / Group Entity</span><span><i className="af-dot-network"/>Partner Network</span></div>
       </div>
       <p className="af-map-mobile-hint">Swipe horizontally to explore AFII office locations</p>
-      <div ref={viewportRef} className="af-map-viewport" aria-label="World map: office and partner location markers; horizontally scrollable on small screens" tabIndex={0}>
-        <div className="af-map-canvas">
-          <img src="/afii-world-land.svg" alt="" aria-hidden="true" />
+      <div ref={viewportRef} className={homeCta ? `af-map-viewport ${homeMapV538.viewport}` : "af-map-viewport"} aria-label="World map: office and partner location markers; horizontally scrollable on small screens" tabIndex={0}>
+        <div className={homeCta ? `af-map-canvas ${homeMapV538.canvas}` : "af-map-canvas"}>
+          <img className={homeCta ? homeMapV538.mapImage : undefined} src="/afii-world-land.svg" alt="" aria-hidden="true" />
           {locations.map((p) => (
             <button key={p.id} type="button"
               className={`af-map-pin ${p.kind === "office" ? "af-map-pin-office":"af-map-pin-network"} ${selected === p.id ? "af-map-pin-selected":""}`}

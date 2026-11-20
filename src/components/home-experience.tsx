@@ -668,8 +668,7 @@ export default function HomeExperience() {
             </Reveal>
                         {/* AFII_HOME_OFFICE_MAP_V4_0_3: exact Leadership & Offices map, compact presentation only. */}
             <div className="af-home-office-map-clone">
-              <GeoMap />
-              <a className="af-home-office-map-link" href="/leadership-offices#global-map">Explore all offices <span aria-hidden="true">↗</span></a>
+              <GeoMap homeCta />
             </div>
           </div>
         </section>

@@ -1,0 +1,118 @@
+/* AFII_V538_HOME_MAP_SCOPED_LAYOUT
+   Only the homepage GeoMap gets these module classes. Directory map is intact.
+   Coordinate formula and office metadata are not modified. */
+.mapSection { --afii-home-map-v538: 1; }
+.ctaRow {
+  position: absolute;
+  top: 36px;
+  right: 29px;
+  z-index: 8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 0 0 8px;
+  border-bottom: 1px solid #dfb979;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.cta:hover { color: #eac481; }
+.viewport { overscroll-behavior-x: contain; }
+.canvas { position: relative; }
+.mapImage { display: block; }
+@media (max-width: 760px) {
+  /* Real DOM top row. It does not overlay the title or swipe instruction. */
+  .mapSection.mapSection > .ctaRow {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    width: calc(100% - 32px) !important;
+    min-height: 24px !important;
+    margin: 0 auto 10px !important;
+    padding: 0 !important;
+    z-index: 8 !important;
+    text-align: right !important;
+  }
+  .mapSection.mapSection .ctaRow > .cta {
+    display: inline-flex !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    gap: 6px !important;
+    padding: 0 0 6px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #dfb979 !important;
+  }
+  .mapSection.mapSection > :global(.af-map-heading-row) {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 6px !important;
+  }
+  .mapSection.mapSection > :global(.af-map-mobile-hint) {
+    margin-top: 9px !important;
+    margin-bottom: 12px !important;
+    white-space: normal !important;
+  }
+  /* Higher specificity than the old global homepage map overrides.
+     SVG image AND pins are positioned within the SAME 880x372.78 canvas. */
+  .mapSection.mapSection.mapSection .viewport {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mapSection.mapSection.mapSection .viewport > .canvas {
+    display: block !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+    width: 880px !important;
+    min-width: 880px !important;
+    max-width: 880px !important;
+    height: 372.777778px !important;
+    min-height: 372.777778px !important;
+    max-height: 372.777778px !important;
+    aspect-ratio: 1440 / 610 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    transform: none !important;
+  }
+  .mapSection.mapSection.mapSection .canvas > .mapImage {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    object-fit: fill !important;
+    object-position: top left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  .mapSection.mapSection.mapSection .canvas > :global(.af-map-pin) {
+    position: absolute !important;
+    transform: translate(-50%,-90%) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) { .cta { transition: none; } }

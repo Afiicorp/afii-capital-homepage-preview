@@ -4489,3 +4489,207 @@ body:has(.af-introduction) .af-orbit-disc,
 .af-v53-contact .af-v53-contact-note { font-size: 12px; line-height: 1.6; color: #7c8c92; margin: 9px 0 0; }
 @media (max-width: 600px) { .af-v53-backdrop { padding: 0; align-items: end; } .af-v53-dialog { width: 100%; border-radius: 18px 18px 0 0; max-height: 94dvh; } .af-v53-dialog-image { height: clamp(195px, 33dvh, 290px); } .af-v53-dialog-body { padding: 25px 24px 35px; } }
 @media (prefers-reduced-motion: reduce) { .af-v53-close { transition: none; } .af-v53-close:hover { transform: none; } }
+
+/* AFII_V5_3_2_MOBILE_MAP_CTA_AND_INDIA_START */
+/* Mobile home: never place Explore All Offices over the swipe hint. */
+@media (max-width: 760px) {
+  .af-home-office-map-clone .af-map-heading-row {
+    margin-bottom: 12px !important;
+  }
+  .af-home-office-map-clone .af-home-office-map-link {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    display: flex !important;
+    width: max-content;
+    max-width: calc(100% - 32px);
+    margin: 15px 16px 0 auto !important;
+    padding: 7px 0 8px !important;
+    gap: 10px;
+    border-bottom: 1px solid #b38e52;
+    color: #133b49 !important;
+    font-size: 13px !important;
+    line-height: 1.4;
+    white-space: normal;
+  }
+  .af-home-office-map-clone .af-home-office-map-link:hover,
+  .af-home-office-map-clone .af-home-office-map-link:focus-visible {
+    color: #926d33 !important;
+  }
+  .af-home-office-map-clone .af-map-viewport,
+  .af-geography .af-map-viewport {
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+}
+/* AFII_V5_3_2_MOBILE_MAP_CTA_AND_INDIA_END */
+
+/* AFII_V536_MOBILE_MAP_SINGLE_CTA_AND_GEOMETRY_BEGIN */
+/* HOME MAP ONLY, MOBILE ONLY. Never render an extra JSX CTA.
+   Keep the existing desktop coordinate formula for all map pins.
+   Native SVG viewBox=1440x610: the image and pins MUST share one box. */
+@media (max-width: 760px) {
+  html body .af-home-office-map-clone {
+    display: block !important;
+    position: relative !important;
+  }
+  html body .af-home-office-map-clone > .af-geography {
+    order: initial !important;
+  }
+  /* ONE original CTA anchored at the very top-right of the navy card.
+     Reserve a separate first row so it cannot overlap the gold eyebrow,
+     heading or swipe instruction even at 360px. */
+  html body .af-home-office-map-clone > a.af-home-office-map-link {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: absolute !important;
+    top: 12px !important;
+    right: 16px !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    order: initial !important;
+    align-self: auto !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    width: max-content !important;
+    max-width: calc(100% - 32px) !important;
+    margin: 0 !important;
+    padding: 0 0 6px !important;
+    border-bottom: 1px solid #dfb979 !important;
+    border-top: 0 !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+    gap: 7px !important;
+    z-index: 10 !important;
+  }
+  html body .af-home-office-map-clone .af-geography > .af-map-heading-row {
+    padding-top: 24px !important;
+    padding-right: 0 !important;
+    margin-bottom: 6px !important;
+  }
+  html body .af-home-office-map-clone .af-geography > .af-map-mobile-hint {
+    display: block !important;
+    position: relative !important;
+    width: calc(100% - 32px) !important;
+    margin: 10px auto 14px !important;
+    padding: 0 !important;
+    transform: none !important;
+    text-indent: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    overflow-wrap: normal !important;
+    color: #dceaf0 !important;
+    -webkit-text-fill-color: #dceaf0 !important;
+  }
+  html body .af-home-office-map-clone .af-home-map-mobile-cta {
+    display: none !important;
+  }
+  html body .af-home-office-map-clone .af-geography .af-map-viewport {
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+  /* Width 880 * 610 / 1440 = 372.77778: exact SVG ratio. */
+  html body .af-home-office-map-clone .af-geography .af-map-viewport > .af-map-canvas {
+    display: block !important;
+    position: relative !important;
+    width: 880px !important;
+    min-width: 880px !important;
+    max-width: 880px !important;
+    height: 372.777778px !important;
+    min-height: 372.777778px !important;
+    max-height: 372.777778px !important;
+    aspect-ratio: 1440 / 610 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    transform: none !important;
+  }
+  /* Fill the SAME coordinate rectangle as the absolutely-positioned pins.
+     Contain/letterboxing used by older patches displaced city markers. */
+  html body .af-home-office-map-clone .af-geography .af-map-canvas > img {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: fill !important;
+    object-position: top left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+  /* Pin left/top (%) stays from the original desktop GeoMap component. */
+}
+/* AFII_V536_MOBILE_MAP_SINGLE_CTA_AND_GEOMETRY_END */
+
+/* AFII_V537_SINGLE_SOURCE_MAP_CTA_BEGIN */
+/* Unique CTA class: previous V5.3.x absolute-link selectors cannot target it.
+   This one link is INSIDE GeoMap: static flow on mobile; overlay position desktop. */
+.af-home-office-map-clone .af-geography > .afi-v537-map-cta-row {
+  position: absolute;
+  top: 36px;
+  right: 29px;
+  z-index: 6;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.af-home-office-map-clone .afi-v537-map-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(220,181,113,.72);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.af-home-office-map-clone .afi-v537-map-cta:hover { color: #eac481; }
+@media (max-width: 760px) {
+  /* A dedicated top row INSIDE the card. The title and swipe hint flow below.
+     This is NOT an absolutely positioned mobile CTA. */
+  html body .af-home-office-map-clone .af-geography > .afi-v537-map-cta-row {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: calc(100% - 32px) !important;
+    margin: 0 auto 14px !important;
+    padding: 0 !important;
+    justify-content: flex-end !important;
+    z-index: 6 !important;
+  }
+  html body .af-home-office-map-clone .af-geography .afi-v537-map-cta {
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
+    gap: 7px !important;
+    padding-bottom: 6px !important;
+    white-space: nowrap !important;
+  }
+  html body .af-home-office-map-clone .af-geography > .af-map-heading-row {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    padding-right: 0 !important;
+  }
+  /* Retain V5.3.6 map canvas/SVG geometry and horizontally swipeable pins. */
+}
+/* AFII_V537_SINGLE_SOURCE_MAP_CTA_END */
