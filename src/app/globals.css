@@ -2840,7 +2840,7 @@ html, body, body > main, main { background-color: #ffffff; }
 }
 .af-expertise .af-practice-pill:not(.af-practice-pill--active):not(:hover),
 .af-principles .af-principle:not(:hover),
-.afi-ind-related-link, .afi-ind-detail-essay, .afi-exp-service-card,
+.afi-ind-related-link, .afi-ind-detail-essay:not(:hover), .afi-exp-service-card,
 .afi-exp-essay-card, .afi-exp-tx, .tx-card, .afi-careers-card,
 .afi-careers-path-card, .af-location-card, .af-directory-person,
 .af-practice-image, .af-practice-detail-panel, .af-footer-social a {
@@ -4693,3 +4693,49 @@ body:has(.af-introduction) .af-orbit-disc,
   /* Retain V5.3.6 map canvas/SVG geometry and horizontally swipeable pins. */
 }
 /* AFII_V537_SINGLE_SOURCE_MAP_CTA_END */
+
+/* AFII_V5310_INDUSTRY_HOVER_BEGIN */
+
+/* Commercial consideration cards across all industry detail pages */
+
+.afi-ind-detail-page .afi-ind-detail-essay:hover {
+    background: #123844 !important;
+    background-color: #123844 !important;
+    border-color: #cda961 !important;
+    color: #ffffff !important;
+}
+
+.afi-ind-detail-page .afi-ind-detail-essay:hover h3 {
+    color: #eed09a !important;
+    -webkit-text-fill-color: #eed09a !important;
+}
+
+.afi-ind-detail-page .afi-ind-detail-essay:hover p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Related industry cards */
+
+.afi-ind-detail-page .afi-ind-related-link:hover,
+.afi-ind-detail-page .afi-ind-related-link:focus-visible {
+    background: #123844 !important;
+    background-color: #123844 !important;
+    color: #ffffff !important;
+    border-color: #cda961 !important;
+}
+
+.afi-ind-detail-page .afi-ind-related-link:hover strong,
+.afi-ind-detail-page .afi-ind-related-link:focus-visible strong,
+.afi-ind-detail-page .afi-ind-related-link:hover > span:last-child,
+.afi-ind-detail-page .afi-ind-related-link:focus-visible > span:last-child {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.afi-ind-detail-page .afi-ind-related-link:hover .afi-ind-related-icon,
+.afi-ind-detail-page .afi-ind-related-link:focus-visible .afi-ind-related-icon {
+    color: #f1cd85 !important;
+}
+
+/* AFII_V5310_INDUSTRY_HOVER_END */
